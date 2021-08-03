@@ -1,0 +1,4 @@
+BACKUP DATABASE TO 'D:/workspace/eclipse-workspace-01/trinity/backup/trinity-db.tgz' BLOCKING
+
+java -cp hsqldb.jar org.hsqldb.lib.tar.DbBackupMain --extract D:/workspace/eclipse-workspace-01/trinity/backup/trinity-db.tgz dbdir
+java -cp hsqldb.jar org.hsqldb.lib.tar.DbBackupMain --extract trinity-db.tgz ./db

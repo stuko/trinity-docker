@@ -1,0 +1,54 @@
+package com.stuko.anaconda.intercepter;
+
+import bsh.EvalError;
+import bsh.Interpreter;
+import bsh.ParseException;
+import bsh.TargetError;
+
+import com.stuko.anaconda.Exception.ExceptionCenter;
+import com.stuko.anaconda.business.BusinessData;
+import com.stuko.anaconda.business.BusinessHelper;
+import com.stuko.anaconda.front.RequestHelper;
+import com.stuko.anaconda.intercepter.BusinessIntercepter;
+import com.stuko.anaconda.intercepter.BusinessCollectionIntercepter;
+import com.stuko.anaconda.intercepter.ActionIntercepter;
+import com.stuko.anaconda.value.BlankField;
+import com.stuko.anaconda.value.ReturnValue;
+<@IMPORT>
+
+public class <@NAME> extends ActionIntercepter
+{
+
+	public ReturnValue invokeAfterMethod(RequestHelper helper, BusinessData businessData, ReturnValue masterReturnValue) throws Exception
+	{
+		String FORWARD_PAGE = new String();
+		ExceptionCenter.debug( "Simple ActionIntercepter Call After!!!");
+		ReturnValue returnValue = new ReturnValue();
+		returnValue.mBRtn = true;
+		return returnValue;
+	}
+
+	public ReturnValue invokeBeforeMethod(RequestHelper helper,BusinessData businessData, ReturnValue masterReturnValue) throws Exception
+	{
+		String FORWARD_PAGE = new String();
+		ExceptionCenter.debug( "Simple ActionIntercepter Call Before!!!");
+		ReturnValue returnValue = new ReturnValue();
+		if(<@BEFORE>)
+		{
+			ExceptionCenter.debug("AOP Condition is OK");
+			returnValue.mBRtn = true;
+			this.setProcessSkip(false);
+			returnValue.mORtn = "AOP Condition result is true and Continue process";
+		}
+		else
+		{
+			ExceptionCenter.debug("AOP Condition is NOT OK");
+			returnValue.mBRtn = true;
+			this.setProcessSkip(true);
+			returnValue.mORtn = "AOP Condition result is false and Skip process";
+		}
+		return returnValue;
+	}
+
+}
+

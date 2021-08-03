@@ -1,0 +1,35 @@
+version: '3.3'
+services:
+    db:
+      image: mysql:latest
+      hostname: trinity-db
+      extra_hosts:
+        - "trinity-db:192.168.57.243"
+      container_name: trinity-db
+      environment:
+        MYSQL_ROOT_PASSWORD: asdfasdf11
+        MYSQL_DATABASE: anaconda
+        MYSQL_USER: sa 
+        MYSQL_PASSWORD: sa
+      ports:
+        - "3306:3306"
+      volumes:
+        - "./db:/docker-entrypoint-initdb.d"
+      restart: always
+    web:
+      image: tomcat:latest
+      hostname: trinity-web
+      extra_hosts:
+        - "trinity-db:192.168.57.243"
+      container_name: trinity-web
+      environment:
+        JDBC_URL: jdbc:mysql://trinity-db:3306/anaconda?connectTimeout=0&amp;socketTimeout=0&amp;autoReconnect=true
+        JDBC_USER: sa
+        JDBC_PASS: sa
+      ports:
+        - "8800:8080"
+      volumes:
+        - /workspace/trinity-docker/trinity:/user/local/tomcat/webapps
+      links:
+        - db
+      restart: always  

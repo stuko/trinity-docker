@@ -1,0 +1,46 @@
+package com.stuko.anaconda.intercepter;
+
+import com.stuko.anaconda.Exception.ExceptionCenter;
+import com.stuko.anaconda.business.BusinessData;
+import com.stuko.anaconda.business.BusinessHelper;
+import com.stuko.anaconda.front.SingleClassInstance;
+import com.stuko.anaconda.intercepter.BusinessIntercepter;
+import com.stuko.anaconda.intercepter.BusinessCollectionIntercepter;
+import com.stuko.anaconda.intercepter.ActionIntercepter;
+import com.stuko.anaconda.value.BlankField;
+import com.stuko.anaconda.value.ReturnValue;
+<@IMPORT>
+
+public class <@NAME>  extends BusinessIntercepter
+{
+	public ReturnValue invokeAfterMethod(BusinessData process, BusinessData businessData, ReturnValue masterReturnValue) throws Exception
+	{
+		BusinessData request = businessData;
+		ExceptionCenter.debug(businessData.getBusinessName() + "This is conditional so, Nothing is executed in here : Call After!!!");
+		ReturnValue returnValue = new ReturnValue();
+		returnValue.mBRtn = true;
+		return returnValue;
+	}
+
+	public ReturnValue invokeBeforeMethod(BusinessData process, BusinessData businessData, ReturnValue masterReturnValue) throws Exception
+	{
+		BusinessData request = businessData;
+		ExceptionCenter.debug(businessData.getBusinessName() + " ==> Conditional BusinessIntercepter Call Before!!!");
+		ReturnValue returnValue = new ReturnValue();
+		if(<@BEFORE>)
+		{
+			ExceptionCenter.debug("AOP Condition is OK");
+			returnValue.mBRtn = true;
+			this.setProcessSkip(false);
+			returnValue.mORtn = "AOP Condition result is true and Continue process";
+		}
+		else
+		{
+			ExceptionCenter.debug("AOP Condition is NOT OK");
+			returnValue.mBRtn = true;
+			this.setProcessSkip(true);
+			returnValue.mORtn = "AOP Condition result is false and Skip process";
+		}
+		return returnValue;
+	}
+}

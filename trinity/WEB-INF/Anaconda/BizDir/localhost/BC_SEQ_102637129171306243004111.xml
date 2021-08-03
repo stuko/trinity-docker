@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/localhost/BC_SEQ_102637129171306243004111.xml" USER="null" id="BC_SEQ_102637129171306243004111"><BC_SEQ_102637129171306243004111 AnacondaRule="" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="null" BIZ_COLLECTION_KOR_NAME="XML서비스 -notice" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="" aop_point_method="" business_rule="null" id="BC_SEQ_102637129171306243004111" referenceKey=""><notice_insert DATASOURCE="java:comp/env/jdbc/hsql" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO notice (regdate,title,contents,gubun,path,uptdate,member_id,cnt) VALUES(?,?,?,?,?,?,?,?) " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="null " aop_point_method="&quot;create&quot;.equals(request.getFieldValue(&quot;code&quot;)) ">
+<FIELD KIND="ITEM" LENGTH="0" NAME="regdate" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="title" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="contents" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="gubun" SEQ="4" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="path" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="uptdate" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="member_id" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cnt" SEQ="8" TYPE="INT" VALUE=""/>
+</notice_insert><notice_update DATASOURCE="java:comp/env/jdbc/hsql" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE notice SET title= ?,contents= ? WHERE seq = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="null " aop_point_method="&quot;update&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="title" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="contents" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="3" TYPE="INT" VALUE=""/>
+</notice_update><notice_delete DATASOURCE="java:comp/env/jdbc/hsql" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="DELETE FROM notice WHERE seq = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="null " aop_point_method="&quot;delete&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="INT" VALUE=""/>
+</notice_delete><notice_read DATASOURCE="java:comp/env/jdbc/hsql" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT seq,regdate,title,contents,gubun,path,uptdate,member_id,cnt FROM notice WHERE seq = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="null " aop_point_method="&quot;read&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="INT" VALUE=""/>
+</notice_read><notice_list DATASOURCE="java:comp/env/jdbc/hsql" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT seq,regdate,title,contents,gubun,path,uptdate,member_id,cnt FROM notice&lt;BR&gt;ORDER BY regdate DESC&lt;BR&gt;LIMIT ?,5 " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="null " aop_point_method="&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;)) ">
+<FIELD KIND="ITEM" LENGTH="0" NAME="pos" SEQ="1" TYPE="INT" VALUE=""/>
+</notice_list></BC_SEQ_102637129171306243004111></xml>

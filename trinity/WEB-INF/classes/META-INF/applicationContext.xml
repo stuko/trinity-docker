@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="googleConnectionFactory" class="org.springframework.social.google.connect.GoogleConnectionFactory">
+	 <constructor-arg value="163156741745-i6hlouliqpkjhlgm0hf47ss8qlh7104u.apps.googleusercontent.com" />
+	 <constructor-arg value="0u9EJXO5WhsC9p2iWyovNi7C" />
+    </bean>
+    
+    <bean id="googleOAuth2Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
+     <property name="scope" value="https://www.googleapis.com/auth/userinfo.email"/>
+     <!-- <property name="state" value="state_parameter_passthrough_value"/> -->
+     <!-- https://www.googleapis.com/auth/plus.login -->
+     <!-- https://www.googleapis.com/auth/userinfo.profile -->
+     <property name="redirectUri" value="https://app.bestmember.net/Anaconda.do?CMD=CMD_SEQ_103950343651513726424071"/>
+    </bean>            
+
+</beans>	

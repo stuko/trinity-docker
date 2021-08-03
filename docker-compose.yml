@@ -1,0 +1,41 @@
+version: '3.3'
+services:
+    db:
+      image: blacklabelops/hsqldb
+      hostname: trinity-db
+      extra_hosts:
+        - "trinity-db:192.168.57.243"
+      container_name: trinity-db
+      environment:
+        HSQLDB_DATABASE_HOST: 192.168.57.243
+        HSQLDB_USER: sa
+        HSQLDB_PASSWORD: sa
+        HSQLDB_TRACE: "false"
+        HSQLDB_SILENT: "true"
+        HSQLDB_REMOTE: "false"
+        HSQLDB_DATABASE_ALIAS: "anaconda"
+      ports:
+        - "9001:9001"
+      volumes:
+        - "./db:/opt/database"
+      restart: always
+    web:
+      image: tomcat:latest
+      hostname: trinity-web
+      extra_hosts:
+        - "trinity-db:192.168.57.243"
+      container_name: trinity-web
+      environment:
+        JDBC_URL: jdbc:hsqldb:hsql://192.168.57.243:9001/
+        JDBC_USER: sa
+        JDBC_PASS: sa
+      ports:
+        - "8800:8080"
+      volumes:
+        - ./trinity:/usr/local/tomcat/webapps/ROOT
+        - ./config/server.xml:/usr/local/tomcat/conf/server.xml
+        - ./config/context.xml:/usr/local/tomcat/conf/context.xml
+        - ./lib/hsqldb.jar:/usr/local/tomcat/lib/hsqldb.jar
+      links:
+        - db
+      restart: always  
