@@ -176,7 +176,7 @@ String service_button = "";
 BusinessCollection bc = dac.getTableInfo();
 
 %>
-<p><div class="post"><div class="title-right"><h2><font><b>D/B > XML >Web service,REST</b></font></h2></div></div></p>
+<p><div class="post"><div class="title-right"><h2><font><b>데이터베이스 리소스 관리</b></font></h2></div></div></p>
 <form name="frmRES" method="post" action="/Anaconda.do">
 <input type="hidden" name="CMD" value="CMD_SEQ_100615207491289267339048"></input>
 <input id="res_key" type="hidden" name="res_key"></input>
@@ -193,11 +193,11 @@ BusinessCollection bc = dac.getTableInfo();
 <col width="35%"></col>
 </colgroup>
 <thead>
-<th>Num</th>
-<th>Table</th>
-<th>XML meta name</th>
-<th>Type</th>
-<th>Function</th>
+<th>번호</th>
+<th>테이블</th>
+<th>XML 매핑</th>
+<th>유형</th>
+<th>기능</th>
 </thead>
 <tbody>
 <%
@@ -232,10 +232,10 @@ if(!"N/A".equals(strDxdName))
 <div id="div_table_<%=strDxdName %>" style="display:none;position:absolute;background-color:white;border: 2px double #BF95FF;padding: 5px 5px;width:500px;overflow-x:scroll;overflow-y:scroll;">
 <p>
 <% if(!BusinessHelper.checkNull(dxd2.getData("Business.Service.Name"))){ %>
-<button type="button" class="btn btn-primary" value="Create CRUD function" onClick="javascript:fnCreateXmlTableConfig('id_<%=strDxdName%>','frm_<%=strDxdName%>');">Create CRUD function</button>
+<button type="button" class="btn btn-primary" value="Create CRUD function" onClick="javascript:fnCreateXmlTableConfig('id_<%=strDxdName%>','frm_<%=strDxdName%>');">CRUD 기능 생성</button>
 <% }%>
-<button type="button" class="btn btn-danger" value="Delete xml meta data" onClick="javascript:fnRemoveXmlTableConfig('<%=strResourceKey%>','<%=strDxdName%>','<%=str_jndi%>');">Delete XML meta data</button>
-<button type="button" class="btn btn-secondary" value=" Close" onClick="javascript:fnShowOrHide('div_table_<%=strDxdName %>');">Close</button>
+<button type="button" class="btn btn-danger" value="Delete xml meta data" onClick="javascript:fnRemoveXmlTableConfig('<%=strResourceKey%>','<%=strDxdName%>','<%=str_jndi%>');">XML 메타 삭제</button>
+<button type="button" class="btn btn-secondary" value=" Close" onClick="javascript:fnShowOrHide('div_table_<%=strDxdName %>');">닫기</button>
 </p>
 <form name="frm_<%=strDxdName%>" id="id_<%=strDxdName %>" method="post" action="/Anaconda.do">
 <input type="hidden" name="CMD" value="CMD_SEQ_100615207491289267339048"></input>
@@ -304,12 +304,12 @@ if(!"N/A".equals(strDxdName))
 </td>
 <td>
 <% if("N/A".equals(strDxdName)) {%>
-<button type="button" class="btn btn-primary" value="Create XML meta data" onClick="javascript:fnCreateXmlData('<%=strResourceKey %>','<%=bd.getBusinessName() %>','<%=str_jndi %>');">Create XML meta data</button>
+<button type="button" class="btn btn-primary" value="Create XML meta data" onClick="javascript:fnCreateXmlData('<%=strResourceKey %>','<%=bd.getBusinessName() %>','<%=str_jndi %>');">XML 메타 생성하기</button>
 <% } else { %>
 <% if(!BusinessHelper.checkNull(dxd2.getData("Business.Service.Name"))){ %>
-<button type="button" class="btn btn-danger" value="Create XML service" onClick="javascript:fnCreateXmlService('<%=strResourceKey %>','<%=bd.getBusinessName() %>','<%=str_jndi %>');" <%=service_button%>>Create XML service</button>
+<button type="button" class="btn btn-danger" value="Create XML service" onClick="javascript:fnCreateXmlService('<%=strResourceKey %>','<%=bd.getBusinessName() %>','<%=str_jndi %>');" <%=service_button%>>XML 서비스 생성</button>
 <% } %>
-<button type="button" class="btn btn-secondary" value="Create REST service" onClick="javascript:fnCreateRESTService('<%=strResourceKey %>','<%=bd.getBusinessName() %>','<%=str_jndi %>');" <%=service_button%>>Create REST service</button>
+<button type="button" class="btn btn-secondary" value="Create REST service" onClick="javascript:fnCreateRESTService('<%=strResourceKey %>','<%=bd.getBusinessName() %>','<%=str_jndi %>');" <%=service_button%>>REST 서비스 생성</button>
 <% } %>
 </td>
 </tr>

@@ -174,46 +174,46 @@
     <span></span>
     <span></span>
     <ul id="menu">
-      <li id="topactive"><a href="javascript:fnOpenMenu('menu-domain');" id="topcurrent"><i class="fas fa-home"></i>&nbsp;Manage domain</a>
+      <li id="topactive"><a href="javascript:fnOpenMenu('menu-domain');" id="topcurrent"><i class="fas fa-home"></i>&nbsp;멀티 사이트</a>
 	<ul style="z-index:1000000;display:none" id='menu-domain'>
-	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_108173637391288444301255" ><i class="fas fa-circle"></i>&nbsp;Domain list</a></li>
-	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_107365064121289636666401" ><i class="fas fa-circle"></i>&nbsp;Create domain</a></li>
-	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_102622610251288248433847" ><i class="fas fa-circle"></i>&nbsp;Web filter list</a></li>
-	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_106855886431288257600525" ><i class="fas fa-circle"></i>&nbsp;Create web filter</a></li>
+	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_108173637391288444301255" ><i class="fas fa-circle"></i>&nbsp;사이트 리스트</a></li>
+	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_107365064121289636666401" ><i class="fas fa-circle"></i>&nbsp;사이트 생성하기</a></li>
+	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_102622610251288248433847" ><i class="fas fa-circle"></i>&nbsp;필터 리스트</a></li>
+	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_106855886431288257600525" ><i class="fas fa-circle"></i>&nbsp;필터 생성하기</a></li>
 	</ul>
       </li>
-      <li><a href="javascript:fnOpenMenu('menu-requirements');"><i class="fas fa-list-ul"></i>&nbsp;Manage requirements</a>
+      <li><a href="javascript:fnOpenMenu('menu-requirements');"><i class="fas fa-list-ul"></i>&nbsp;요구사항 관리</a>
         <ul style="z-index:1000000;display:none" id='menu-requirements'>
-	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_107171455261304663724702" ><i class="fas fa-circle"></i>&nbsp;Write requirements</a></li>
+	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_107171455261304663724702" ><i class="fas fa-circle"></i>&nbsp;요구사항 생성하기</a></li>
   	</ul>
       </li>
-      <li><a href="javascript:fnOpenMenu('menu-analysis');"><i class="fas fa-project-diagram"></i>&nbsp;Analysis and Design</a>
+      <li><a href="javascript:fnOpenMenu('menu-analysis');"><i class="fas fa-project-diagram"></i>&nbsp;분석과 설계</a>
 	<ul style="z-index:1000000;display:none"  id='menu-analysis'>
-	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_104378450531288765663303" ><i class="fas fa-circle"></i>&nbsp;UI components list</a></li>
-	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_103558081791305006657614" ><i class="fas fa-circle"></i>&nbsp;Create UI components</a></li>
-	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_105856396481288658408572" ><i class="fas fa-circle"></i>&nbsp;Layout components list</a></li>
-	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_103530981101559962079937" ><i class="fas fa-circle"></i>&nbsp;Manage database connection</a></li>
+	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_104378450531288765663303" ><i class="fas fa-circle"></i>&nbsp;UI 컴포넌트</a></li>
+	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_103558081791305006657614" ><i class="fas fa-circle"></i>&nbsp;UI 컴포넌트 생성하기</a></li>
+	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_105856396481288658408572" ><i class="fas fa-circle"></i>&nbsp;레이아웃 관리</a></li>
+	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_103530981101559962079937" ><i class="fas fa-circle"></i>&nbsp;데이터베이스 연결</a></li>
 	  <!--li><a href="/Anaconda.do?CMD=CMD_SEQ_101383688701288585627625" >Matrix</a></li-->
         </ul>
       </li>
-	<li><a href="javascript:fnOpenMenu('menu-development');"><i class="far fa-file-code"></i>&nbsp;Web Development</a>
+	<li><a href="javascript:fnOpenMenu('menu-development');"><i class="far fa-file-code"></i>&nbsp;웹 개발 관리</a>
 	  <ul style="z-index:1000000;display:none"  id='menu-development'>
-            <li><a href="/Anaconda.do?CMD=CMD_SEQ_101666004731562248869595" ><i class="fas fa-circle"></i>&nbsp;Execute command in server</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_107581931011562108379033" ><i class="fas fa-circle"></i>&nbsp;Explore server files</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_106594560501498179923551" ><i class="fas fa-circle"></i>&nbsp;Develop jsp or html</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_108164918711286971872119" ><i class="fas fa-circle"></i>&nbsp;Web actions list</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_106123592361287269752055" ><i class="fas fa-circle"></i>&nbsp;Create web action</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_103615773161287821449749" ><i class="fas fa-circle"></i>&nbsp;Business service list</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_107211261401287822755707" ><i class="fas fa-circle"></i>&nbsp;Create business service</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_107239804791288227326088" ><i class="fas fa-circle"></i>&nbsp;Web access role list</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_108710360611288228206258" ><i class="fas fa-circle"></i>&nbsp;Create web access role</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_106557688651298705108710" ><i class="fas fa-circle"></i>&nbsp;Assign web access role to action</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_108037707931289267322444" ><i class="fas fa-circle"></i>&nbsp;Database explorer</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_103935205231230567381328" ><i class="fas fa-circle"></i>&nbsp;Test SQL statement</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_105269752731345259248970" ><i class="fas fa-circle"></i>&nbsp;Manage SQL cache</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_109567308931345345981920" ><i class="fas fa-circle"></i>&nbsp;Manage thread batch</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_103213425031360588235009" ><i class="fas fa-circle"></i>&nbsp;Manage anaconda rule</a></li>
-            <li><a href="/Anaconda.do?CMD=CMD_SEQ_104740062431578035448248" ><i class="fas fa-circle"></i>&nbsp;Debug</a></li>
+            <li><a href="/Anaconda.do?CMD=CMD_SEQ_101666004731562248869595" ><i class="fas fa-circle"></i>&nbsp;명령어 실행</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_107581931011562108379033" ><i class="fas fa-circle"></i>&nbsp;서버 파일 탐색</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_106594560501498179923551" ><i class="fas fa-circle"></i>&nbsp;프런트 개발</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_108164918711286971872119" ><i class="fas fa-circle"></i>&nbsp;액션 관리</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_106123592361287269752055" ><i class="fas fa-circle"></i>&nbsp;액션 생성하기</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_103615773161287821449749" ><i class="fas fa-circle"></i>&nbsp;서비스 관리</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_107211261401287822755707" ><i class="fas fa-circle"></i>&nbsp;서비스 생성하기</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_107239804791288227326088" ><i class="fas fa-circle"></i>&nbsp;권한 관리</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_108710360611288228206258" ><i class="fas fa-circle"></i>&nbsp;권한 생성하기</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_106557688651298705108710" ><i class="fas fa-circle"></i>&nbsp;권한 할당하기</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_108037707931289267322444" ><i class="fas fa-circle"></i>&nbsp;데이터베이스 리소스 관리</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_103935205231230567381328" ><i class="fas fa-circle"></i>&nbsp;SQL 테스트</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_105269752731345259248970" ><i class="fas fa-circle"></i>&nbsp;SQL 캐시 관리</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_109567308931345345981920" ><i class="fas fa-circle"></i>&nbsp;배치 관리</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_103213425031360588235009" ><i class="fas fa-circle"></i>&nbsp;룰 관리</a></li>
+            <li><a href="/Anaconda.do?CMD=CMD_SEQ_104740062431578035448248" ><i class="fas fa-circle"></i>&nbsp;디버깅</a></li>
 	    <!--li><a href="/Anaconda.do?CMD=CMD_SEQ_108773320751371349718547" ><i class="fas fa-circle"></i>&nbsp;Manager anaconda entity</a></li-->
 	  </ul>				
 	</li>
@@ -227,14 +227,14 @@
 	  </ul>
 -->
 	</li>
-	<li><a href="javascript:fnOpenMenu('menu-deploy');"><i class="fas fa-server"></i>&nbsp;Deployment</a>
+	<li><a href="javascript:fnOpenMenu('menu-deploy');"><i class="fas fa-server"></i>&nbsp;배포하기</a>
           <ul style="z-index:1000000;display:none"  id='menu-deploy'>
-            <li><a href="/Anaconda.do?CMD=CMD_SEQ_100333381081289029921460" ><i class="fas fa-circle"></i>&nbsp;Change requests list</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_107335537401289969322212" ><i class="fas fa-circle"></i>&nbsp;Create CR(Change Request)</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_101304559451289996453898" ><i class="fas fa-circle"></i>&nbsp;Create target servers  group</a></li>
-	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_103105634661289983608812" ><i class="fas fa-circle"></i>&nbsp;Create target servers</a></li></ul>
+            <li><a href="/Anaconda.do?CMD=CMD_SEQ_100333381081289029921460" ><i class="fas fa-circle"></i>&nbsp;배포 요청 리스트</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_107335537401289969322212" ><i class="fas fa-circle"></i>&nbsp;배포 요청 생성하기</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_101304559451289996453898" ><i class="fas fa-circle"></i>&nbsp;배포 대상 서버 그룹 생성하기</a></li>
+	    <li><a href="/Anaconda.do?CMD=CMD_SEQ_103105634661289983608812" ><i class="fas fa-circle"></i>&nbsp;배포 대상 서버 생성하기</a></li></ul>
 	  </li>
-        <li><a href="/Anaconda.do?CMD=CMD_SEQ_106577512821577858709543" ><i class="fas fa-file-export"></i>&nbsp;Backup</a></li>
+        <li><a href="/Anaconda.do?CMD=CMD_SEQ_106577512821577858709543" ><i class="fas fa-file-export"></i>&nbsp;백업하기</a></li>
 	</li>
         <!--li><a href="/Anaconda.do?CMD=CMD_SEQ_106992440181289030150305"><i class="fas fa-circle"></i>&nbsp;User</a><ul>
 	  <li><a href="/Anaconda.do?CMD=CMD_SEQ_106992440181289030150305" ><i class="fas fa-circle"></i>&nbsp;Users list</a></li>

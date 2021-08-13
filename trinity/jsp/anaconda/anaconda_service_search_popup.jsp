@@ -20,52 +20,46 @@
 %>
 
 <script language="javascript">
-<!--
-function fn_FrmInput(args)
-{
+function fn_FrmInput(args){
 	var object = eval(<%=strObject%>);
 	if(object == null) 	opener.document.frm.bizservice.value  = args;
 	else object.value = args;
 	self.close();
 	return;
 }
-//-->
 </script>
-<p>
+
 <form name="frm" method="POST" action="/Anaconda.do?CMD=CMD_SEQ_109678783811287278764362&title=Search">
-<!----------------------------------------- 검색 조건및 등록 테이블 시작---------------------------------------->	
-		<table>
-		  <tr>
-			<td align="right"><b>Condition</b>&nbsp;&nbsp;&nbsp;</td>
-			<td>
-			  <SELECT NAME='srh_param'>
-			    <OPTION>Select</OPTION>
-			    <OPTION value='BUSINESS_COLLECTION_NAME' <%=strParam.equals("BUSINESS_COLLECTION_NAME")?"selected":""%>>Service group name</OPTION>
-			    <OPTION value='SERVICE_NAME' <%=strParam.equals("SERVICE_NAME")?"selected":""%>>Service name</OPTION>
-	  		  </SELECT>
-                         </td>
-                         <td>
-	  		  <input type="text" class="styled" name="inputText" size="30" value="<%=strText%>">
-                         </td>
-                         <td>
-	  		  <input type="submit" class="button white" name="" value="Search" onClick="javascript:AnacondaSubmit(document.frm);">			  
-	  		</td>
-		  </tr>
-		</table>
-<!----------------------------------------- 검색 조건및 등록 테이블 끝------------------------------------------>
-<!----------------------------------------- 리스트 보여주는 테이블 시작----------------------------------------->
-		<table>
+	<table>
+		<tr>
+		<td align="right"><b>조건</b>&nbsp;&nbsp;&nbsp;</td>
+		<td>
+			<SELECT NAME='srh_param'>
+			<OPTION>Select</OPTION>
+			<OPTION value='BUSINESS_COLLECTION_NAME' <%=strParam.equals("BUSINESS_COLLECTION_NAME")?"selected":""%>>서비스 그룹 이름</OPTION>
+			<OPTION value='SERVICE_NAME' <%=strParam.equals("SERVICE_NAME")?"selected":""%>>서비스 이름</OPTION>
+			</SELECT>
+		</td>
+		<td>
+			<input type="text" class="styled" name="inputText" size="30" value="<%=strText%>">
+		</td>
+		<td>
+			<input type="submit" class="button white" name="" value="검색" onClick="javascript:AnacondaSubmit(document.frm);">			  
+		</td>
+		</tr>
+	</table>
+	<table>
 		<colgroup>
-		<col width="40%">
-		<col width="30%">
-		<col>
+			<col width="40%">
+			<col width="30%">
+			<col>
 		</colgroup>
 		<thead>
-		<tr>
-		<th scope="col">Service name</th>
-		<th scope="col">Description</th>
-		<th scope="col">Function</th>
-		</tr>
+			<tr>
+				<th scope="col">서비스 이름</th>
+				<th scope="col">설명</th>
+				<th scope="col">기능</th>
+			</tr>
 		</thead>
 		<tbody>
 		<%
@@ -82,24 +76,19 @@ function fn_FrmInput(args)
 					it = xmlResource.searchBusinessDataLikeServiceName(strText);
 				} 			
 				
-				for (int i = 0;it.hasNext();i++)
-				{    				
-				    businessCollection = (BusinessCollection)it.next();		
-				    // Iterator iterator = businessCollection.iterator();
-				    out.println("<tr align=\"left\">");
-				    out.println("<td width=\"30%\" height=\"20\"  bgcolor=\"#FFFFFF\"><b>"+businessCollection.getBIZ_COLLECTION_KOR_NAME()+ "</b><br>("+businessCollection.getBusinessName()+")</td>");
-				    out.println("<td width=\"60%\" height=\"20\"  bgcolor=\"#FFFFFF\"></td>");
-				    out.println("<td height=\"20\" align=\"center\" bgcolor=\"#FFFFFF\"><input type=\"button\"  class=\"button white\" name=\"btn_"+i+ "\" value=\"Select\" onClick=\"javascript:fn_FrmInput('"+businessCollection.getBusinessName()+"');\"></td>");
-				    out.println("</tr>");				    
+				for (int i = 0;it.hasNext();i++){    				
+					businessCollection = (BusinessCollection)it.next();		
+					// Iterator iterator = businessCollection.iterator();
+					out.println("<tr align=\"left\">");
+					out.println("<td width=\"30%\" height=\"20\"  bgcolor=\"#FFFFFF\"><b>"+businessCollection.getBIZ_COLLECTION_KOR_NAME()+ "</b><br>("+businessCollection.getBusinessName()+")</td>");
+					out.println("<td width=\"60%\" height=\"20\"  bgcolor=\"#FFFFFF\"></td>");
+					out.println("<td height=\"20\" align=\"center\" bgcolor=\"#FFFFFF\"><input type=\"button\"  class=\"button white\" name=\"btn_"+i+ "\" value=\"Select\" onClick=\"javascript:fn_FrmInput('"+businessCollection.getBusinessName()+"');\"></td>");
+					out.println("</tr>");				    
 				}	
 				xmlResource.release();
-			} catch (Exception e) {
-				ExceptionCenter.catchException(e);
-			}
+			} catch (Exception e) {	ExceptionCenter.catchException(e); }
 		%>
 		</tbody>
-		</td>
-		</tr>
-		</table>
+	</table>
 </form>
-</p>
+

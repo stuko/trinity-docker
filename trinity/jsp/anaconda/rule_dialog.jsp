@@ -6,11 +6,9 @@
 <%@ page import="com.stuko.anaconda.util.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="com.stuko.anaconda.Auth.*"%>
-
 <%
 	String seq = request.getParameter("seq");
 %>
-
 <style>
 .home
 {
@@ -20,7 +18,7 @@
 	margin:2px 0 2px 0;
 	padding:16px 16px 16px 16px;border: 1px double #CCCCCC;
 	float: left;
-        width:400px;  
+    width:400px;  
 }
 
 .dialog
@@ -31,7 +29,7 @@
 	margin:2px 0 2px 0;
 	padding:16px 16px 16px 16px;border: 1px double #CCCCCC;
 	float: left;
-        width:400px;
+    width:400px;
 }
 
 .more
@@ -71,75 +69,69 @@
 	border: 1px double #CCCCCC;
 	margin : 3px;
 }
-.talking
-{
-	
-}
 </style>
- <div class="container-fluid">
-
-<h3 class="page-header"><img src="/jsp/sp/img/talk.png" width="40px">&nbsp;  Edit dialog scenario </h3>
-<p>Determine the conversation topic in the selection box below, then create a scenario.</p>
-
+<div class="container-fluid">
+	<h3 class="page-header"><img src="/jsp/sp/img/talk.png" width="40px">&nbsp;  대화 시나리오 편집 </h3>
+	<p>아래 대화 시나리오를 작성해 주세요.</p>
 	<div id="choiceContext">
-			<select id="selTalk" onChange="javascript:changeTalk(this);">
-					<option value=''>선택</option>
-				</select>
+		<select id="selTalk" onChange="javascript:changeTalk(this);">
+			<option value=''>선택</option>
+		</select>
 	</div>
 	<div id="dialogs" class="dialogs">
 	</div>
 
-<div id='templateHome' style='display:none;'>
-	<form name="frmTemplateHome" id="#FORM_ID">
-	<input type="hidden" name="seq"  value=""  id="#SEQ_ID">
-	<input type="hidden" name="parent_seq"  value="" id="#P_SEQ_ID">
-	<input type="hidden" name="kind"  value="" id="#KIND_ID">
-	<input type="hidden" name="rule_group"  value="" id="#GROUP_ID">
-	<div id="home" class="home">
-		<div id="start" class="start">
-			<div style="display:none;">
-				조건 : &nbsp;<input type="text" id="#RULE_ID" name="rule" class="if" />
+	<div id='templateHome' style='display:none;'>
+		<form name="frmTemplateHome" id="#FORM_ID">
+			<input type="hidden" name="seq"  value=""  id="#SEQ_ID">
+			<input type="hidden" name="parent_seq"  value="" id="#P_SEQ_ID">
+			<input type="hidden" name="kind"  value="" id="#KIND_ID">
+			<input type="hidden" name="rule_group"  value="" id="#GROUP_ID">
+			<div id="home" class="home">
+				<div id="start" class="start">
+					<div style="display:none;">
+						조건 : &nbsp;<input type="text" id="#RULE_ID" name="rule" class="if" />
+					</div>
+					<div>
+						<textarea  id="#MSG_ID" name="msg" class="talk"></textarea>
+					</div>
+					<div>
+						<input type="button" class="btn btn-primary" value="저장" onClick="javascript:updateDialog('#SEQ_ID','#MSG_ID');"></input>&nbsp;
+						<input id="#DEL_ID" type="button" class="btn btn-primary" value="추가" onClick="javascript:AddTemplate(true, '#DEL_ID','#template','#NEW_ID');"></input>	
+					</div>
+				</div>
 			</div>
-			<div>
-				<textarea  id="#MSG_ID" name="msg" class="talk"></textarea>
-			</div>
-			<div>
-					<input type="button" class="btn btn-primary" value="저장" onClick="javascript:updateDialog('#SEQ_ID','#MSG_ID');"></input>&nbsp;
-					<input id="#DEL_ID" type="button" class="btn btn-primary" value="추가" onClick="javascript:AddTemplate(true, '#DEL_ID','#template','#NEW_ID');"></input>	
-			</div>
-		</div>
+		</form>
 	</div>
-	</form>
-</div>
 
-
-<div id='template' style='display:none;'>
+	<div id='template' style='display:none;'>
 		<form name="frmTemplate" id="#FORM_ID">
-		<input type="hidden" name="seq"  value=""   id="#SEQ_ID">
-		<input type="hidden" name="parent_seq"  value=""   id="#P_SEQ_ID">
-		<input type="hidden" name="kind"  value=""   id="#KIND_ID">
-		<input type="hidden" name="rule_group"  value=""   id="#GROUP_ID">
-		<div id="more" class="more">
-			<img src="/jsp/bestmember/img/more.png" class="more_img" />
-		</div>
-		<div id="dialog" class="dialog">
-			<div id="talking" class="talking">
-			<div style="display:none;">
-				조건 : &nbsp;<input type="text" id="#RULE_ID" name="rule" class="if" />
+			<input type="hidden" name="seq"  value=""   id="#SEQ_ID">
+			<input type="hidden" name="parent_seq"  value=""   id="#P_SEQ_ID">
+			<input type="hidden" name="kind"  value=""   id="#KIND_ID">
+			<input type="hidden" name="rule_group"  value=""   id="#GROUP_ID">
+			<div id="more" class="more">
+				<img src="/jsp/bestmember/img/more.png" class="more_img" />
 			</div>
-			<div>
-				<textarea  id="#MSG_ID" name="msg" class="talk"></textarea>
-			</div>
-				<div>
+			<div id="dialog" class="dialog">
+				<div id="talking" class="talking">
+					<div style="display:none;">
+						조건 : &nbsp;<input type="text" id="#RULE_ID" name="rule" class="if" />
+					</div>
+					<div>
+						<textarea  id="#MSG_ID" name="msg" class="talk"></textarea>
+					</div>
+					<div>
 						<input type="button" class="btn btn-primary" value="Save" onClick="javascript:updateDialog('#SEQ_ID','#MSG_ID');"></input>&nbsp;
 						<input id="#DEL_ID" type="button" class="btn btn-primary" value="Add" onClick="javascript:AddTemplate(true, '#DEL_ID','#template', '#NEW_ID');"></input>	&nbsp;
 						<input type="button" class="btn btn-primary" value="Delete" onClick="javascript:DelTemplate('#DIV_ID', '#P_SEQ_ID');"></input>
+					</div>
 				</div>
 			</div>
-		</div>
 		</form>
+	</div>
 </div>
-</div>
+
 <script language="javascript">
 	function uuid(){
 	   var chars = '0123456789abcdef'.split('');

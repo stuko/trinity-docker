@@ -9,29 +9,23 @@
 	String strStyle  = request.getParameter("ui_style");
 	String strClass  = request.getParameter("ui_class");
 	String strRtn = "";
-	try
-	{
+	try{
 		BusinessData businessData = (BusinessData)request.getAttribute(InitClass.getBusinessDataValue());
 		DefaultXmlResource res = DefaultXmlResource.getInstance();
-		if(strCode.equals("remove"))
-		{
+		if(strCode.equals("remove")){
 			DefaultXmlDataCollection col = res.getDefaultXmlDataCollection(com.stuko.anaconda.value.BlankField.ANACONDA_UI);
-			if(col != null)
-			{
+			if(col != null){
 				col.removeDefaultXmlData(strKey);
 			}
 			res.save(col);
 			strRtn = res.httpXmlData(businessData,col);
-		}
-		else if(strCode.equals("save_page"))
-		{
+		}else if(strCode.equals("save_page")){
 			String filelist = request.getParameter("filelist");
 			String path = request.getParameter("path");
 			String[] list = filelist.split(",");
 			FileManager fm = new FileManager();
 			StringBuffer sb = new StringBuffer();
-			for(int i = 0; i < list.length; i++)
-			{
+			for(int i = 0; i < list.length; i++){
 				String file_name = list[i];
 				sb.append("<!------------------------------------------------------------------------>\n");
 				sb.append("<!------------------ ANACONDA UI FILE START ------------------------------>\n");
@@ -45,12 +39,9 @@
 				sb.append("\r\n");
 			}
 			fm.saveJSPFile(path,sb.toString());
-		}
-		else if(strCode.equals("create"))
-		{
+		}else if(strCode.equals("create")){
 			DefaultXmlDataCollection col = res.getDefaultXmlDataCollection(com.stuko.anaconda.value.BlankField.ANACONDA_UI);
-			if(col == null)
-			{
+			if(col == null){
 				col = new DefaultXmlDataCollection(com.stuko.anaconda.value.BlankField.ANACONDA_UI);
 				res.addDefaultXmlDataCollection(col);
 			}
@@ -61,23 +52,18 @@
 			dxd.set("value",strValue);
 			dxd.set("ui_style",strStyle);
 			dxd.set("ui_class",strClass);
-			if(strType.equals("panel"))
-			{
+			if(strType.equals("panel")){
 				String strRow = request.getParameter("panel_row");
 				String strCol = request.getParameter("panel_col");
 				dxd.set("panel_row",strRow);
 				dxd.set("panel_col",strCol);
 			}
-			
 			col.addDefaultXmlData(dxd);
 			res.save(col);
 			strRtn = res.httpXmlData(businessData,col);
-		}
-		else if(strCode.equals("update"))
-		{
+		}else if(strCode.equals("update")){
 			DefaultXmlDataCollection col = res.getDefaultXmlDataCollection(com.stuko.anaconda.value.BlankField.ANACONDA_UI);
-			if(col != null)
-			{
+			if(col != null){
 				DefaultXmlData dxd = col.getDefaultXmlData(strKey);
 				dxd.setTYPE("UI");
 				dxd.set("value_type",strType);
@@ -85,8 +71,7 @@
 				dxd.set("value",strValue);
 				dxd.set("ui_style",strStyle);
 				dxd.set("ui_class",strClass);
-				if(strType.equals("panel"))
-				{
+				if(strType.equals("panel")){
 					String strRow = request.getParameter("panel_row");
 					String strCol = request.getParameter("panel_col");
 					dxd.set("panel_row",strRow);
@@ -95,61 +80,45 @@
 				res.save(col);
 			}
 			strRtn = res.httpXmlData(businessData,col);
-		}
-		else if(strCode.equals("find"))
-		{
+		}else if(strCode.equals("find")){
 			DefaultXmlResource resource = DefaultXmlResource.getInstance();
 			DefaultXmlData data = null;
 			DefaultXmlDataCollection dxdc = null;
 			DefaultXmlDataCollection collection = new DefaultXmlDataCollection("Response");
 			dxdc = resource.getDefaultXmlDataCollection(com.stuko.anaconda.value.BlankField.ANACONDA_UI);
 			Iterator subIt = dxdc.iterator();
-			for(;subIt.hasNext();)
-			{
+			for(;subIt.hasNext();){
 				data = (DefaultXmlData)subIt.next();
-				if(data.toString().indexOf(strSearch) >= 0)
-				{
+				if(data.toString().indexOf(strSearch) >= 0){
 					collection.addDefaultXmlData(data);
 				}
 			}
 			strRtn = resource.httpXmlData(businessData,collection);
-		}
-		else if(strCode.equals("ui_extend_save"))
-		{
+		}else if(strCode.equals("ui_extend_save")){
 			DefaultXmlDataCollection col = res.getDefaultXmlDataCollection(com.stuko.anaconda.value.BlankField.ANACONDA_UI);
-			if(col != null)
-			{
+			if(col != null){
 				String strAreaName = request.getParameter("ui_area_name");
 				String strAreaValue = request.getParameter("ui_area_value");
 				DefaultXmlData dxd = col.getDefaultXmlData(strKey);
-				if(dxd != null)
-				{
+				if(dxd != null){
 					dxd.set(strAreaName,strAreaValue);
-					//dxd.setFieldValue(strAreaName,strAreaValue);
 					res.save(col);
 				}
 			}
 			strRtn = res.httpXmlData(businessData,col);
-		}
-		else if(strCode.equals("ui_extend_remove"))
-		{
+		}else if(strCode.equals("ui_extend_remove")){
 			DefaultXmlDataCollection col = res.getDefaultXmlDataCollection(com.stuko.anaconda.value.BlankField.ANACONDA_UI);
-			if(col != null)
-			{
+			if(col != null)	{
 				String strAreaName = request.getParameter("ui_area_name");
 				String strAreaValue = request.getParameter("ui_area_value");
 				DefaultXmlData dxd = col.getDefaultXmlData(strKey);
-				if(dxd != null)
-				{
+				if(dxd != null){
 					dxd.remove(strAreaName);
-					//dxd.getBusinessData().removeBusinessItem(strAreaName);
 					res.save(col);
 				}
 			}	
 			strRtn = res.httpXmlData(businessData,col);
-		}
-		else if(strCode.equals("get_ui_extend"))
-		{
+		}else if(strCode.equals("get_ui_extend")){
 			DefaultXmlResource resource = DefaultXmlResource.getInstance();
 			DefaultXmlData data = null;
 			DefaultXmlDataCollection dxdc = null;
@@ -158,36 +127,27 @@
 			data = dxdc.getDefaultXmlData(strKey);
 			collection.addDefaultXmlData(data);
 			strRtn = resource.httpXmlData(businessData,collection);			
-		}
-		else if(strCode.equals("search"))
-		{
+		}else if(strCode.equals("search")){
 			String searchKey = request.getParameter("search_key_word");
 			DefaultXmlResource resource = DefaultXmlResource.getInstance();
 			DefaultXmlDataCollection dxdc = null;
 			dxdc = resource.searchUI(searchKey);
-			// dxdc = resource.getDefaultXmlDataCollection(com.stuko.anaconda.value.BlankField.ANACONDA_UI);
 			strRtn = resource.httpXmlData(businessData,dxdc);			
-		}
-		else if(strCode.equals("copy"))
-		{
+		}else if(strCode.equals("copy")){
 			DefaultXmlDataCollection col = res.getDefaultXmlDataCollection(com.stuko.anaconda.value.BlankField.ANACONDA_UI);
-			if(col != null)
-			{
+			if(col != null)	{
 				DefaultXmlData dxd = col.getDefaultXmlData(strKey);
-				if(dxd != null)
-				{
+				if(dxd != null)	{
 					DefaultXmlData tmp = new DefaultXmlData();
 					tmp.setTYPE(dxd.getTYPE());
 					tmp.setDESC(dxd.getDESC());
 					tmp.setCOLLECTION_NAME(dxd.getCOLLECTION_NAME());
 					Set set = dxd.keySet();
 					Iterator it = set.iterator();
-					for(;it.hasNext();)
-					{
+					for(;it.hasNext();){
 						String tmpKey = (String)it.next();
 						String tmpValue = dxd.getData(tmpKey);
-						if(tmpKey.equals("name"))
-						{
+						if(tmpKey.equals("name")){
 							tmpValue = "copy of " + tmpValue;
 						}
 						tmp.set(tmpKey,tmpValue);
@@ -200,9 +160,5 @@
 		}
 		out.print(strRtn);
 		ExceptionCenter.debug(strRtn);
-	} 
-	catch (Exception e) 
-	{
-		ExceptionCenter.catchException(e);
-	}
+	} catch (Exception e) {	ExceptionCenter.catchException(e);}
 %>

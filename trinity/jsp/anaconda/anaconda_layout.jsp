@@ -102,7 +102,7 @@ function smartSearch()
   {
     search.value = keyword.value;
     if(search.value == '' || search.value == 'Input keyword'){
-      if(confirm('Search a current page?')){
+      if(confirm('이 페이지를 검색할까요?')){
 	searchCurrentPage();      
       }
     }else{
@@ -134,9 +134,9 @@ function goWIKI()
 }
 function goSecession()
 {
-	if(confirm("Really leave?")){
-            if(confirm("Really?")){
-                if(confirm("You can not use you account any more.")){
+	if(confirm("탈퇴할까요?")){
+            if(confirm("정말 탈퇴할까요?")){
+                if(confirm("이제부터 이 계정을 사용할 수 없습니다.")){
    		    document.location.href = "/Anaconda.do?CMD=CMD_SEQ_107375260951381444906625";
                 }
             }
@@ -157,7 +157,7 @@ function searchCurrentPage(){
 	submit();
      }
    }else{
-     alert('Can not find command!!!');  
+     alert('커멘드를 찾을 수 없습니다!!!');  
    }
 }
 </script>
@@ -416,24 +416,6 @@ textarea {
    min-width: 98%;
 }
 
-/*
-#content{
-   padding-bottom:0px;
-   height:100%;
-   min-height:100%;
-   background: #fff;
-}
-
-#footer {
-   width:100%;
-   position:relative;
-   // bottom:0;
-   text-align: center;
-}
-.row-fluid{
-   background : white;
-}
-*/
 
 /*
 // Override
@@ -530,7 +512,7 @@ function getTime(){
     <li class=""><a href="/CMD_SEQ_107594046521381410883546.do" title="사용자정보 확인"> <span class="fas fa-user"></span></a></li>
     <li class=""><a href="/CMD_SEQ_106169144651288332119302.do" title="로그아웃"> <span class="fas fa-sign-out-alt"></span></a></li>
 <%}else{%>
-    <li class=""><a href="javascript:goLogin();" title="로그인"> <span class="text">Log in</span></a></li>
+    <li class=""><a href="javascript:goLogin();" title="로그인"> <span class="text">로그인</span></a></li>
 <%}%>
   </ul>
 </div>
@@ -539,7 +521,7 @@ function getTime(){
 <div id="search" style="display:block">
   <input type="hidden" name="search" value=""></input>
   <input type="hidden" name="CMD" value="CMD_SEQ_105264816741288577553725"></input>	
-  <input type="text"  id="keyword" name="keyword" placeholder="Search here..."/>
+  <input type="text"  id="keyword" name="keyword" placeholder="여기를 검색하기..."/>
   <button type="button" class="tip-left" title="Search" onClick="javascript:smartSearch();"><i class="icon-search icon-white"></i></button>
 </div>
 </form>
@@ -548,51 +530,51 @@ function getTime(){
 
 
 <div id="sidebar">
-  <a href="#" class="visible-phone"><i class="icon icon-th-list"></i> Grid Layout</a>
+  <a href="#" class="visible-phone"><i class="icon icon-th-list"></i> </a>
 <% if(isLogin){ %>
     <ul>
-      <li class="active"><a href="/CMD_SEQ_108173637391288444301255.do"><i class="icon icon-home"></i> <span>Domain</span></a> 
+      <li class="active"><a href="/CMD_SEQ_108173637391288444301255.do"><i class="icon icon-home"></i> <span>멀티 사이트 관리</span></a> 
         <ul>
-          <li><a href="/CMD_SEQ_108173637391288444301255.do">Domain List</a></li>
-          <li><a href="/CMD_SEQ_107365064121289636666401.do">Register Domain</a></li>
-          <li><a href="/CMD_SEQ_102622610251288248433847.do">Filter List</a></li>
-          <li><a href="/CMD_SEQ_106855886431288257600525.do">Register Filter</a></li>
+          <li><a href="/CMD_SEQ_108173637391288444301255.do">사이트 리스트</a></li>
+          <li><a href="/CMD_SEQ_107365064121289636666401.do">사이트 생성하기</a></li>
+          <li><a href="/CMD_SEQ_102622610251288248433847.do">필터 리스트</a></li>
+          <li><a href="/CMD_SEQ_106855886431288257600525.do">필터 생성하기</a></li>
         </ul>
       </li>
-      <li> <a href="/CMD_SEQ_107171455261304663724702.do"><i class="icon icon-signal"></i> <span>Inception</span></a>
+      <li> <a href="/CMD_SEQ_107171455261304663724702.do"><i class="icon icon-signal"></i> <span>요구사항관리</span></a>
         <ul>
-          <li><a href="/CMD_SEQ_107171455261304663724702.do">Write Scenario</a></li>
+          <li><a href="/CMD_SEQ_107171455261304663724702.do">요구사항 작성하기</a></li>
         </ul>
       </li>
-      <li> <a href="/CMD_SEQ_104378450531288765663303.do"><i class="icon icon-inbox"></i> <span>Elaboration</span></a>
+      <li> <a href="/CMD_SEQ_104378450531288765663303.do"><i class="icon icon-inbox"></i> <span>분석과 설계</span></a>
         <ul>
-          <li><a href="/CMD_SEQ_104378450531288765663303.do">UI List</a></li>
-          <li><a href="/CMD_SEQ_103558081791305006657614.do">Register UI</a></li>
-          <li><a href="/CMD_SEQ_105856396481288658408572.do">Layout List</a></li>
-          <li><a href="/CMD_SEQ_103530981101559962079937.do">Datasource List</a></li>
+          <li><a href="/CMD_SEQ_104378450531288765663303.do">UI 컴포넌트 관리</a></li>
+          <li><a href="/CMD_SEQ_103558081791305006657614.do">UI 컴포넌트 생성하기</a></li>
+          <li><a href="/CMD_SEQ_105856396481288658408572.do">레이아웃 관리</a></li>
+          <li><a href="/CMD_SEQ_103530981101559962079937.do">데이터베이스 리소스 관리</a></li>
         </ul>
       </li>
-      <li><a href="/CMD_SEQ_108164918711286971872119.do"><i class="icon icon-th"></i> <span>Construction</span></a>
+      <li><a href="/CMD_SEQ_108164918711286971872119.do"><i class="icon icon-th"></i> <span>개발</span></a>
         <ul>
-          <li><a href="/CMD_SEQ_108164918711286971872119.do">WebAction List</a></li>
-          <li><a href="/CMD_SEQ_106123592361287269752055.do">Register WebAction</a></li>
-          <li><a href="/CMD_SEQ_103615773161287821449749.do">Service List</a></li>
-          <li><a href="/CMD_SEQ_107211261401287822755707.do">Register Service</a></li>
-          <li><a href="/CMD_SEQ_107239804791288227326088.do">Role List</a></li>
-          <li><a href="/CMD_SEQ_108710360611288228206258.do">Register Role</a></li>
-          <li><a href="/CMD_SEQ_106557688651298705108710.do">Assign Role</a></li>
-          <li><a href="/CMD_SEQ_108037707931289267322444.do">Explore database</a></li>
-          <li><a href="/CMD_SEQ_103935205231230567381328.do">Execute sql</a></li>
-          <li><a href="/CMD_SEQ_105269752731345259248970.do">Cache List</a></li>
-          <li><a href="/CMD_SEQ_109567308931345345981920.do">Thread Batch List</a></li>
-          <li><a href="/CMD_SEQ_103213425031360588235009.do">Rule List</a></li>
-          <li><a href="/CMD_SEQ_101666004731562248869595.do">Execute shell</a></li>
-          <li><a href="/CMD_SEQ_107581931011562108379033.do">Explore file</a></li>
-          <li><a href="/CMD_SEQ_106594560501498179923551.do">Edit source</a></li>
-          <li><a href="/CMD_SEQ_104740062431578035448248.do">View log</a></li>
+          <li><a href="/CMD_SEQ_108164918711286971872119.do">액션 리스트</a></li>
+          <li><a href="/CMD_SEQ_106123592361287269752055.do">액션 생성하기</a></li>
+          <li><a href="/CMD_SEQ_103615773161287821449749.do">서비스 리스트</a></li>
+          <li><a href="/CMD_SEQ_107211261401287822755707.do">서비스 생성하기</a></li>
+          <li><a href="/CMD_SEQ_107239804791288227326088.do">권한 리스트</a></li>
+          <li><a href="/CMD_SEQ_108710360611288228206258.do">권한 생성하기</a></li>
+          <li><a href="/CMD_SEQ_106557688651298705108710.do">권한 할당하기</a></li>
+          <li><a href="/CMD_SEQ_108037707931289267322444.do">데이터베이스 리소스 관리</a></li>
+          <li><a href="/CMD_SEQ_103935205231230567381328.do">SQL 테스트</a></li>
+          <li><a href="/CMD_SEQ_105269752731345259248970.do">SQL 캐시 관리</a></li>
+          <li><a href="/CMD_SEQ_109567308931345345981920.do">배치 관리</a></li>
+          <li><a href="/CMD_SEQ_103213425031360588235009.do">룰 관리</a></li>
+          <li><a href="/CMD_SEQ_101666004731562248869595.do">서버 명령어 실행</a></li>
+          <li><a href="/CMD_SEQ_107581931011562108379033.do">서버 파일 탐색</a></li>
+          <li><a href="/CMD_SEQ_106594560501498179923551.do">소스 편집</a></li>
+          <li><a href="/CMD_SEQ_104740062431578035448248.do">로그 보기</a></li>
         </ul>
       </li>
-      <li><a href="/CMD_SEQ_100333381081289029921460.do"><i class="icon icon-fullscreen"></i> <span>Transition</span></a>
+      <li><a href="/CMD_SEQ_100333381081289029921460.do"><i class="icon icon-fullscreen"></i> <span>배포</span></a>
         <ul>
          <!-- 
           <li><a href="form-wizard.html">Test Scenario List</a></li>
@@ -600,17 +582,17 @@ function getTime(){
           <li><a href="form-wizard.html">Execute Test Scenario</a></li>
           <li><a href="form-wizard.html">View Test Result</a></li>
           --> 
-          <li><a href="/CMD_SEQ_100333381081289029921460.do">CR List</a></li>
-          <li><a href="/CMD_SEQ_107335537401289969322212.do">Register CR</a></li>
-          <li><a href="/CMD_SEQ_101304559451289996453898.do">Register Server Group</a></li>
-          <li><a href="/CMD_SEQ_103105634661289983608812.do">Register Server</a></li>
+          <li><a href="/CMD_SEQ_100333381081289029921460.do">배포 요청 리스트</a></li>
+          <li><a href="/CMD_SEQ_107335537401289969322212.do">배포 요청하기</a></li>
+          <li><a href="/CMD_SEQ_101304559451289996453898.do">배포 서버 그룹 관리</a></li>
+          <li><a href="/CMD_SEQ_103105634661289983608812.do">배포 서버 관리</a></li>
         </ul>
       </li>
-      <li class="submenu"> <a href="/CMD_SEQ_106577512821577858709543.do"><i class="icon icon-th-list"></i> <span>Maintain</span></a>
+      <li class="submenu"> <a href="/CMD_SEQ_106577512821577858709543.do"><i class="icon icon-th-list"></i> <span>유지보수</span></a>
         <ul>
-          <li><a href="/CMD_SEQ_106577512821577858709543.do">Backup</a></li>
-          <li><a href="/CMD_SEQ_107594046521381410883546.do">Profile</a></li>
-          <li><a href="/download/wayd-monitoring-tools.zip">Download Monitoring Tools</a></li>
+          <li><a href="/CMD_SEQ_106577512821577858709543.do">백업하기</a></li>
+          <li><a href="/CMD_SEQ_107594046521381410883546.do">내정보</a></li>
+          <li><a href="/download/wayd-monitoring-tools.zip">모니터링 툴 다운받기</a></li>
          <!--
           <li><a href="form-wizard.html">User List</a></li>
           <li><a href="form-wizard.html">Register User</a></li>
@@ -658,9 +640,9 @@ function toggleNavBar(){
   <div id="content-header">
    
     <div id="breadcrumb">
-      <a href="javascript:toggleNavBar()"><i class="icon-home"></i> Menu</a>
+      <a href="#"><i class="icon-home"></i> 동시작업</a>
       <% if(!"CMD_SEQ_106594560501498179923551".equals(request.getParameter("CMD")) || request.getRequestURL().indexOf("CMD_SEQ_106594560501498179923551") < 0 ){ %>
-      <button  type="button" style="" class="btn navbar-btn btn-primary" name="btn_more_tab" id="btn_more_tab" >+(Tab)</button>
+      <button  type="button" style="" class="btn navbar-btn btn-primary" name="btn_more_tab" id="btn_more_tab" >+(탭열기)</button>
       <% }%>
     </div>
 

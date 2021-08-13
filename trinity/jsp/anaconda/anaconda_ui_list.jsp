@@ -1,54 +1,44 @@
 <%@ page contentType="text/xml; charset=UTF-8" %><%@page pageEncoding="UTF-8" %><%@ page import="java.util.*"%><%@ page import="com.stuko.anaconda.XmlConfig.*"%><%@ page import="com.stuko.anaconda.business.*"%><%@ page import="com.stuko.anaconda.value.*"%><%@ page import="com.stuko.anaconda.Exception.ExceptionCenter"%><%@ page import="com.stuko.anaconda.util.InitClass"%><%
-
 %>
 <script language="javascript">
-function copyUI()
-{
-	with(frmUI)
-	{
-		if(ui_name.value == '' || ui_value.value == '')
-		{
-			alert("Please input name of UI");
+function copyUI(){
+	with(frmUI)	{
+		if(ui_name.value == '' || ui_value.value == '')		{
+			alert("UI 이름을 입력해 주세요.");
 			return;
 		}
 		code.value = "copy";
 		callAjaxByForm("copy", "frmUI");
 	}
 }
-function saveUI()
-{
-	with(frmUI)
-	{
-		if(ui_name.value == '' || ui_value.value == '')
-		{
-			alert("Please input name of UI");
+
+function saveUI(){
+	with(frmUI){
+		if(ui_name.value == '' || ui_value.value == ''){
+			alert("UI 이름을 입력해 주세요.");
 			return;
 		}
 		code.value = "create";
 		callAjaxByForm("create", "frmUI");
 	}
 }
-function updateUI()
-{
-	with(frmUI)
-	{
-		if(ui_name.value == '' || ui_value.value == '')
-		{
-			alert("Please input name of UI");
+
+function updateUI(){
+	with(frmUI)	{
+		if(ui_name.value == '' || ui_value.value == ''){
+			alert("UI 이름을 입력해 주세요.");
 			return;
 		}
 		code.value = "update";
 		callAjaxByForm("update", "frmUI");
 	}
 }
-function removeUI()
-{
+
+function removeUI(){
     if(confirm("Really delete?")){
-	with(frmUI)
-	{
-		if(ui_key.value == '' || ui_value.value == '')
-		{
-			alert("Please input name of UI");
+	with(frmUI){
+		if(ui_key.value == '' || ui_value.value == ''){
+			alert("UI 이름을 입력해 주세요.");
 			return;
 		}
 		code.value = "remove";
@@ -56,10 +46,9 @@ function removeUI()
 	}
    }
 }
-function setData(key,type,nm,value,row,col)
-{
-	with(frmUI)
-	{
+
+function setData(key,type,nm,value,row,col){
+	with(frmUI){
 		ui_name.value = nm;
 		ui_value.value = value;
 		ui_key.value = key;
@@ -68,84 +57,62 @@ function setData(key,type,nm,value,row,col)
 		setSelectBox("ui_type", type)
 	}
 }
-function doRuning(action)
-{
+
+function doRuning(action){
 }
 
-function doRun(action,REQ)
-{
+function doRun(action,REQ){
 	var object = parseAnacondaAJAX(REQ.responseXML);
-	if(action == "create")
-	{
-		alert("Applied successfully");
-		with(frmUI)
-		{
+	if(action == "create"){
+		alert("요청하신 내용이 적용되었습니다.");
+		with(frmUI){
 			code.value = "get_ui_extend";
 			callAjaxByForm("get_ui_extend", "frmUI");
 		}
 		document.location.reload();		
-	}
-	else if(action == "remove" || action == "ui_extend_remove")
-	{
-		alert("Deleted successfully");
-		with(frmUI)
-		{
+	}else if(action == "remove" || action == "ui_extend_remove"){
+		alert("요청하신 내용이 삭제되었습니다.");
+		with(frmUI){
 			code.value = "get_ui_extend";
 			callAjaxByForm("get_ui_extend", "frmUI");
 		}
 		document.location.reload();
-	}
-	else if(action == "update" || action == 'ui_extend_save')
-	{
-		alert("Updated successfully");
-		with(frmUI)
-		{
+	}else if(action == "update" || action == 'ui_extend_save'){
+		alert("요청하신 내용이 적용되었습니다.");
+		with(frmUI){
 			code.value = "get_ui_extend";
 			callAjaxByForm("get_ui_extend", "frmUI");
 		}
 		document.location.reload();
-	}
-	else if(action == "get_ui_extend")
-	{
-		//alert(REQ.responseText);
-		if(object == null)
-		{
-			alert("ERROR");
+	}else if(action == "get_ui_extend"){
+		if(object == null){
+			alert("에러가 발생하였습니다.");
 			return;
 		}
 		var tBody = _("tBodyUIExtendPlus");
 		removeAllChildNodesById("tBodyUIExtendPlus");
 
-		for(var i = 0; i < object.response.length; i++)
-		{
-			for(var j = 0; j < object.response_keys.length; j++)
-			{
+		for(var i = 0; i < object.response.length; i++){
+			for(var j = 0; j < object.response_keys.length; j++){
 				var ui = object.response[i];
 				var tr = createElement("tr","","");
 				var id = _rand();
 				tr.setAttribute("id",id);
 
-				if(object.response_keys[j] == "ui_style")
-				{
+				if(object.response_keys[j] == "ui_style"){
 					var objStyle = _("ui_style");
 					objStyle.value = object.response[i].ui_style;
-				}
-				else if(object.response_keys[j] == "ui_class")
-				{
+				}else if(object.response_keys[j] == "ui_class"){
 					var objClass = _("ui_class");
 					objClass.value = object.response[i].ui_class;
-				}
-				else if(object.response_keys[j] == "type"
+				}else if(object.response_keys[j] == "type"
 						|| object.response_keys[j] == "value_type"
 						|| object.response_keys[j] == "name"
 						|| object.response_keys[j] == "value"
 						|| object.response_keys[j] == "panel_row"
 						|| object.response_keys[j] == "panel_col"
-						)
-				{
-				}
-				else
-				{
+						){
+				}else{
 					var td1 = createElement("td","","");
 					var td2 = createElement("td","","");
 					tr.appendChild(td1);
@@ -163,8 +130,7 @@ function doRun(action,REQ)
 					input1.value = object.response_keys[j];
 					input2.value = object.response[i][object.response_keys[j]];
 
-					if(true)
-					{
+					if(true){
 						var td3 = createElement("td","","");
 						var input3 = createElementWithStyle ("input","save","button" ,"button" , "");
 						var input4 = createElementWithStyle ("input","save","button" ,"button" , "");
@@ -176,16 +142,13 @@ function doRun(action,REQ)
 						input3.setAttribute("value","Save");
 
 						input3.onclick= function() {
-							if(input1.value == '' || input2.value == '')
-							{
+							if(input1.value == '' || input2.value == ''){
 								alert("Please input a name of area");
 								return;
 							}
 							var isOK = confirm("Really create?");
-							if(isOK)
-							{
-								with(frmUI)
-								{
+							if(isOK){
+								with(frmUI){
 									code.value = "ui_extend_save";
 									ui_area_name.value = input1.value;
 									ui_area_value.value = input2.value;
@@ -200,9 +163,8 @@ function doRun(action,REQ)
 						input4.setAttribute("input2_id",rnd_input2);		
 						input4.onclick= function() {
 			
-							if(input1.value == '' || input2.value == '')
-							{
-								alert("Do you wanna delete a line? (Input all of value)");
+							if(input1.value == '' || input2.value == ''){
+								alert("선택하신 라인을 삭제 할까요?");
 								var strId = this.getAttribute("tr_id");
 								// alert(strId);
 								var objTr = _(strId);
@@ -210,10 +172,8 @@ function doRun(action,REQ)
 								return;
 							}			
 							var isOK = confirm("Really delete?");
-							if(isOK)
-							{
-								with(frmUI)
-								{
+							if(isOK){
+								with(frmUI){
 									var o1 = _(this.getAttribute("input1_id"));
 									var o2 = _(this.getAttribute("input2_id"));
 									code.value = "ui_extend_remove";
@@ -235,27 +195,16 @@ function doRun(action,REQ)
 		objDiv = _('div_ui_basic');
 		objDiv.style.display = 'block';
 
-	}
-	else
-	{
-		alert("Applied successfully.");
+	}else{
+		alert("요청하신 내용이 적용되었습니다.");
 		document.location.reload();	
 	}
-		
-	
-
 }
-function fnEditView(path)
-{
-        document.location.href = '/Anaconda.do?CMD=CMD_SEQ_106594560501498179923551&path=' + path;
-        /*
-	var url = '/Anaconda.do?CMD=CMD_SEQ_109011583661287796111343&path=' + path;
-	window.open(url+"&title=Source","","height=600,width=900,left=200,top=20,status=no, location=no, toolbar=no,resizable=yes,scrollbars=yes");
-        */
+function fnEditView(path){
+    document.location.href = '/Anaconda.do?CMD=CMD_SEQ_106594560501498179923551&path=' + path;
 }
 
-function fnAddRow()
-{
+function fnAddRow(){
 	var tBody = _("tBodyUIExtendPlus");
 	var tr = createElement("tr","","");
 	var id = _rand();
@@ -280,19 +229,16 @@ function fnAddRow()
 	td3.appendChild(input3);
 	td3.appendChild(input4);
 
-	input3.setAttribute("value","Save");
+	input3.setAttribute("value","저장하기");
 
 	input3.onclick= function() {
-		if(input1.value == '' || input2.value == '')
-		{
-			alert("Please input a name of area");
+		if(input1.value == '' || input2.value == ''){
+			alert("영역의 이름을 입력해 주세요.");
 			return;
 		}
-		var isOK = confirm("Really create?");
-		if(isOK)
-		{
-			with(frmUI)
-			{
+		var isOK = confirm("생성할까요?");
+		if(isOK){
+			with(frmUI){
 				code.value = "ui_extend_save";
 				ui_area_name.value = input1.value;
 				ui_area_value.value = input2.value;
@@ -303,18 +249,15 @@ function fnAddRow()
 		
 	input4.setAttribute("value","삭제하기");
 	input4.onclick= function() {
-		if(input1.value == '' || input2.value == '')
-		{
-			alert("Do you wanna delete a line? (Input all of value)");
+		if(input1.value == '' || input2.value == ''){
+			alert("선택하신 라인을 삭제 할까요?");
 			var objTr = _(id);
 			tBody.removeChild(objTr);
 			return;
 		}			
 		var isOK = confirm("삭제하시겠습니까?");
-		if(isOK)
-		{
-			with(frmUI)
-			{
+		if(isOK){
+			with(frmUI){
 				code.value = "ui_extend_remove";
 				ui_area_name.value = input1.value; 
 				ui_area_value.value = input2.value;
@@ -327,18 +270,16 @@ function fnAddRow()
 }
 </script>
 <form name="frmUI" method="post" action="/Anaconda.do">
-<input type="hidden" name="CMD" value="CMD_SEQ_107412743841288767936876"></input>
-<input id="ui_key" type="hidden" name="ui_key"></input>
-<input type="hidden" name="ui_area_name"></input>
-<input type="hidden" name="ui_area_value"></input>
-<input type="hidden" name="code"></input>
+	<input type="hidden" name="CMD" value="CMD_SEQ_107412743841288767936876"></input>
+	<input id="ui_key" type="hidden" name="ui_key"></input>
+	<input type="hidden" name="ui_area_name"></input>
+	<input type="hidden" name="ui_area_value"></input>
+	<input type="hidden" name="code"></input>
 
-<div>
- <div class="content-module-heading cf">
-  <h3 class="fl">
-  UI Component Info.
-  </h3>	
-  <span class="fr">
+	<div>
+ 		<div class="content-module-heading cf">
+  			<h3 class="fl"> UI 컴포넌트 정보</h3>	
+  			<span class="fr">
    <button type="button" class="btn btn-secondary" value="Copy UI" onClick="javascript:copyUI()">Copy UI</button>&nbsp;
    <button type="button" class="btn btn-primary" value="Create UI" onClick="javascript:saveUI()">Create UI</button>&nbsp;
    <button type="button" class="btn btn-info" value="Modify UI" onClick="javascript:updateUI()">Modify UI</button>&nbsp;
@@ -356,9 +297,9 @@ function fnAddRow()
 		</colgroup>
 		<thead >
 		<tr>
-		<th scope="col">Name</th>
-		<th scope="col">Type</th>
-		<th scope="col">Contents</th>
+		<th scope="col">이름</th>
+		<th scope="col">유형</th>
+		<th scope="col">내용</th>
 		</tr>
 		</thead>
 		<tbody id="tBodyUI">
@@ -382,8 +323,8 @@ function fnAddRow()
 		</colgroup>
 		<thead >
 		<tr>
-		<th scope="col">Name</th>
-		<th scope="col">Value &nbsp;&nbsp;<button type="button" class="btn btn-primary" value="Edit UI area" onClick="javascript:panelNext();">Edit UI area</button></th>
+		<th scope="col">이름</th>
+		<th scope="col">값 &nbsp;&nbsp;<button type="button" class="btn btn-primary" value="UI 영역 편집" onClick="javascript:panelNext();">UI 영역 편집</button></th>
 		</tr>
 		</thead>
 		<tbody id="tBodyUIExtendBasic">
@@ -391,11 +332,11 @@ function fnAddRow()
 		</tr>
 		</tbody>
 		<tr>
-		<td>Count of rows</td>
+		<td>영역 행 개수</td>
 		<td><INPUT type="text" id="panel_row" name="panel_row" class="styled" size=40></input></td>
 		</tr>
 		<tr>
-		<td>Count of cols</td>
+		<td>영역 열 개수</td>
 		<td><INPUT type="text" id="panel_col" name="panel_col" class="styled" size=40></input></td>
 		</tr>
 		</table>
@@ -404,7 +345,7 @@ function fnAddRow()
 
 <div id="div_ui_basic" style="display:none;">
 
-		<p><h1>Default argument value</h1></p>
+		<p><h1>기본 인자 값</h1></p>
 		<table class="table_hydra">
 		<colgroup>
 		<col width="30%">
@@ -412,8 +353,8 @@ function fnAddRow()
 		</colgroup>
 		<thead >
 		<tr>
-		<th scope="col">Name</th>
-		<th scope="col">Value</th>
+		<th scope="col">이름</th>
+		<th scope="col">값</th>
 		</tr>
 		</thead>
 		<tbody id="tBodyUIExtendBasic">
@@ -421,18 +362,18 @@ function fnAddRow()
 		</tr>
 		</tbody>
 		<tr>
-		<td>Style of area</td>
+		<td>영역 CSS 스타일</td>
 		<td><INPUT type="text" id="ui_style" name="ui_style" class="styled" size=40></input></td>
 		</tr>
 		<tr>
-		<td>Class of area</td>
+		<td>영역 CSS 클래스</td>
 		<td><INPUT type="text" id="ui_class" name="ui_class" class="styled" size=40></input></td>
 		</tr>
 		</table>
 </div>		
 
 <div id="div_ui_extend" style="display:none;">
-		<p><h1>More arguments</h1></p>
+		<p><h1>추가 인자값</h1></p>
 		<table class="table_hydra">
 		<colgroup>
 		<col width="30%">
@@ -441,9 +382,9 @@ function fnAddRow()
 		</colgroup>
 		<thead >
 		<tr>
-		<th scope="col">Name</th>
-		<th scope="col">Value</th>
-		<th scope="col">Function<a href="javascript:fnNull();" onClick="javascript:fnAddRow();"><img src="/jsp/anaconda/img/plus.png" width="15px" height="15px" border="0" align="absmiddle"></img>Add</a></th>
+		<th scope="col">이름</th>
+		<th scope="col">값</th>
+		<th scope="col">기능<a href="javascript:fnNull();" onClick="javascript:fnAddRow();"><img src="/jsp/anaconda/img/plus.png" width="15px" height="15px" border="0" align="absmiddle"></img>Add</a></th>
 		</tr>
 		</thead>
 		<tbody id="tBodyUIExtendPlus">
@@ -467,14 +408,12 @@ function fnAddRow()
 <%
 DefaultXmlResource res = DefaultXmlResource.getInstance();
 DefaultXmlDataCollection col = res.getDefaultXmlDataCollection(com.stuko.anaconda.value.BlankField.ANACONDA_UI);
-if(col != null)
-{
+if(col != null){
 	int iCount = col.size();
 	int divide = iCount / 5;
 	int modCount = iCount % 5;
 	Iterator it = col.getDefaultXmlDatas();
-	for(int i = 0;it.hasNext();i++)
-	{
+	for(int i = 0;it.hasNext();i++)	{
 		DefaultXmlData dxd = (DefaultXmlData)it.next();
 		String img_name = "file";
 		if(dxd.getData("value_type").equals("ref")) img_name = "ui";
@@ -490,42 +429,32 @@ if(col != null)
 </table>
 <br>
 <script language="javascript">
-function selectLayoutType(objSelect, idx)
-{
+function selectLayoutType(objSelect, idx){
 	var select = _(objSelect);
-	if(select.value == 'ref')
-	{
+	if(select.value == 'ref'){
 
 		var objDiv = _('div_ui_panel');		
 		objDiv.style.display = 'none';
 		objDiv = _('div_ui_extend');
 		var ui_key = _('ui_key');
-		if(ui_key.value != '')
-		{
-			with(frmUI)
-			{
+		if(ui_key.value != ''){
+			with(frmUI){
 				code.value = "get_ui_extend";
 				callAjaxByForm("get_ui_extend", "frmUI");
 			}
-		}
-		else
-		{
+		}else{
 			// objDiv.style.display = 'block';
 			objDiv = _('div_ui_basic');		
 			objDiv.style.display = 'block';
 		}
-	}
-	else if (select.value == 'file')
-	{
+	}else if (select.value == 'file'){
 		var objDiv = _('div_ui_extend');
 		objDiv.style.display = 'none';
 		objDiv = _('div_ui_basic');		
 		objDiv.style.display = 'none';
 		objDiv = _('div_ui_panel');		
 		objDiv.style.display = 'none';
-	} 
-	else if (select.value == 'panel')
-	{
+	} else if (select.value == 'panel'){
 		var objDiv = _('div_ui_extend');
 		objDiv.style.display = 'none';
 		objDiv = _('div_ui_basic');		
@@ -535,10 +464,8 @@ function selectLayoutType(objSelect, idx)
 	}
 }
 
-function panelNext()
-{
-	with(frmUI)
-	{
+function panelNext(){
+	with(frmUI)	{
 		document.location.href="/Anaconda.do?CMD=CMD_SEQ_108144299441289285595183&ui_key="+ui_key.value+"&ui_type="+ui_type.value+"&ui_name="+ui_name.value+"&ui_value="+ui_value.value+"&panel_row="+panel_row.value+"&panel_col="+panel_col.value;
 	}
 }

@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@page import="java.io.*" %> 
 <%@page import="java.util.*" %> 
 <%@page import="java.text.*" %> 
@@ -30,19 +31,19 @@ function openParent(path){
 <div class="wrapper wrapper-content">
   <div>
      <div class="content-module-heading cf">
-	<h3 class="fl">Explore Server Files</h3>	
+	<h3 class="fl">서버 파일 정보</h3>	
   	     <span class="fr">
                <h4><%=root + folder%></h4>
              </span>
      </div>
     <div>
       <div>
-        Total space : <%=total%> , Usable Space : <%=usable%> , Free Space : <%=free%>
+        전체 : <%=total%> , 사용가능 : <%=usable%> , 남은 공간 : <%=free%>
       </div>
 
      <h3>
-      <i class="fas fa-home"></i><a style='margin-left:5px;margin-right:10px;' href="/Anaconda.do?CMD=<%=cmd%>&getFile=<%=getFile%>">Home</a>
-      <i class="fas fa-arrow-left"></i><a style='margin-left:5px;' href="/Anaconda.do?CMD=<%=cmd%>&getFile=<%=getFile%>&folder=<%=pre%>">Before</a>
+      <i class="fas fa-home"></i><a style='margin-left:5px;margin-right:10px;' href="/Anaconda.do?CMD=<%=cmd%>&getFile=<%=getFile%>">홈</a>
+      <i class="fas fa-arrow-left"></i><a style='margin-left:5px;' href="/Anaconda.do?CMD=<%=cmd%>&getFile=<%=getFile%>&folder=<%=pre%>">이전</a>
      </h3>
    </div>
   </div>
@@ -70,14 +71,14 @@ try{
     
          Date lastModifiedDate = new Date( f.lastModified());
          String currentFolder = folder + (folder.endsWith("/") ? "" : "/") + f.getName();
-         out.println("<tr><td><i class='fas fa-folder-open'></i><a  style='margin-left:5px;font-size:18px;' href=\"/Anaconda.do?CMD="+cmd+"&getFile="+getFile+"&folder=" + currentFolder + "\">" + f.getName() + "</a></td><td colspan='3'><span class='fr'>"+simpleDateFormat.format( lastModifiedDate )+"</span></td></tr>");   
+         out.println("<tr><td><i class='fas fa-folder-open'></i><a  style='margin-left:5px;font-size:18px;' href=\"/Anaconda.do?CMD="+cmd+"&getFile="+getFile+"&folder=" + currentFolder + "\">" + f.getName() + "</a></td><td colspan='4'><span class='fr'>"+simpleDateFormat.format( lastModifiedDate )+"</span></td></tr>");   
   }
   for(File f: files){
          Date lastModifiedDate = new Date( f.lastModified());
          if("true".equals(getFile)){
-           out.println("<tr><td><a style='font-size:16px;' href='javascript:openParent(&quot;"+ folder + "/" + f.getName() +"&quot;);'> " + f.getName() + "</a></td><td><span class='fr'>"+simpleDateFormat.format( lastModifiedDate )+"</span></td><td><span class='fr' style='margin-right:30px;'>"+df.format(f.length()/1000) + " (KB)" +"</span></td><td><button class='btn btn-primary btn-sm' type='button' style='margin-left:10px;margin-top:3px;margin-bottom:3pxl;' onClick='javascript:fnTransfer(&#39;"+root+"&#39;,&#39;"+dir.getAbsolutePath()+"&#39;,&#39;"+f.getAbsolutePath()+"&#39;);'>Transfer</button></td></tr>");
+           out.println("<tr><td><a style='font-size:16px;' href='javascript:openParent(&quot;"+ folder + "/" + f.getName() +"&quot;);'> " + f.getName() + "</a></td><td><span class='fr'>"+simpleDateFormat.format( lastModifiedDate )+"</span></td><td><span class='fr' style='margin-right:30px;'>"+df.format(f.length()/1000) + " (KB)" +"</span></td><td><button class='btn btn-primary btn-sm' type='button' style='margin-left:10px;margin-top:3px;margin-bottom:3pxl;' onClick='javascript:fnTransfer(&#39;"+root+"&#39;,&#39;"+dir.getAbsolutePath()+"&#39;,&#39;"+f.getAbsolutePath()+"&#39;);'>파일전송</button></td></tr>");
          }else{ 
-           out.println("<tr><td><a style='font-size:16px;' href='/Anaconda.do?CMD=CMD_SEQ_106594560501498179923551&path="+ folder + "/" + f.getName() +"'> " + f.getName() + "</a></td><td><span class='fr'>"+simpleDateFormat.format( lastModifiedDate )+"</span></td><td><span class='fr' style='margin-right:30px;'>"+df.format(f.length()/1000) + " (KB)" +"</span></td><td><button type='button' class='btn btn-primary btn-sm' style='margin-left:10px;margin-top:3px;margin-bottom:3pxl;' onClick='javascript:fnTransfer(&#39;"+root+"&#39;,&#39;"+dir.getAbsolutePath()+"&#39;,&#39;"+f.getAbsolutePath()+"&#39;);'>Transfer</button><td></tr>");
+           out.println("<tr><td><a style='font-size:16px;' href='/Anaconda.do?CMD=CMD_SEQ_106594560501498179923551&path="+ folder + "/" + f.getName() +"'> " + f.getName() + "</a></td><td><span class='fr'>"+simpleDateFormat.format( lastModifiedDate )+"</span></td><td><span class='fr' style='margin-right:30px;'>"+df.format(f.length()/1000) + " (KB)" +"</span></td><td><button type='button' class='btn btn-primary btn-sm' style='margin-left:10px;margin-top:3px;margin-bottom:3pxl;' onClick='javascript:fnTransfer(&#39;"+root+"&#39;,&#39;"+dir.getAbsolutePath()+"&#39;,&#39;"+f.getAbsolutePath()+"&#39;);'>파일전송</button><td></tr>");
          }
   }
 

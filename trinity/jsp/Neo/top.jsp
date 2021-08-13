@@ -43,7 +43,7 @@ function smartSearch()
 	  with(smartFrm)
 		{
 		  if(search.value == '' || search.value == 'Input keyword'){
-		     if(confirm('Search a current page?')){
+		     if(confirm('현재 화면을 검색할까요?')){
 		       searchCurrentPage();      
 		     }
 		  }else{
@@ -75,9 +75,9 @@ function goWIKI()
 }
 function goSecession()
 {
-	if(confirm("Really leave?")){
-            if(confirm("Really?")){
-                if(confirm("You can not use you account any more.")){
+	if(confirm("탈퇴할까요?")){
+            if(confirm("정말로 탈퇴할까요?")){
+                if(confirm("이제부터 더이상 이 계정을 사용할 수 없습니다.")){
    		    document.location.href = "/Anaconda.do?CMD=CMD_SEQ_107375260951381444906625";
                 }
             }
@@ -98,7 +98,7 @@ function searchCurrentPage(){
 	      submit();
 	   }
    }else{
-     alert('Can not find command!!!');  
+     alert('커멘드를 찾을 수 없습니다!!!');  
    }
 }
 </script>
@@ -114,37 +114,37 @@ function searchCurrentPage(){
                               </div>
                               <div class="col-lg-2">
                               <div class="form-group">
-                                <input type="search" class="form-control" id="search" name="search" placeholder="Input keyword" onfocus="javascript:fnSelectSearch();">
+                                <input type="search" class="form-control" id="search" name="search" placeholder="검색어를 입력해 주세요" onfocus="javascript:fnSelectSearch();">
                               </div>
                               </div>
                               <div class="col-lg-2">
                                <button type="button" class="btn btn-warning" onClick="javascript:smartSearch();">
-                                  Search
+                                  검색하기
                                </button>
                                <button type="button" class="btn btn-secondary" onClick="javascript:searchCurrentPage();">
-                                  Search Me !!
+                                  여기 검색 !!
                                </button>
                               </div>
 
                               <div class="col-lg-6">
 						<% if(!isLogin){ %>
-						<a href="javascript:goLogin();"  style="color:yellow" >Log in</a>
-						<a href="/Anaconda.do?CMD=CMD_SEQ_101617954751381273902468"  style="color:white" >Sign up</a>
+						<a href="javascript:goLogin();"  style="color:yellow" >로그인</a>
+						<a href="/Anaconda.do?CMD=CMD_SEQ_101617954751381273902468"  style="color:white" >가입하기</a>
 						<span class="header-menu">|</span>
 						<%}else{%>
-                                                <a href="/Anaconda.do?CMD=CMD_SEQ_108173637391288444301255" style="color:yellow" >Xtreme List</a>
+                                                <a href="/Anaconda.do?CMD=CMD_SEQ_108173637391288444301255" style="color:yellow" >멀티 사이트 리스트</a>
                                                 <span class="header-menu">|</span>
-                                                <a href="/Anaconda.do?CMD=CMD_SEQ_108164918711286971872119" style="color:yellow" >WAC List</a>
+                                                <a href="/Anaconda.do?CMD=CMD_SEQ_108164918711286971872119" style="color:yellow" >액션 그룹 리스트</a>
                                                 <span class="header-menu">|</span>
-                                                <a href="/Anaconda.do?CMD=CMD_SEQ_103456456861583150620923" style="color:yellow" >WAYD generator</a>
+                                                <a href="/Anaconda.do?CMD=CMD_SEQ_103456456861583150620923" style="color:yellow" >WAYD 생성기</a>
                                                 <span class="header-menu">|</span>
-						<a href="/Anaconda.do?CMD=CMD_SEQ_104757947291319959645242&gubun=1" style="color:white" >Project Board</a>
+						<a href="/Anaconda.do?CMD=CMD_SEQ_104757947291319959645242&gubun=1" style="color:white" >프로젝트 게시판</a>
                                                 <span class="header-menu">|</span>
-						<a href="/Anaconda.do?CMD=CMD_SEQ_106169144651288332119302"  style="color:white" >Logout</a>
+						<a href="/Anaconda.do?CMD=CMD_SEQ_106169144651288332119302"  style="color:white" >로그아웃</a>
                                                 <span class="header-menu">|</span>
-						<a href="/Anaconda.do?CMD=CMD_SEQ_107594046521381410883546"  style="color:white" >Modify</a>
+						<a href="/Anaconda.do?CMD=CMD_SEQ_107594046521381410883546"  style="color:white" >수정</a>
                                                 <span class="header-menu">|</span>
-						<a href="javascript:goSecession();"  style="color:white" >Leave</a>
+						<a href="javascript:goSecession();"  style="color:white" >탈퇴</a>
 <%}%>
                               </div>
                               
@@ -193,27 +193,6 @@ if(isLogin){
 
 
 </form>
-
-<!--
-<script language="javascript">
-/*
-var cookie  = getCookie("search-word");
-if(cookie != null && cookie != "undefined" && cookie != '')
-{
-	var obj = document.getElementById("search");
-	obj.value =cookie;
-}
-cookie = getCookie("HMENU");
-var m = document.getElementById(cookie);
-
-if(m != null && m != "undefined" && m != '')
-{
-	m.style.color = '#FFFF00';
-}
-*/
-</script>
--->
-
 
 <style type="text/css">
 .popup{
@@ -275,7 +254,7 @@ function fnAddTab() {
 }
 
 </script>
-  <button type="button" style="margin-top:10px;" class="btn navbar-btn btn-info second-button" name="btn_more_tab" id="btn_more_tab" >+(Tab)</button>
+  <button type="button" style="margin-top:10px;" class="btn navbar-btn btn-info second-button" name="btn_more_tab" id="btn_more_tab" >+(탭열기)</button>
 
    <div id="tab_div" class="row" style="display:none;margin-left:2px;z-index:9999;">
        <div id="main_tab" style=" width: 99%; z-index:9999;">

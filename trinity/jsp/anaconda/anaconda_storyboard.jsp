@@ -5,46 +5,33 @@
 <%@ page import="com.stuko.anaconda.business.*" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%!
-public String getBusinessTree(BusinessTree bt)
-{
+public String getBusinessTree(BusinessTree bt){
 	StringBuffer sb = new StringBuffer();
 	Iterator it = bt.iterator();
 	sb.append("<table cellspacing='0' cellpadding='0' style='border:0px;margin:0px 0px 0px 0px;' align='left' valign='top'>");
 
-	for(int i = 0;it.hasNext();i++)
-	{
+	for(int i = 0;it.hasNext();i++){
 		BusinessTree businessTree = (BusinessTree)it.next();
 		String strKey = BusinessHelper.getKey("DIV_");
 		sb.append("<tr  style='border:0px;margin:0px 0px 0px 0px;' align='left' valign='top'>");
 		
-		if(bt.getDepth() == 1)
-		{
+		if(bt.getDepth() == 1){
 			sb.append("<td  style='border:0px;margin:0px 0px 0px 0px;width:18px;' align='left' valign='top'>");
-		}
-		else
-		{
-			if(i == 0)
-			{
+		}else{
+			if(i == 0){
 				// 처음
-				if(bt.size() == 1)
-				{
+				if(bt.size() == 1){
 					sb.append("<td  style='border:0px;margin:0px 0px 0px 0px;width:18px;' align='left' valign='top'>");
 					sb.append("<img src='/jsp/anaconda/img/tree-leaf-start-no.gif'>");
-				}
-				else
-				{
+				}else{
 					sb.append("<td  style='border:0px;margin:0px 0px 0px 0px;width:18px;background: url(/jsp/anaconda/img/tree-branch.gif) repeat-y;' align='left' valign='top'>");
 					sb.append("<img src='/jsp/anaconda/img/tree-leaf-start.gif'>");
 				}
-			}
-			else if(i == (bt.size()-1))
-			{
+			}else if(i == (bt.size()-1)){
 				// 마지막
 				sb.append("<td  style='border:0px;margin:0px 0px 0px 0px;width:18px;' align='left' valign='top'>");
 				sb.append("<img src='/jsp/anaconda/img/tree-leaf-end.gif'>");
-			}
-			else
-			{
+			}else{
 				// 중간
 				sb.append("<td  style='border:0px;margin:0px 0px 0px 0px;width:18px;background: url(/jsp/anaconda/img/tree-branch.gif) repeat-y;' align='left' valign='top'>");
 				sb.append("<img src='/jsp/anaconda/img/tree-leaf.gif'>");
@@ -59,16 +46,12 @@ public String getBusinessTree(BusinessTree bt)
 		sb.append(businessTree.getNode().getFieldValue("cate_name"));
 		sb.append("</a></div>");
 		sb.append("</td>");
-		if(businessTree.hasChild())
-		{
-			if(bt.getDepth() <= 4)
-			{
+		if(businessTree.hasChild()){
+			if(bt.getDepth() <= 4){
 				sb.append("<td  style='border:0px;margin:0px 0px 0px 0px;' align='left' valign='top'>");
 				sb.append(this.getBusinessTree(businessTree));
 				sb.append("</td>");
-			}
-			else
-			{
+			}else{
 				sb.append("<td  style='border:0px;margin:0px 0px 0px 0px;' align='left' valign='center'>");
 				sb.append("<a style='text-decoration:none;' href='javascript:fnNull();' onClick='javascript:fnShowMenu(\""+businessTree.getNode().getFieldValue("seq")+"\");'>&nbsp;");
 				sb.append("<img src='/jsp/anaconda/img/more.png' width='20px' height='20px' border='0' align='absmiddle'>");
@@ -82,12 +65,8 @@ public String getBusinessTree(BusinessTree bt)
 	return sb.toString();
 }
 %>
-
-
-
 <script language="javascript">
-function fnShowMenu(seq)
-{
+function fnShowMenu(seq){
 	  var pos = getCurrentPosition();
 	  var div = _('div_storyboard_menu');
 	  div.style.left = pos.x;

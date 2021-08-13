@@ -30,7 +30,7 @@ function fnRoleView(strCollectionName,strViewName)
 }
 function fnRoleCopy(strNameSpace,strRoleKorName)
 {
-    if(confirm("Really copy role?")){
+    if(confirm("권한을 복사 할까요?")){
 	document.frm2.action="/Anaconda.do?CMD=CMD_SEQ_109355673071288245749397";
 	document.frm2.RoleCollectionKorName.value = strRoleKorName;
 	document.frm2.RoleCollection.value = strNameSpace;
@@ -40,7 +40,7 @@ function fnRoleCopy(strNameSpace,strRoleKorName)
 }
 function fnRoleCollectionRemove(strNameSpace)
 {
-    if(confirm("Really delete role?")){
+    if(confirm("권한을 삭제할까요?")){
 	document.frm2.action="/Anaconda.do?CMD=CMD_SEQ_109355673071288245749397";
 	document.frm2.RoleCollection.value = strNameSpace;
 	document.frm2.GUBUN.value = 'DC';
@@ -54,14 +54,14 @@ function fnRoleCreate()
 
 function fnRoleDel(args,arg2)
 {	
-	var bAnswer = confirm("Can not recover.\nReally Delete?");
+	var bAnswer = confirm("권한을 삭제 할까요?");
 	
 	if (bAnswer == true) 
 	{
 		document.frm.action="/Anaconda.do?CMD=CMD_SEQ_109355673071288245749397&GUBUN=D&RoleCollection="+args+"&RoleName="+arg2;
 		AnacondaSubmit(document.frm);		
 	} else {
-		alert("Cancelled");
+		alert("취소하셨습니다.");
 		return;
 	}
 }
@@ -78,10 +78,10 @@ function fnRoleDel(args,arg2)
 
 
  <div class="content-module-heading cf">
-			<h3 class="fl">Access roles list</h3>	
-			<span class="fr">
-                           <button type="button" class="btn btn-primary" name="Register" value="Create" onClick="javascript:fnRoleCreate();">Create</button>
-                           </span>
+	<h3 class="fl">권한 리스트</h3>	
+	<span class="fr">
+		<button type="button" class="btn btn-primary" name="Register" value="Create" onClick="javascript:fnRoleCreate();">추가하기</button>
+	</span>
  </div>
 
 
@@ -97,11 +97,11 @@ function fnRoleDel(args,arg2)
 		</colgroup>
 		<thead >
 		<tr>
-		<th scope="col">Role name</th>
-		<th scope="col">Role value</th>
-		<th scope="col">Type</th>
-		<th scope="col">Parent role</th>
-		<th scope="col">Function</th>
+		<th scope="col">권한이름</th>
+		<th scope="col">권한값</th>
+		<th scope="col">권합값 유형</th>
+		<th scope="col">상위권한</th>
+		<th scope="col">기능</th>
 		</tr>
 		</thead>
 		<tbody >
@@ -116,14 +116,14 @@ function fnRoleDel(args,arg2)
 			 	if(col != null)
 			 	{
 	 		%>
-	 			<tr style="background:#FFFFCC;"><td colspan=2 style="text-align:center">Role group : <%=strRoleKeys %>(<%=col.getROLECOLLECTION_KOR_NAME() %>)</td>
+	 			<tr style="background:#FFFFCC;"><td colspan=2 style="text-align:center">권한 그룹 : <%=strRoleKeys %>(<%=col.getROLECOLLECTION_KOR_NAME() %>)</td>
 	 			<td colspan="3" style="text-align:right">
-<button type="button" class="btn btn-secondary" name="" value="Copy role group" onClick="javascript:fnShowOrHideMenu('div_role_<%=idx %>');">Copy role group</button>
-	 			&nbsp;&nbsp;<button type="button" class="btn btn-danger" name="" value="Delete role group" onClick="javascript:fnRoleCollectionRemove('<%=strRoleKeys %>');">Delete role group</button></td></tr>
+<button type="button" class="btn btn-secondary" name="" value="Copy role group" onClick="javascript:fnShowOrHideMenu('div_role_<%=idx %>');">권한 그룹 복사</button>
+	 			&nbsp;&nbsp;<button type="button" class="btn btn-danger" name="" value="Delete role group" onClick="javascript:fnRoleCollectionRemove('<%=strRoleKeys %>');">권한 그룹 삭제</button></td></tr>
 				<div id="div_role_<%=idx %>" style="display:none;position:absolute;background-color:white;border: 2px double #BF95FF;padding: 5px 5px;">
 						<ul>
-							<li>Role group name : <input type="text" name="role_kor_name_<%=idx %>"></input></li>
-							<li><button type="button" class="btn btn-info" name="" value="Copy role" onClick="javascript:fnRoleCopy('<%=strRoleKeys %>',frmRoleCopy.role_kor_name_<%=idx %>.value);">Copy role</button>
+							<li>권한 그룹 이름 : <input type="text" name="role_kor_name_<%=idx %>"></input></li>
+							<li><button type="button" class="btn btn-info" name="" value="Copy role" onClick="javascript:fnRoleCopy('<%=strRoleKeys %>',frmRoleCopy.role_kor_name_<%=idx %>.value);">권한 복사</button>
 							</li>
 						</ul>
 				</div>

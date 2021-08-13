@@ -328,7 +328,6 @@ if(return_url != null && !"null".equals(return_url) && !return_url.trim().equals
 document.location.href = '<%=return_url%>';
 <%}else{%>
 document.location.href = "/Anaconda.do?CMD=CMD_SEQ_103615773161287821449749&srh_param=COLLECTION_NAME&inputText=<%=strColBizName%>";
-
 <%}%>
 </script>
 </body>

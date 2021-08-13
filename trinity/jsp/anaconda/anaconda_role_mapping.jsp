@@ -43,7 +43,7 @@ function fnRoleCreate()
 
 function fnRoleDel(args,arg2)
 {	
-	var bAnswer = confirm("Can not recover.\nReally delete?");
+	var bAnswer = confirm("삭제하시겠습니까?");
 	
 	if (bAnswer == true) 
 	{
@@ -132,7 +132,7 @@ function fnDeselectAll(id)
 	<div class="side-content">
 		<div class="content-module">
 			<div class="content-module-heading cf">
-			<h3 class="fl">Assign role</h3>
+			<h3 class="fl">권한 할당</h3>
 
 			</div>
 		</div>
@@ -141,8 +141,8 @@ function fnDeselectAll(id)
 
 		<ul>
 				<li>
-				Anaconda role	: <select id="anaconda_role" name="anaconda_role" class="styled" onChange="javascript:fnSelectRole('anaconda_role');">
-				<option name='tmp' value='tmp'>Select</option>
+				권한	: <select id="anaconda_role" name="anaconda_role" class="styled" onChange="javascript:fnSelectRole('anaconda_role');">
+				<option name='tmp' value='tmp'>선택</option>
 		 <%
 		 	XtremeRoleManager res = XtremeRoleManager.getInstance();
 		 	XtremeRoleCollection col = res.getRoleCollection("Default");
@@ -164,7 +164,7 @@ function fnDeselectAll(id)
 		 		out.println("No Role");
 		 	}
 		 %>
-		 	</select>&nbsp;&nbsp;<button type="button" class="btn btn-primary" onClick="javascript:fnSaveRoleMapping();" value="Save">Save</button>
+		 	</select>&nbsp;&nbsp;<button type="button" class="btn btn-primary" onClick="javascript:fnSaveRoleMapping();" value="Save">저장</button>
 		 	</li>
 		</ul>
 
@@ -179,8 +179,8 @@ function fnDeselectAll(id)
 		</colgroup>
 		<thead >
 		<tr>
-		<th scope="col">Action group name</th>
-		<th scope="col">Action name</th>
+		<th scope="col">액션 그룹 이름</th>
+		<th scope="col">액션 이름</th>
 		</tr>
 		</thead>
 		<tbody >

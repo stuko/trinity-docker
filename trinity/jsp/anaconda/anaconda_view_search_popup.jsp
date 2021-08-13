@@ -17,100 +17,77 @@
 	String strParam = request.getParameter("srh_param") == null ? "" : request.getParameter("srh_param").trim();
 	String strViewColName = request.getParameter("col_name") == null ? "" : request.getParameter("col_name").trim();
 	
-	//out.println(strViewColName);
-	
 %>
 
 <script language="javascript">
-<!--
-function fn_FrmInput(args)
-{
-	opener.document.frm.forward.value  = args;	
-	self.close();
-	return;
-}
-//-->
+	function fn_FrmInput(args){
+		opener.document.frm.forward.value  = args;	
+		self.close();
+		return;
+	}
 </script>
 <form name="frm" method="POST" action="/Anaconda.do?CMD=CMD_SEQ_107594712551287278742442&title=화면조회">
-<!----------------------------------------위아래 공백을 주기위한 테이블----------------------------------------->
-<!----------------------------------------- 검색 조건및 등록 테이블 시작---------------------------------------->	
-		<table>
-		  <tr>
+	<table>
+		<tr>
 			<td align="left"><b>조회조건</b>&nbsp;</td>
-			<td>
-			  <SELECT NAME='srh_param'>
-			    <OPTION>선택</OPTION>
-			    <OPTION value='FORWARD_NAME' <%=strParam.equals("FORWARD_NAME")?"selected":""%>>화면코드</OPTION>			    
-	  		  </SELECT>
-                         </td>
-                        <td>
-	  		  <input type="text" class="styled" name="inputText" width="100px" value="<%=strText%>">
-                        </td>
-                        <td>
-	  		  <input type="submit" class="button white" name="" value="검색" onClick="javascript:AnacondaSubmit(document.frm);">			  
-	  		</td>
-		  </tr>
-		</table>
-<!----------------------------------------- 검색 조건및 등록 테이블 끝------------------------------------------>
-<!----------------------------------------- 리스트 보여주는 테이블 시작----------------------------------------->
-		<table>
+		<td>
+			<SELECT NAME='srh_param'>
+				<OPTION>선택</OPTION>
+				<OPTION value='FORWARD_NAME' <%=strParam.equals("FORWARD_NAME")?"selected":""%>>화면코드</OPTION>			    
+			</SELECT>
+		</td>
+		<td>
+			<input type="text" class="styled" name="inputText" width="100px" value="<%=strText%>">
+		</td>
+		<td>
+			<input type="submit" class="button white" name="" value="검색" onClick="javascript:AnacondaSubmit(document.frm);">			  
+		</td>
+		</tr>
+	</table>
+	<table>
 		<colgroup>
-		<col width="20%">
-		<col width="20%">
-		<col width="30%">
-		<col>
+			<col width="20%">
+			<col width="20%">
+			<col width="30%">
+			<col>
 		</colgroup>
 		<thead>
-		<tr>
-		<th scope="col">화면 명</th>
-		<th scope="col">화면 코드</th>
-		<th scope="col">설명</th>
-		<th scope="col">기능</th>
-		</tr>
+			<tr>
+				<th scope="col">화면 명</th>
+				<th scope="col">화면 코드</th>
+				<th scope="col">설명</th>
+				<th scope="col">기능</th>
+			</tr>
 		</thead>
 		<tbody>
 		<%
-			try
-			{
+			try{
 				ViewXmlResource xmlResource = ViewXmlResource.getInstance();					
 				Iterator iterator = null;
 				Iterator it = null;
 				ViewCollection viewCollection = null;				
 				View view = null;								
 				it 	=	xmlResource.getViewCollection();
-				//viewCollection = xmlResource.getViewCollection(strViewColName);
-				//iterator = viewCollection.iterator();
-				
 				if (!strText.equals("") && strText!= null && strParam.equals("FORWARD_NAME")) {
 					iterator = xmlResource.searchViewLikeForward(strText);
 				}
-
-				for (;it.hasNext();) 
-				{    				
+				for (;it.hasNext();){    				
 					viewCollection = (ViewCollection)it.next();					
 					iterator = viewCollection.getViews();
 
-					for(int i =0 ;iterator.hasNext();i++)
-				    {
+					for(int i =0 ;iterator.hasNext();i++){
 						view = (View)iterator.next();				
-		 				out.println("<tr align=\"left\">");
-		 				
-		 				out.println("<td width=\"30%\" height=\"20\"  bgcolor=\"#FFFFFF\"><b>"+view.getFORWARD_KOR_NAME()+ "</b></td>");		 				
-					    out.println("<td width=\"30%\" height=\"20\"  bgcolor=\"#FFFFFF\"><b>"+view.getFORWARD_NAME()+ "</b></td>");
-					    out.println("<td width=\"40%\" height=\"20\"  bgcolor=\"#FFFFFF\"></td>");
-					    out.println("<td height=\"20\" align=\"center\" bgcolor=\"#FFFFFF\"><input type=\"button\"  class=\"button white\" name=\"btn_"+i+ "\" value=\"선택\" onClick=\"javascript:fn_FrmInput('"+view.getFORWARD_NAME()+"');\"></td>");
-					    out.println("</tr>");
+						out.println("<tr align=\"left\">");
+						out.println("<td width=\"30%\" height=\"20\"  bgcolor=\"#FFFFFF\"><b>"+view.getFORWARD_KOR_NAME()+ "</b></td>");		 				
+						out.println("<td width=\"30%\" height=\"20\"  bgcolor=\"#FFFFFF\"><b>"+view.getFORWARD_NAME()+ "</b></td>");
+						out.println("<td width=\"40%\" height=\"20\"  bgcolor=\"#FFFFFF\"></td>");
+						out.println("<td height=\"20\" align=\"center\" bgcolor=\"#FFFFFF\"><input type=\"button\"  class=\"button white\" name=\"btn_"+i+ "\" value=\"선택\" onClick=\"javascript:fn_FrmInput('"+view.getFORWARD_NAME()+"');\"></td>");
+						out.println("</tr>");
 					}
 				}
-				
 				xmlResource.release();
-				} catch (Exception e) {
-				ExceptionCenter.catchException(e);
-			}
+				} catch (Exception e) {ExceptionCenter.catchException(e);}
 		%>
 		</tbody>
-		</td>
-		</tr>
-		</table>
-<!----------------------------------------- 리스트 보여주는 테이블 끝----------------------------------------->		
+	</table>
 </form>

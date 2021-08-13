@@ -28,35 +28,35 @@ function fn_FrmInput(args1,args2)
 }
 //-->
 </script>
-<p></p>
+<div style="padding: 5px;margin:10px;">
+<h3>검색하기</h3>
 <form name="frm" method="POST" action="/Anaconda.do?CMD=CMD_SEQ_105690120951288243926312&title=권한조회">
 <input type="hidden" name="Object" value="<%=strObject %>"></input>
 <!----------------------------------------- 검색 조건및 등록 테이블 시작---------------------------------------->	
-		<table>
+		<table class="table_hydra" cellspacing="0" cellpadding="1">
 		  <tr>
-			<td align="right"><b>Condition</b>&nbsp;&nbsp;&nbsp;</td>
 			<td>
 			  <SELECT NAME='srh_param'>
-			    <OPTION>Select</OPTION>
-			    <OPTION value='Role' <%=strParam.equals("Role")?"selected":""%>>Role name</OPTION>
+			    <OPTION>선택</OPTION>
+			    <OPTION value='Role' <%=strParam.equals("Role")?"selected":""%>>권한 이름</OPTION>
 	  		  </SELECT>
-                        </td><td>
-	  		  <input type="text" class="styled" name="inputText" size="30" value="<%=strText%>">
-                       </td><td>
-	  		  <input type="submit" class="button white" name="" value="Search" onClick="javascript:AnacondaSubmit(document.frm);">			  
+            </td>
+			<td>
+	  		  <input type="text" class="styled" name="inputText" size="45" value="<%=strText%>">
 	  		</td>
+			<td align="right"><div><button type="submit" style="margin-bottom:10px;" class="btn btn-primary" name="" value="Search" onClick="javascript:AnacondaSubmit(document.frm);">검색</button></div></td>
 		  </tr>
 		</table>
+		
+		<hr/>
 <!----------------------------------------- 검색 조건및 등록 테이블 끝------------------------------------------>
 <!----------------------------------------- 리스트 보여주는 테이블 시작----------------------------------------->
-		<table>
-		<thead>
-		<tr>
-		<th scope="col">Role name</th>
-		<th scope="col">Role code</th>
-		<th scope="col">Function</th>
-		</tr>
-		</thead>
+		<table class="table_hydra" cellspacing="0" cellpadding="3" border="1" style="border-color:gray">
+			<colgroup>
+				<col width="30%">
+				<col width="50%">
+				<col>
+			</colgroup>
 		<tbody>
 				<%
 			 	XtremeRoleManager res = XtremeRoleManager.getInstance();
@@ -73,12 +73,16 @@ function fn_FrmInput(args1,args2)
 									continue;
 								}
 							}
+
+							if("".equals(role.getRole_name().trim())) continue;
 				 %>
 				 <tr>
 				 	<td  height="20"  bgcolor="#FFFFFF" style="padding:3 5 2 7;"><%=role.getRole_kor_name()%></td>
 				 	<td  height="20"  bgcolor="#FFFFFF" style="padding:3 5 2 7;"><%=role.getRole_name() %></td>
-				 	<td  height="20"  bgcolor="#FFFFFF" style="padding:3 5 2 7;">&nbsp;&nbsp;<input type="button" class="button white" value="Select" onClick="javascript:fn_FrmInput('<%=role.getRole_kor_name() %>','<%=role.getRole_name() %>')"></td>
-				 </td>
+				 	<td  height="20"  bgcolor="#FFFFFF" style="padding:3 5 2 7;">
+						<button type="button" class="btn btn-primary" value="선택" onClick="javascript:fn_FrmInput('<%=role.getRole_kor_name() %>','<%=role.getRole_name() %>')">선택</button>
+					</td>
+				 </tr>
 				 
 				 <%
 			 		}
@@ -89,8 +93,5 @@ function fn_FrmInput(args1,args2)
 			 	}
 				%>
 		</tbody>
-		</td>
-		</tr>
-		</table>
 </form>
-<p></p>
+</div>

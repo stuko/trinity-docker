@@ -167,7 +167,7 @@ function fnSearchRole()
 	<div class="side-content">
 		<div class="content-module">
 			<div class="content-module-heading cf">
-			<h3 class="fl">Create access role info.</h3>
+			<h3 class="fl">권한 정보 생성</h3>
 
 			</div>
 		</div>
@@ -181,23 +181,17 @@ function fnSearchRole()
 		<col width="30%">
 		<col>
 		</colgroup>
-		<thead >
-		<tr>
-		<th scope="col">Name</th>
-		<th scope="col">Value</th>
-		</tr>
-		</thead>
 		<tbody >
 	   	<tr>
-		  <td class="left"  >Role name</td>
+		  <td class="left"  >권한 이름</td>
 		  <td>&nbsp;<input type="text" class="styled" name="RoleKorName" value="<%=strRoleKorName%>" size="45"></td>	
   		</tr>
   		<tr>
-		  <td class="left"  >Role code</td>
+		  <td class="left"  >권한 키</td>
 		  <td>&nbsp;<%=strRoleName%><input type="hidden" name="RoleName" value="<%=strRoleName%>"></td>	
   		</tr>
   		<tr>
-		  <td class="left" >Role type</td>
+		  <td class="left" >권한 값 유형</td>
 		  <td>&nbsp;<SELECT NAME='RoleType'>
 			  <OPTION value='numeric' <%=strRoleType.equals("numeric")?"selected":""%>>numeric</OPTION>
 			  <OPTION value='string' <%=strRoleType.equals("string")?"selected":""%>>string</OPTION>
@@ -209,30 +203,30 @@ function fnSearchRole()
 		  </td>	
   		</tr>
 		<tr>
-		  <td class="left" >Role value</td>
+		  <td class="left" >권합 값</td>
 		  <td>&nbsp;<input type="text" class="styled" name="RoleValue" value="<%=strRoleValue%>" size="45"></td>	
 		</tr>
 		<tr>
-		  <td class="left" >Action for obtain a role</td>
+		  <td class="left" >권한을 얻기위한 액션 선택</td>
 		  <td>&nbsp;<SELECT NAME='RoleUrlType' onChange="javascript:selectRoleUrlType(this)">
-			  <OPTION value='URL' <%=strRoleUrlType.equals("URL")?"selected":""%>>Enter a URL</OPTION>
-			  <OPTION value='ACTION' <%=strRoleUrlType.equals("ACTION")?"selected":""%>>Action</OPTION>
+			  <OPTION value='URL' <%=strRoleUrlType.equals("URL")?"selected":""%>>URL 입력</OPTION>
+			  <OPTION value='ACTION' <%=strRoleUrlType.equals("ACTION")?"selected":""%>>액션</OPTION>
 	  		</SELECT>
 		  </td>	
   		</tr> 		
   		<tr>
-		  <td class="left" >Action for access role(URL)  </td>
+		  <td class="left" >권한을 얻기위한 액션 입력</td>
 		  <td>&nbsp;<input type="text" class="styled" name="RoleUrl" value="<%=strRoleUrl%>" size="45">
 		  <% if(strRoleUrlType.equals("ACTION")){ strSearchActionButtonDisplay = "block"; } %>
 		  <button id="searchActionButton" style="display:<%=strSearchActionButtonDisplay %>;margin:4px;" type="button" class="btn btn-info" name="" value="Search a action for access a role" onClick="javascript:fnSearchAction();">Search a action for access a role</button>
 		  </td>	
   		</tr>
   		<tr>
-		  <td class="left" >Role column name </td>
+		  <td class="left" >권한 프로세스 이름</td>
 		  <td>&nbsp;<input type="text" class="styled" name="RoleFieldName" value="<%=strRoleFieldName%>" size="45">&nbsp;(ex:BCName.BPName , ex: business process)</td>	
   		</tr>
   		<tr>
-    	  <td class="left" >condition</td>
+    	  <td class="left" >권한 조건</td>
     	  <td>&nbsp;<SELECT NAME='Expression'>
 			  <OPTION value='=' <%=strExpression.equals("=")?"selected":""%> >=</OPTION>
 			  <OPTION value='>' <%=strExpression.equals(">")?"selected":""%> >></OPTION>
@@ -244,12 +238,12 @@ function fnSearchRole()
 		  </td>	
   		</tr>
   		<tr>
-		  <td class="left" >Message for click </td>
+		  <td class="left" >권한 없을때 메시지 정보</td>
 		  <td>&nbsp;<input type="text" class="styled" name="RoleClickMessage" value="<%=strRoleClickMessage%>" size="45"></td>	
   		</tr>
   		<tr>
-		  <td class="left" >Reference role</td>
-		  <td>&nbsp;<input type="text" class="styled" name="RoleParent" value="<%=strParent%>" size="45">&nbsp;&nbsp;<button type="button" class="btn btn-secondary" name="" value="Search role" onClick="javascript:fnSearchRole();">Search role</button></td>	
+		  <td class="left" >상위 권한</td>
+		  <td>&nbsp;<input type="text" class="styled" name="RoleParent" value="<%=strParent%>" size="45">&nbsp;&nbsp;<button type="button" class="btn btn-secondary" name="" value="Search role" onClick="javascript:fnSearchRole();">검색</button></td>	
   		</tr>
   	</tbody>
 	</table>
@@ -258,12 +252,12 @@ function fnSearchRole()
   <tr>    
     <td align="center">
     <% if(role == null) { %>
-	<button type="button" class="btn btn-primary" name="" value="Create" colspan="2" onClick="javascript:fnRoleCreate();">Create</button>
+	<button type="button" class="btn btn-primary" name="" value="Create" colspan="2" onClick="javascript:fnRoleCreate();">추가</button>
 	<%} else { %>
-	<button type="button" class="btn btn-secondary" name="" value="Modify" colspan="2" onClick="javascript:fnRoleUpdate();">Modify</button>
-	<button type="button" class="btn btn-danger" name="" value="Delete" colspan="2" onClick="javascript:fnRoleDelete();">Delete</button>
+	<button type="button" class="btn btn-secondary" name="" value="Modify" colspan="2" onClick="javascript:fnRoleUpdate();">수정</button>
+	<button type="button" class="btn btn-danger" name="" value="Delete" colspan="2" onClick="javascript:fnRoleDelete();">삭제</button>
 	<%} %>
-	<button type="button" class="btn btn-warning" name="" value="Back" colspan="2" onClick="javascript:history.back();">Back</button>
+	<button type="button" class="btn btn-warning" name="" value="Back" colspan="2" onClick="javascript:history.back();">뒤로가기</button>
 	</td>
   </tr>
   </table>

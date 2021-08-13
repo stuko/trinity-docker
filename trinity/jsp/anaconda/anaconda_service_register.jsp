@@ -77,7 +77,6 @@ function AddFamily(str)
 	    //첫번째row
 	    var tRow1 = createElement("TR","","");
 		Tbl.appendChild(tRow1);
-		  //var tRow1 = Tbl.insertRow();
 		var skey = _rand();
 	    tRow1.setAttribute("id","AddChild_Tr_New_" + skey);
 		
@@ -89,10 +88,6 @@ function AddFamily(str)
 		tRow1.appendChild(tCell2);
 		tRow1.appendChild(tCell3);
 		    
-		//var tCell1 = tRow1.insertCell();
-	    //var tCell2 = tRow1.insertCell();
-	    //var tCell3 = tRow1.insertCell();		    
-	        
 	    tCell1.bgColor = "#F6FCFF";
 	    tCell1.align = "left";
 	    tCell1.innerHTML = 
@@ -106,10 +101,8 @@ function AddFamily(str)
 	    tCell3.bgColor = "#F6FCFF";
 	    tCell3.align = "left";
 	    tCell3.innerHTML = 
-	     "<button name='delete' type='button' class='btn btn-danger' onClick='javascript:delRow(\"AddChild_Tr_New_" + skey + "\")' value='Delete'>Delete</button><input name='delete' type='button' class='button white' onClick='javascript:AddFamily(1)' value='Add'>";	     
-//   		var ele = createElement("INPUT","ActName","hidden");
-//	     tRow1.appendChild(ele);
-	}//end for
+	     "<button name='delete' type='button' class='btn btn-primary' onClick='javascript:delRow(\"AddChild_Tr_New_" + skey + "\")' value='삭제'>삭제</button>&nbsp;<button name='delete' type='button' class='btn btn-primary' onClick='javascript:AddFamily(1)' value='추가'>추가</button>";	     
+	}
 }
 
 function AddFirst(str)
@@ -128,7 +121,6 @@ function AddFirst(str)
 	    //첫번째row
 	    var tRow1 = createElement("TR","","");
 		Tbl.insertBefore(tRow1,Tbl.firstChild);
-		  //var tRow1 = Tbl.insertRow();
 		var skey = _rand();
 	    tRow1.setAttribute("id","AddChild_Tr_New_" + skey);
 		
@@ -140,10 +132,6 @@ function AddFirst(str)
 		tRow1.appendChild(tCell2);
 		tRow1.appendChild(tCell3);
 		    
-		//var tCell1 = tRow1.insertCell();
-	    //var tCell2 = tRow1.insertCell();
-	    //var tCell3 = tRow1.insertCell();		    
-	        
 	    tCell1.bgColor = "#F6FCFF";
 	    tCell1.align = "left";
 	    tCell1.innerHTML = 
@@ -157,24 +145,14 @@ function AddFirst(str)
 	    tCell3.bgColor = "#F6FCFF";
 	    tCell3.align = "left";
 	    tCell3.innerHTML = 
-	     "<button name='delete' type='button' class='btn btn-danger' onClick='javascript:delRow(\"AddChild_Tr_New_" + skey + "\")' value='Delete'>Delete</button>&nbsp;<button name='delete' type='button' class='btn btn-primary' onClick='javascript:AddFamily(1)' value='Add'>Add</button>";	     
-//   		var ele = createElement("INPUT","ActName","hidden");
-//	     tRow1.appendChild(ele);
-	}//end for
+	     "<button name='delete' type='button' class='btn btn-primary' onClick='javascript:delRow(\"AddChild_Tr_New_" + skey + "\")' value='삭제'>삭제</button>&nbsp;<button name='delete' type='button' class='btn btn-primary' onClick='javascript:AddFamily(1)' value='추가'>추가</button>";	     
+	}
 }
 
 
-
-/**
-function AddFamily(1)
-{		
-	var idx = getObj().parentElement.rowIndex;	
-	AddFamily(1,idx);
-}
-**/
 function copyService()
 {
-	var bAnswer = confirm("Business services is used commonly, Really copy ?")
+	var bAnswer = confirm("복사 하시겠습니까?")
 	if (bAnswer == true) 
 	{
 		with(frm)
@@ -186,7 +164,7 @@ function copyService()
 }
 function fnSubmit()
 {
-	var bAnswer = confirm("Business services is used commonly, Really create?")
+	var bAnswer = confirm("생성하시겠습니까?")
 	
 	if (bAnswer == true) 
 	{
@@ -200,7 +178,7 @@ function fnSubmit()
 			}
 		} 
 	} else {
-		alert("Cancelled");
+		alert("취소하셨습니다");
 		return ;
 	}
 	AnacondaSubmit(document.frm);
@@ -211,29 +189,29 @@ function createInterceptor()
 	{
 		if(aop_point_method.value == null && aop_point_class.value == null)
 		{
-			alert("If you want to create intercepter class, you should write before and after source.");
+			alert("인터셉터를 만드시려면, 이전/이후 소스를 입력해 주세요.");
 			return;
 		}
 		
 	}
-	var bAnswer = confirm("Really create interceptor class?");
+	var bAnswer = confirm("인터셉터 클래스를 만드시겠습니까?");
 	if (bAnswer == true) 
 	{
 		window.open("/Anaconda.do?CMD=CMD_SEQ_107351305671330160197641&BizCol=<%=strBizColName%>","","height=400,width=700,left=200,top=20,status=no, location=no, toolbar=no, scrollbars=yes");
 		
 	} else {
-		alert("Cancelled");
+		alert("취소하셨습니다.");
 		return;
 	}
 }
 function doRun(action, REQ)
 {
     alert(REQ.responseText);
-	alert("Applied successfully.");
+	alert("요청하신 내용이 적용되었습니다.");
 }
 function chkForm(frm)
 {	
-	var bAnswer = confirm("Business services is used commonly, Really create?")
+	var bAnswer = confirm("생성하시겠습니까?")
 	
 	if (bAnswer == true) 
 	{
@@ -241,7 +219,7 @@ function chkForm(frm)
 		{ 
 			if (document.frm.colbizname.value == "")
 			{
-				alert("Please enter the service name");		
+				alert("서비스 이름을 입력해 주세요");		
 				document.frm.colbizname.focus();	
 				return false;
 			}
@@ -258,7 +236,7 @@ function chkForm(frm)
 
 function fnAllChangeUser()
 {
-	if(!confirm("If you did not change owner, the ownere will be current user.")) return;
+	if(!confirm("소유자를 설정하지 않으시면, 현재 로그인한 사용자로 설정이 됩니다.")) return;
 	with(frm)
 	{
 		// var change_user = owner.value;
@@ -294,10 +272,10 @@ function showAction(div_object)
 	<div class="side-content">
 		<div class="content-module">
 			<div class="content-module-heading cf">
-			<h3 class="fl">Create business service</h3>
-					<span class="fr"><button type="button" class="btn btn-info" name="Register" value="Copy" onClick="javascript:copyService();">Copy</button></span>
-					<span class="fr"><button type="button"  id="actionGroupShow" class="btn btn-primary" name="Register" value="Save" onClick="javascript:fnSubmit();">Save</button></span>
-					<span class="fr"><button type="button"  id="actionGroupShow" class="btn btn-secondary" name="Register" value="Back" onClick="javascript:history.back();">Back</button></span>
+			<h3 class="fl">서비스 정보</h3>
+					<span class="fr"><button type="button" class="btn btn-info" name="Register" value="Copy" onClick="javascript:copyService();">복사</button></span>
+					<span class="fr"><button type="button"  id="actionGroupShow" class="btn btn-primary" name="Register" value="Save" onClick="javascript:fnSubmit();">저장</button></span>
+					<span class="fr"><button type="button"  id="actionGroupShow" class="btn btn-secondary" name="Register" value="Back" onClick="javascript:history.back();">뒤로가기</button></span>
 			</div>
 		</div>
 	</div>
@@ -311,31 +289,24 @@ function showAction(div_object)
 		<col width="20%">
 		<col>
 		</colgroup>
-		<thead>
-		<tr>
-		<th scope="col">Service attriute</th>
-		<th scope="col">value</th>
-		</tr>
-		</thead>
 		<tbody>
 		  <tr>
-			<td class="left">&nbsp;service name&nbsp;</td>
+			<td class="left">&nbsp;서비스 이름 <br>&nbsp;<input name="BizCheck" type="checkbox"    onClick="javascript:fn_check();">&nbsp;&nbsp;(선택하시면, 자동생성됨. )</td>
 			<td class="left">
 <%
 	if (strCode.equals("upd"))
 	{
-		//out.println("<b>"+strBizColName+"</b>");
 		out.println("&nbsp;<input type=\"text\"  class=\"styled\"  name=\"colbizname\" size=\"30\" value=\""+strBizColName+"\">");		
 	} else {
 		out.println("&nbsp;<input name=\"colbizname\" type=\"text\"  class=\"styled\"  size=\"30\">");			
 	}
 	
 %>
-        &nbsp;<font color="red" style="size:12px;"><b>* need alphabet (do not use special or blank).</b></font>
+        &nbsp;<font color="red" style="size:12px;"><b>* 알파벳 입력 (특수문자나 공백은 사용하지 못함).</b></font>
 		</td>
 	</tr>
 	  <tr>
-		<td class="left">&nbsp;service alias name&nbsp;</td>
+		<td class="left">&nbsp;서비스 별명&nbsp;</td>
 		<td class="left">	
 		<%
 		strColKorBizName = BusinessHelper.checkBusinessNull(strColKorBizName) == true ? strColKorBizName : "";
@@ -350,8 +321,8 @@ function showAction(div_object)
 	<div class="side-content">
 		<div class="content-module">
 			<div class="content-module-heading cf">
-			<h3 class="fl">Service Detail Info.</h3>
-					<span class="fr"><button type="button" class="btn btn-info" name="Register" value="Open/Close" onClick="javascript:showAction('div_collection');">Open/Close</button></span>
+			<h3 class="fl">서비스 상세 정보</h3>
+					<span class="fr"><button type="button" class="btn btn-info" name="Register" value="Open/Close" onClick="javascript:showAction('div_collection');">+/-</button></span>
 			</div>
 		</div>
 	</div>
@@ -364,22 +335,17 @@ function showAction(div_object)
 		<col>
 		</colgroup>
 		<tbody>
-
 		<tr>
-			<td class="left">&nbsp;service code name(auto generated)&nbsp;</td>
-			<td class="left">&nbsp;<input name="BizCheck" type="checkbox"    onClick="javascript:fn_check();">&nbsp;&nbsp;(If checked, auto generated )</td>
-		</tr>	
-		<tr>
-			<td class="left">&nbsp;service cached&nbsp;</td>
-			<td class="left">&nbsp;<input name="cacheText" type="text" class="styled" size="13" value="<%=cache_time%>">&nbsp;&nbsp;(Unit:ms , if 0 , Do not use cache)</td>
+			<td class="left">&nbsp;서비스 캐시 시간&nbsp;</td>
+			<td class="left">&nbsp;<input name="cacheText" type="text" class="styled" size="13" value="<%=cache_time%>">&nbsp;&nbsp;(밀리세컨드, 0이면 사용안함)</td>
 		</tr>  	
 		<tr>
-			<td class="left">&nbsp;service execution count&nbsp;</td>
-			<td class="left">&nbsp;<input name="count" type="text" class="styled" size="13" value="<%=strCount%>">&nbsp;&nbsp;(will be executed until count)</td>
+			<td class="left">&nbsp;서비스 실행 횟수&nbsp;</td>
+			<td class="left">&nbsp;<input name="count" type="text" class="styled" size="13" value="<%=strCount%>">&nbsp;&nbsp;(입력한 횟수만큼 실행)</td>
 		</tr>  	
 		 <tr>
-			<td class="left">&nbsp;Change all owner&nbsp;&nbsp;</td>
-			<td class="left">&nbsp;<input type="text" name="owner"  class="styled" size="20" value="<%=strSessionValue %>"></input>&nbsp;&nbsp;<button type="button" class="btn btn-primary" value="Change all" onClick="javascript:fnAllChangeUser();">Change all</button></td>
+			<td class="left">&nbsp;소유자 변경&nbsp;&nbsp;</td>
+			<td class="left">&nbsp;<input type="text" name="owner"  class="styled" size="20" value="<%=strSessionValue %>"></input>&nbsp;&nbsp;<button type="button" class="btn btn-primary" value="Change all" onClick="javascript:fnAllChangeUser();">모두 변경</button></td>
 		  </tr>
 		</tbody>	
 	 </table>
@@ -389,7 +355,7 @@ function showAction(div_object)
 	<div class="side-content">
 		<div class="content-module">
 			<div class="content-module-heading cf">
-			<h3 class="fl">Process Info.</h3>
+			<h3 class="fl">프로세스 정보</h3>
 			</div>
 		</div>
 	</div>
@@ -403,9 +369,9 @@ function showAction(div_object)
 		</colgroup>
 		<thead>
 		<tr>
-		<th scope="col">Process name</th>
-		<th scope="col">Process description</th>
-		<th scope="col"><a href='javascript:AddFirst(1)'><img src="/jsp/anaconda/img/plus.png" width="15px" height="15px" border="0" align="absmiddle"></img>Add</a></th>
+		<th scope="col">프로세스 이름</th>
+		<th scope="col">프로세스 설명</th>
+		<th scope="col"><a href='javascript:AddFirst(1)'><img src="/jsp/anaconda/img/plus.png" width="15px" height="15px" border="0" align="absmiddle"></img>추가</a></th>
 		</tr>
 		</thead>
 		<tbody id="AddChild">
@@ -421,9 +387,9 @@ if (strCode.equals("upd"))
 			bizdata = (BusinessData)iterator.next();				
 			out.println("<tr align=\"left\" id='AddChild_Td_"+i+"'>");						
 			out.println("<td bgcolor=\"#F6FCFF\"><input name='bizname' type='text' class='styled'  size='20' value='"+bizdata.getBusinessName()+"'>");
-			out.println("&nbsp;<a href=\"/Anaconda.do?CMD=CMD_SEQ_103913152981287845327671&BizName="+bizdata.getBusinessName()+"&colbizname="+strBizColName+"\"><img src=\"/jsp/anaconda/img/go.png\" width=\"15px\" height=\"15px\" border=\"0\" align=\"absmiddle\"></img></a>go to</td>");
+			out.println("&nbsp;<a href=\"/Anaconda.do?CMD=CMD_SEQ_103913152981287845327671&BizName="+bizdata.getBusinessName()+"&colbizname="+strBizColName+"\"><img src=\"/jsp/anaconda/img/go.png\" width=\"15px\" height=\"15px\" border=\"0\" align=\"absmiddle\"></img></a>바로가기</td>");
 			out.println("<td  align=\"left\" bgcolor=\"#F6FCFF\"><input name='desc' type='text' class='styled'  size='40' value='"+bizdata.getDESC()+"'></td>");
-			out.println("<td  align=\"left\" bgcolor=\"#F6FCFF\"><button name='delete' type='button' class='btn btn-danger' onClick='javascript:delRow(\"AddChild_Td_"+i+"\")' value='Delete'>Delete</button>&nbsp;<button name='delete' type='button' class='btn btn-primary' onClick='javascript:AddFamily(1)' value='Add'>Add</button></td>");
+			out.println("<td  align=\"left\" bgcolor=\"#F6FCFF\"><button name='delete' type='button' class='btn btn-primary' onClick='javascript:delRow(\"AddChild_Td_"+i+"\")' value='삭제'>삭제</button>&nbsp;<button name='delete' type='button' class='btn btn-primary' onClick='javascript:AddFamily(1)' value='추가'>추가</button></td>");
 			out.println("</tr>");
 		}	
 		xmlResource.release();
@@ -438,19 +404,18 @@ if (strCode.equals("upd"))
 	<div class="side-content">
 		<div class="content-module">
 			<div class="content-module-heading cf">
-			<h3 class="fl">Service Interceptor Info.</h3>
-			<span class="fr"><button type="button" class="btn btn-primary" name="Register" value="Create Interceptor class" onClick="javascript:createInterceptor();">Create Interceptor class</button></span>
+				<h3 class="fl">인터셉터</h3>
 			</div>
 		</div>
 	</div>
 </div>
 		<ul>
-			<li>Reserved : BusinessDataParameter=parameter , MasterReturnValue=return</li>
-			<li>Process skip : This.doProcessSkip(true or false);</li>
-			<li>Process exit : This.doProcessExit(true or false);</li>
-			<li>Process interrupt : MasterReturnValue.setSkipCount(-1);</li>
-			<li>Global: ((BusinessData)BusinessDataParameter.getAllBusinessData()).getFieldValue )</li>
-			<li>Import: import com.stuko.anaconda.business.*;</li>
+			<li>예약어 : BusinessDataParameter=parameter , MasterReturnValue=return</li>
+			<li>프로세스 건너뛰기 : This.doProcessSkip(true or false);</li>
+			<li>프로세스 종료 : This.doProcessExit(true or false);</li>
+			<li>프로세스 중단 : MasterReturnValue.setSkipCount(-1);</li>
+			<li>전역 변수: ((BusinessData)BusinessDataParameter.getAllBusinessData()).getFieldValue )</li>
+			<li>패키지 : import com.stuko.anaconda.business.*;</li>
 		</ul>
 		
 <table class="table_hydra" cellspacing="0" cellpadding="0">
@@ -458,98 +423,27 @@ if (strCode.equals("upd"))
 		<col width="30%">
 		<col width="500px">
 		</colgroup>
-		<thead>
-		<tr>
-		<th scope="col">Name</th>
-		<th scope="col">Value</th>
-		</tr>
-		</thead>
 		<tbody>
   		<tr>
-		  <td class="left" >Class name</td>
+		  <td class="left" >인터셉터 클래스 이름</td>
 		  <td>&nbsp;<input type="text" class="styled" name="aop_intercepter" size="50" value="<%=strAopInter%>">
 		  &nbsp;<SELECT NAME='intercepter_type' onChange="javascript:selectIntercepterType(this.selectedIndex);">
-			    <OPTION value='' selected>Enter the class name</OPTION>
+			    <OPTION value='' selected>선택해 주세요</OPTION>
 			    <OPTION value='com.stuko.anaconda.intercepter.ConditionalBusinessCollectionIntercepter'>Conditional</OPTION>
 			    <OPTION value='com.stuko.anaconda.intercepter.SimpleBusinessCollectionIntercepter'>Simple</OPTION>
 	  		   </SELECT>
 		  </td>
   		</tr>
   		<tr>
-		  <td class="left" >Before</td>
+		  <td class="left" >이전 스크립트</td>
 		  <td>&nbsp;<textarea class="styled code" name="aop_point_method" style="width:530px;height:150px;" wordWrap="true"></textarea></td>
   		</tr>
   		<tr>
-    	  <td class="left" >After</td>
+    	  <td class="left" >이후 스크립트</td>
     	  <td>&nbsp;<textarea class="styled code" name="aop_point_class" style="width:530px;height:150px;"  wordWrap="true"></textarea></td>
   		</tr>
   		</tbody>
  </table>
-
-
-<div id="table-content">
-	<div class="side-content">
-		<div class="content-module">
-			<div class="content-module-heading cf">
-			<h3 class="fl">Service Rule Info.</h3>
-			</div>
-		</div>
-	</div>
-</div>
-
-<table class="table_hydra" cellspacing="0" cellpadding="0">
-		<colgroup>
-		<col width="100px">
-		<col width="500px">
-		</colgroup>
-		<thead>
-		<tr>
-		<th scope="col">Factor</th>
-		<th scope="col">Value</th>
-		</tr>
-		</thead>
-		<tbody>
-  		<tr>
-		  <td class="left" >Anaconda Rule</td>
-		  <td>
-		     <select name="anaconda_rule" id="anaconda_rule">
-				<option name="null" value="null">Not applied</option>
-			<%
-				RuleManager rm = new RuleManager();
-				DefaultXmlDataCollection dxdc = rm.getList();
-				Iterator it = dxdc.iterator();
-				for(;it.hasNext();)
-				{
-					DefaultXmlData dxd = (DefaultXmlData)it.next();
-					String rule_name = dxd.getData("RuleAlias");
-					String rule_key = dxd.getNAME();
-					String bc_rule = businessCollection.getAnacondaRule();
-					String selected = "";
-					if(rule_key.equals(bc_rule)) selected = "selected";
-			%>
-				<option name="<%=rule_key %>" value="<%=rule_key %>" <%=selected%>><%=rule_name %></option>
-			<%
-				}
-			%>
-		  </td>
-  		</tr>
-  		</tbody>
- </table>
- <hr/>
-
-
- </div>
-
-</p>
- 		     <!--table cellspacing="0" cellpadding="0">
-			  <tr>
-			    <td align='left'><button type="button" class="btn btn-info" name="" value="Copy" onClick="javascript:copyService();">Copy</button></td>
-			    <td align='left'><button type="button" class="btn btn-primary" name="" value="Save" onClick="javascript:fnSubmit();">Save</button></td>
-			    <td align='left'><button type="button" class="btn btn-secondary" name="" value="Back" onClick="javascript:history.back();">Back</button></td>
-			  </tr>
-		    </table-->
-<p></p><p></p>
-	  
 </form>
 <DIV id="AOPBEFORE" style="visibility:hidden">
 <%=BusinessHelper.revert(strAopPointMethod)%>
@@ -583,15 +477,7 @@ function selectIntercepterType(idx)
 }
 
 var strData = AOPBEFORE.innerHTML;
-// alert(strData.replace(/</g,"<").replace(/>/g,">").replace(/\<BR\>/g,"\n"));
 frm.aop_point_method.value = strData.replace(/&amp;/g,"&").replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'");
-// frm.aop_point_method.innerHTML = strData;
-// alert(frm.aop_point_method.value);
 strData = AOPAFTER.innerHTML;
 frm.aop_point_class.value = strData.replace(/&amp;/g,"&").replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'");
-// frm.aop_point_class.innerHTML = strData;
-// alert(strData);
-// alert(frm.aop_point_class.value);
-
-
 </script>

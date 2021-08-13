@@ -17,11 +17,11 @@
 <%@ page import="java.util.*"%>
 
 <div>
-  <h3> Execute server command </h3>
+  <h3> 명령어 실행 </h3>
 </div>
 <div>
   <p> 
-    <h4> Favorite command
+    <h4> 자주 사용하는 명령어
     <ul>
         <li>/bin/sh;-c;ls -ltr
         <li>/bin/sh;-c;cd /home/kronos/kanban
@@ -31,7 +31,7 @@
 </div>
 <div>
     <input type="text" name="exec" id="exec" style="width:600px" value="" ></input>
-    <button class="btn btn-danger"  onClick="fnExecuteCommand()">execute</button>
+    <button class="btn btn-danger"  onClick="fnExecuteCommand()">실행하기</button>
 </div>
 
 <div id="result" style="display:block">

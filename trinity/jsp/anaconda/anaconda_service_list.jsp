@@ -66,7 +66,6 @@ function fn_RegBiz()
 function fn_BizCollection(args) 
 {
 	document.location.href = "/Anaconda.do?CMD=CMD_SEQ_107211261401287822755707&BizColName="+args;
-	//window.open("BizLogic_Reg.jsp?BizColName="+args,"","height=700,width=720,left=200,top=20,status=no, location=no, toolbar=no,scrollbars=yes");
 }
 
 function fn_BizSearch(args)
@@ -77,7 +76,6 @@ function fn_BizSearch(args)
 function fn_BizMod(args, args1) 
 {
 	document.location.href = "/Anaconda.do?CMD=CMD_SEQ_103913152981287845327671&BizName="+args+"&colbizname="+args1;	
-	//window.open("BizLogic_Mod.jsp?BizName="+args+"&colbizname="+args1,"","height=700,width=740,left=200,top=20,status=no, location=no, toolbar=no,resizable=yes,scrollbars=yes");
 }
 
 function fn_Clear()
@@ -134,10 +132,10 @@ function fn_SelectServiceGroup(select)
 	<div class="side-content">
 		<div class="content-module">
 			<div class="content-module-heading cf">
-			<h3 class="fl">Manage business service info.</h3>
+			<h3 class="fl">서비스 관리</h3>
 					<span class="fr">
 							<select id="service_list_select" class="styled"   name="service_list_select" onChange="javascript:fn_SelectServiceGroup(this);">
-							<option value="">Select</option>
+							<option value="">선택</option>
 
 							<%
 							try
@@ -167,9 +165,9 @@ function fn_SelectServiceGroup(select)
 						   %>
 						  </select>
 					</span>
-					<span class="fr"><button type="button" class="btn btn-primary" name="Register" value="Create" onClick="javascript:fn_RegBiz();">Create</button></span>
+					<span class="fr"><button type="button" class="btn btn-primary" name="Register" value="Create" onClick="javascript:fn_RegBiz();">추가</button></span>
 
-					<span class="fr"><button type="button"  id="serviceGroupShow" class="btn btn-secondary" name="Register" value="Show all" onClick="javascript:fnShowOrHideServiceGroup('serviceGroupShow','divContext');">Show all</button></span>
+					<span class="fr"><button type="button"  id="serviceGroupShow" class="btn btn-secondary" name="Register" value="Show all" onClick="javascript:fnShowOrHideServiceGroup('serviceGroupShow','divContext');">모두보기</button></span>
 
 			</div>
 		</div>
@@ -231,10 +229,10 @@ function fn_SelectServiceGroup(select)
 		</colgroup>
 		<thead >
 		<tr>
-		<th scope="col">Business Service Name</th>
-		<th scope="col">sub process name</th>
-		<th scope="col">type</th>
-		<th scope="col">function</th>
+		<th scope="col">서비스 이름</th>
+		<th scope="col">하위 프로세스 이름</th>
+		<th scope="col">프로세스 유형</th>
+		<th scope="col">기능</th>
 		</tr>
 		</thead>
 		<tbody >

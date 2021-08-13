@@ -16,10 +16,6 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8">
 <title>
 </title>
-<script>
-<!--
--->
-</script>
 </head>
 <body bgcolor="#ffffff">
 

@@ -15,13 +15,10 @@
 	String owner = request.getParameter("owner");
 	String strForwardKorName = request.getParameter("ForwardKorName") != null ? URLDecoder.decode(request.getParameter("ForwardKorName"),"UTF-8") : request.getParameter("ForwardKorName");
 	String strRtn = "";
-	try
-	{
-
+	try{
 		BusinessData businessData = (BusinessData)request.getAttribute(InitClass.getBusinessDataValue());
 		ViewXmlResource xmlResource = ViewXmlResource.getInstance();	
-		if(strGubun.equals("R"))
-		{
+		if(strGubun.equals("R")){
 			View view = xmlResource.createView  ( strColName
 									 ,strForwardKorName
 	    							 ,strForward
@@ -37,9 +34,7 @@
 			ViewCollection viewCollection = xmlResource.getViewCollection(view.getVIEW_COLLECTION_NAME());
 			xmlResource.save(viewCollection);
 			xmlResource.release();
-		}
-		else if(strGubun.equals("U"))
-		{
+		}else if(strGubun.equals("U")){
 			String strXtremeUseYN = request.getParameter("XtremeUseYN");
 			if(!"N".equals(strXtremeUseYN)) strXtremeUseYN = "Y";
                            
@@ -51,40 +46,26 @@
 			view.setFORWARD_KOR_NAME(strForwardKorName);
 			ViewCollection viewCollection = xmlResource.getViewCollection(view.getVIEW_COLLECTION_NAME());
 			xmlResource.save(viewCollection);
-                        System.out.println("###############-->" + view.toString()); 
-			// xmlResource.save();
 			xmlResource.release();
-		}
-		else if(strGubun.equals("D"))
-		{
+		}else if(strGubun.equals("D")){
 			ViewCollection viewCollection = xmlResource.removeView(strForward);
 			xmlResource.save(viewCollection);
 			xmlResource.release();
-		}
-		else if(strGubun.equals("S"))
-		{
+		}else if(strGubun.equals("S")){
 			FileManager fm = new FileManager();
-			//String contents = request.getParameter("contents") != null ? URLDecoder.decode(request.getParameter("contents"),"UTF-8") : request.getParameter("contents");
-			//String path = request.getParameter("path") != null ? URLDecoder.decode(request.getParameter("path"),"UTF-8") : request.getParameter("path");
 			String contents = request.getParameter("contents");
 			String path = request.getParameter("path");
 			fm.saveJSPFile(path , contents);
-		}
-		else if(strGubun.equals("M"))
-		{
+		}else if(strGubun.equals("M")){
 			FileManager fm = new FileManager();
 			String path = request.getParameter("path") != null ? URLDecoder.decode(request.getParameter("path"),"UTF-8") : request.getParameter("path");
 			fm.removeJSPFile(path);
-		}
-		else if(strGubun.equals("C"))
-		{
+		}else if(strGubun.equals("C")){
 			xmlResource.copyView(strColName,strForward);
 			xmlResource.save();
 			xmlResource.release();
-		}
-		else if(strGubun.equals("SE"))
-		{
-           StringBuffer strContents = new StringBuffer();
+		}else if(strGubun.equals("SE")){
+            StringBuffer strContents = new StringBuffer();
 			strContents.append(""+"<"+"%"+"@ page import=\"com.stuko.anaconda.value.BlankField\" "+"%"+">"+"\n");
 			strContents.append(""+"<"+"%"+"@ page import=\"java.io.File\""+"%"+">"+"\n");
 			strContents.append(""+"<"+"%"+"@ page import=\"java.io.FileInputStream\""+"%"+">"+"\n");
@@ -167,9 +148,7 @@
 			fm.saveFile(strContents.toString(),mInitClass.getPath(InitClass.ROOT) + strAreaPath);
 			xmlResource.release();
 			
-		}
-		else if(strGubun.equals("RE"))
-		{
+		}else if(strGubun.equals("RE")){
 			String strViewKey = request.getParameter("viewKey");
 			String strAreaName = request.getParameter("area_name");
 			String strAreaPath = request.getParameter("area_path");
@@ -178,30 +157,22 @@
 			view.remove(strAreaName);
 			xmlResource.save();
 			xmlResource.release();			
-		}
-		else if(strGubun.equals("searchBasicLayout"))
-		{
+		}else if(strGubun.equals("searchBasicLayout")){
 			DefaultXmlResource resource = DefaultXmlResource.getInstance();
 			String strSearch = request.getParameter("search") != null ? URLDecoder.decode(request.getParameter("search"),"UTF-8") : request.getParameter("search");
-			// String strSearch = request.getParameter("search");
 			String strSearchKey = request.getParameter("key");
-			//ViewCollection viewCollection = xmlResource.search(strSearchKey,strSearch);
 			ViewCollection viewCollection = xmlResource.search(strSearch);
 			viewCollection.setVIEWCOLLECTION_NAME("Response");
 			strRtn = resource.httpXmlDataOverAll(businessData,viewCollection);
-		}
-		else if(strGubun.equals("saveAnacondaLayout"))
-		{
+		}else if(strGubun.equals("saveAnacondaLayout")){
 			String strViewKey = request.getParameter("viewKey");
-
-                        String strXtremeUseYN = request.getParameter("XtremeUseYN");
+            String strXtremeUseYN = request.getParameter("XtremeUseYN");
 			if(!"N".equals(strXtremeUseYN)) strXtremeUseYN = "Y";
 			
 			String s1 = request.getParameter("Layout");
 			String s2 = request.getParameter("Body");
 			String s3 = request.getParameter("AreaFile");
 			View view = xmlResource.searchView(strViewKey);
-			// view.setVIEW_TYPE(strType);
 			view.setViewItem(BlankField.LAYOUT_TYPE,BlankField.ANACONDA_VIEW);
 			view.setViewItem(BlankField.VIEW_LAYOUT,s1);
 			view.setViewItem(BlankField.VIEW_BODY,s2);
@@ -209,36 +180,25 @@
                         view.setViewItem(InitClass.XTREME_USE_YN,strXtremeUseYN);
 			xmlResource.save();
 			xmlResource.release();
-		}
-		else if(strGubun.equals("saveHydraLayout"))
-		{
+		}else if(strGubun.equals("saveHydraLayout")){
 			String strViewKey = request.getParameter("viewKey");
-                        
-                        String strXtremeUseYN = request.getParameter("XtremeUseYN");
+            String strXtremeUseYN = request.getParameter("XtremeUseYN");
 			if(!"N".equals(strXtremeUseYN)) strXtremeUseYN = "Y";
-			// String s1 = request.getParameter("Layout");
 			String s2 = request.getParameter("Body");
 			View view = xmlResource.searchView(strViewKey);
-			// view.setVIEW_TYPE(BlankField.PARENT_VIEW);
-			// view.setVIEW_TYPE(strType);
 			view.setViewItem(BlankField.LAYOUT_TYPE,BlankField.PARENT_VIEW);
-			// view.setViewItem(BlankField.VIEW_LAYOUT,s1);
 			view.setViewItem(BlankField.VIEW_BODY,s2);
-                        view.setViewItem(InitClass.XTREME_USE_YN,strXtremeUseYN);
+            view.setViewItem(InitClass.XTREME_USE_YN,strXtremeUseYN);
 
 			xmlResource.save();
 			xmlResource.release();
-		}
-		else if(strGubun.equals("change_all_user"))
-		{
+		}else if(strGubun.equals("change_all_user")){
 			xmlResource = ViewXmlResource.getInstance();
 			Iterator it =	xmlResource.getViewCollection();
-			for(;it.hasNext();)
-			{
+			for(;it.hasNext();){
 				ViewCollection vc = (ViewCollection)it.next();
 				Iterator iterator = vc.iterator();
-				for(;iterator.hasNext();)
-				{
+				for(;iterator.hasNext();){
 					View view = (View)iterator.next();
 					view.setOWNER(owner);
 				}
@@ -248,15 +208,11 @@
 		}
 				
  		if(strRtn != null && strRtn.length() > 0 ) {
-                   out.println(strRtn);
-                   return;
-                }else{
-                   out.println("{Result : \"Success\"}");
-                }
-
-
-	} catch (Exception e) {
-		ExceptionCenter.catchException(e);
-	}
+            out.println(strRtn);
+            return;
+        }else{
+            out.println("{Result : \"Success\"}");
+        }
+	} catch (Exception e) {ExceptionCenter.catchException(e);}
 %>
 
