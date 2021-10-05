@@ -1,1 +1,0 @@
-Your Email was approved.

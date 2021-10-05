@@ -574,26 +574,26 @@ function getTime(){
           <li><a href="/CMD_SEQ_104740062431578035448248.do">로그 보기</a></li>
         </ul>
       </li>
+         <!-- 
       <li><a href="/CMD_SEQ_100333381081289029921460.do"><i class="icon icon-fullscreen"></i> <span>배포</span></a>
         <ul>
-         <!-- 
           <li><a href="form-wizard.html">Test Scenario List</a></li>
           <li><a href="form-wizard.html">Test Data List</a></li>
           <li><a href="form-wizard.html">Execute Test Scenario</a></li>
           <li><a href="form-wizard.html">View Test Result</a></li>
-          --> 
           <li><a href="/CMD_SEQ_100333381081289029921460.do">배포 요청 리스트</a></li>
           <li><a href="/CMD_SEQ_107335537401289969322212.do">배포 요청하기</a></li>
           <li><a href="/CMD_SEQ_101304559451289996453898.do">배포 서버 그룹 관리</a></li>
           <li><a href="/CMD_SEQ_103105634661289983608812.do">배포 서버 관리</a></li>
         </ul>
       </li>
+          --> 
       <li class="submenu"> <a href="/CMD_SEQ_106577512821577858709543.do"><i class="icon icon-th-list"></i> <span>유지보수</span></a>
         <ul>
           <li><a href="/CMD_SEQ_106577512821577858709543.do">백업하기</a></li>
           <li><a href="/CMD_SEQ_107594046521381410883546.do">내정보</a></li>
-          <li><a href="/download/wayd-monitoring-tools.zip">모니터링 툴 다운받기</a></li>
          <!--
+          <li><a href="/download/wayd-monitoring-tools.zip">모니터링 툴 다운받기</a></li>
           <li><a href="form-wizard.html">User List</a></li>
           <li><a href="form-wizard.html">Register User</a></li>
           <li><a href="form-wizard.html">View Error Log</a></li>

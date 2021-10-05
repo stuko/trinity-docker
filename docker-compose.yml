@@ -20,7 +20,7 @@ services:
         - "./db:/opt/database"
       restart: always
     web:
-      image: tomcat:latest
+      image: tomcat:9
       hostname: trinity-web
       extra_hosts:
         - "trinity-db:192.168.57.243"
