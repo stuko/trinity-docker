@@ -63,7 +63,7 @@
 			strAreaFile = view.getViewItem(InitClass.DEFAULT_AREA);
 			strXtremeUseYN = view.getViewItem(InitClass.XTREME_USE_YN);
 			
-System.out.println("#######-->" + strXtremeUseYN );
+// System.out.println("#######-->" + strXtremeUseYN );
 
 			if(!"N".equals(strXtremeUseYN))
 			{
@@ -844,6 +844,6 @@ setSelectBox('LayoutTypeObject', '<%=strLayoutType%>');
 </script>
 <%
 	} catch (Exception e) {
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>

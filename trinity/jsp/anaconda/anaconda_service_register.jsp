@@ -44,9 +44,9 @@
 		businessCollection = xmlResource.getBusinessCollection(strBizColName);		
 		cache_time =  businessCollection.getCACHE_TIME();
 		strColKorBizName = businessCollection.getBIZ_COLLECTION_KOR_NAME();
-		strAopInter			=	businessCollection.getAOP_INTERCEPTER();
-		strAopPointCls		=	BusinessHelper.convert(businessCollection.getAOP_POINT_CLASS());
-		strAopPointMethod	=	BusinessHelper.convert(businessCollection.getAOP_POINT_METHOD());
+		strClassIntercepter			=	businessCollection.getCLASS_INTERCEPTER();
+		strAftIntercepter		=	BusinessHelper.convert(businessCollection.getAFT_INTERCEPTER());
+		strBefIntercepter	=	BusinessHelper.convert(businessCollection.getBEF_INTERCEPTER());
 		strCount = BusinessHelper.checkBusinessNull(businessCollection.getCOUNT()) == false ? "1" : businessCollection.getCOUNT();
 	}
 	
@@ -187,7 +187,7 @@ function createInterceptor()
 {
 	with(frm)
 	{
-		if(aop_point_method.value == null && aop_point_class.value == null)
+		if(bef_intercepter.value == null && aft_intercepter.value == null)
 		{
 			alert("인터셉터를 만드시려면, 이전/이후 소스를 입력해 주세요.");
 			return;
@@ -394,7 +394,7 @@ if (strCode.equals("upd"))
 		}	
 		xmlResource.release();
 	} catch (Exception e) {
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 }
 %>				  
@@ -426,7 +426,7 @@ if (strCode.equals("upd"))
 		<tbody>
   		<tr>
 		  <td class="left" >인터셉터 클래스 이름</td>
-		  <td>&nbsp;<input type="text" class="styled" name="aop_intercepter" size="50" value="<%=strAopInter%>">
+		  <td>&nbsp;<input type="text" class="styled" name="class_intercepter" size="50" value="<%=strClassIntercepter%>">
 		  &nbsp;<SELECT NAME='intercepter_type' onChange="javascript:selectIntercepterType(this.selectedIndex);">
 			    <OPTION value='' selected>선택해 주세요</OPTION>
 			    <OPTION value='com.stuko.anaconda.intercepter.ConditionalBusinessCollectionIntercepter'>Conditional</OPTION>
@@ -436,20 +436,20 @@ if (strCode.equals("upd"))
   		</tr>
   		<tr>
 		  <td class="left" >이전 스크립트</td>
-		  <td>&nbsp;<textarea class="styled code" name="aop_point_method" style="width:530px;height:150px;" wordWrap="true"></textarea></td>
+		  <td>&nbsp;<textarea class="styled code" name="bef_intercepter" style="width:530px;height:150px;" wordWrap="true"></textarea></td>
   		</tr>
   		<tr>
     	  <td class="left" >이후 스크립트</td>
-    	  <td>&nbsp;<textarea class="styled code" name="aop_point_class" style="width:530px;height:150px;"  wordWrap="true"></textarea></td>
+    	  <td>&nbsp;<textarea class="styled code" name="aft_intercepter" style="width:530px;height:150px;"  wordWrap="true"></textarea></td>
   		</tr>
   		</tbody>
  </table>
 </form>
-<DIV id="AOPBEFORE" style="visibility:hidden">
-<%=BusinessHelper.revert(strAopPointMethod)%>
+<DIV id="BEFORE" style="visibility:hidden">
+<%=BusinessHelper.revert(strBefIntercepter)%>
 </DIV>
-<DIV id="AOPAFTER" style="visibility:hidden">
-<%=BusinessHelper.revert(strAopPointCls)%>
+<DIV id="AFTER" style="visibility:hidden">
+<%=BusinessHelper.revert(strAftIntercepter)%>
 </DIV>
  
 <script> 
@@ -473,11 +473,11 @@ function getObj()
 
 function selectIntercepterType(idx)
 {
-	if(idx != 0) frm.aop_intercepter.value = frm.intercepter_type[idx].value;
+	if(idx != 0) frm.class_intercepter.value = frm.intercepter_type[idx].value;
 }
 
-var strData = AOPBEFORE.innerHTML;
-frm.aop_point_method.value = strData.replace(/&amp;/g,"&").replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'");
-strData = AOPAFTER.innerHTML;
-frm.aop_point_class.value = strData.replace(/&amp;/g,"&").replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'");
+var strData = BEFORE.innerHTML;
+frm.bef_intercepter.value = strData.replace(/&amp;/g,"&").replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'");
+strData = AFTER.innerHTML;
+frm.aft_intercepter.value = strData.replace(/&amp;/g,"&").replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'");
 </script>

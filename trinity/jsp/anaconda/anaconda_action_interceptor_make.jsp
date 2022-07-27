@@ -31,9 +31,9 @@
 	try
 	{		
 		wa = xmlResource.searchWebActionEqualsName(strBizCol,strBizProc);
-		strAfter	=	BusinessHelper.convert(wa.getAOP_POINT_CLASS());
-		strBefore	=	BusinessHelper.convert(wa.getAOP_POINT_METHOD());
-		strIC = wa.getAOP_INTERCEPTER();
+		strAfter	=	BusinessHelper.convert(wa.getAFT_INTERCEPTER());
+		strBefore	=	BusinessHelper.convert(wa.getBEF_INTERCEPTER());
+		strIC = wa.getCLASS_INTERCEPTER();
 
 		if(strIC.equals(BlankField.AC_CONDITIONAL_INTERCEPTER_CLASS)|| strIC.equals(BlankField.AC_SIMPLE_INTERCEPTER_CLASS))
 		{
@@ -57,13 +57,10 @@
 
 		IntercepterSourceXmlResource res = IntercepterSourceXmlResource.getInstance();
 
-		System.out.println(">>>>>>>>>>>>>>>>[" + res.getIntercepterSource(strPKG, strIC) + "]");
-
-
 		if(strPKG.length() > 0)
 		{
 			
-			System.out.println(strPKG + "/" + strIC);
+			// System.out.println(strPKG + "/" + strIC);
 
 			res.register(strPKG
 						,strIC
@@ -73,21 +70,12 @@
 						,strICType);
 			res.save();
 
-			if(res.getIntercepterSourceCollection(strPKG) == null)
-			{
-				System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++");
-			}
-			else
-			{
-				System.out.println("-------------------------------------------------");
-			}
-
-			System.out.println("XML=" + res.toIntercepterLogicXml());
+			// System.out.println("XML=" + res.toIntercepterLogicXml());
 
 			// Package + Class Name 으로 Build
 			strCompileResult = res.build(strPKG,strIC);
 			// BizData 에는 Package 와 Class Name 이 연결되어 저장.
-			wa.setAOP_INTERCEPTER(strPKG + "."+strIC);
+			wa.setCLASS_INTERCEPTER(strPKG + "."+strIC);
 			//strCompileResult = BusinessHelper.convert(strCompileResult);
 			strCompileResult = strCompileResult == "" ? "Normal" : strCompileResult;
 		}

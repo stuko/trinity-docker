@@ -62,17 +62,14 @@
 	int MAX_PRC = 2000;
 %>
 <script language="javascript">
-<!--
 function fn_ActReg()
 {
 	document.location.href = '/Anaconda.do?CMD=CMD_SEQ_106123592361287269752055';
-	//window.open("/Anaconda.do?CMD=CMD_SEQ_106123592361287269752055","ActReg","height=400,width=670,left=200,top=20,status=no, location=no, toolbar=no, resizable=yes, scrollbars=yes");
 }
 
 function fn_ActCollection(args)
 {
 	document.location.href = '/Anaconda.do?CMD=CMD_SEQ_104447509961287275593540&ActColName='+args;
-	// window.open("/jsp/WebAction/Action_Reg.jsp?ActColName="+args,"ActCollection","height=400,width=670,left=200,top=20,status=no, location=no, toolbar=no, resizable=yes, scrollbars=yes ");
 }
 
 function fn_ActMod(args1, args2, args3, args4)
@@ -86,9 +83,6 @@ function fn_ActMod(args1, args2, args3, args4)
         ActKorName.value = args4;
         submit();
     }
-
-	// document.location.href = "/Anaconda.do?CMD=CMD_SEQ_109283388491287276486644&ActColName="+args1+"&ActKorColName="+args2+"&ActName="+args3+"&ActKorName="+args4;
-	//window.open("/jsp/WebAction/Action_mod.jsp?ActColName="+args1+"&ActKorColName="+args2+"&ActName="+args3+"&ActKorName="+args4,"","height=800,width=730,left=200,top=20,status=no, location=no, toolbar=no, resizable=yes, scrollbars=yes");
 }
 
 function fn_ActDefaultMod(args1, args2, args3, args4, args5)
@@ -121,7 +115,6 @@ function fn_BizCollection(args)
 
 function fnViewView(strCollectionName,strViewName)
 {
-	//window.open("/Anaconda.do?CMD=CMD_SEQ_105760595001287408553144&title=화면정보&View=" + strViewName,"","height=450,width=800,left=200,top=20,status=no, location=no, toolbar=no,resizable=yes, scrollbars=yes");
 	document.location.href ="/Anaconda.do?CMD=CMD_SEQ_105760595001287408553144&title=화면정보&View=" + strViewName;
 }
 
@@ -168,7 +161,6 @@ function fn_SelectActionGroup(select)
 {
 	fnSearchWACList(select.options[select.selectedIndex].value);
 }
-//-->
 </script>
 
 <form name="frmGoActionInfo" method="post" action="/Anaconda.do">
@@ -509,7 +501,7 @@ function fnMoveAction(){
 					}
 				}
 			} catch (Exception e) {
-				ExceptionCenter.catchException(e);
+				e.printStackTrace();
 			}
 		%>
 		</tbody>

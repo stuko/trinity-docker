@@ -246,7 +246,7 @@
 			}	
 	    }
 		xmlResource.release();
-		} catch (Exception e) { ExceptionCenter.catchException(e); }
+		} catch (Exception e) { e.printStackTrace(); }
 %>
 						</tbody>
 					</table>

@@ -240,7 +240,7 @@ function chkForm(frm)
 			}
 		}
 	} catch (Exception e) {
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>
 		    </tbody>	  

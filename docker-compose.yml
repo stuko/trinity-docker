@@ -7,7 +7,7 @@ services:
         - "trinity-db:192.168.57.243"
       container_name: trinity-db
       environment:
-        HSQLDB_DATABASE_HOST: 192.168.57.243
+        HSQLDB_DATABASE_HOST: trinity-db
         HSQLDB_USER: sa
         HSQLDB_PASSWORD: sa
         HSQLDB_TRACE: "false"
@@ -20,13 +20,13 @@ services:
         - "./db:/opt/database"
       restart: always
     web:
-      image: tomcat:9
+      image: tomcat:8
       hostname: trinity-web
       extra_hosts:
         - "trinity-db:192.168.57.243"
       container_name: trinity-web
       environment:
-        JDBC_URL: jdbc:hsqldb:hsql://192.168.57.243:9001/
+        JDBC_URL: jdbc:hsqldb:hsql://trinity-db:9001/anaconda
         JDBC_USER: sa
         JDBC_PASS: sa
       ports:

@@ -47,15 +47,15 @@
 			isBP = true;
 			bd = bc.getBusinessData(strBizProc);	
 			strICType = BlankField.INTERCEPTER_BIZPROCESS;
-			strAfter	=	BusinessHelper.revert(bd.getAOP_POINT_CLASS());
-			strBefore	=	BusinessHelper.revert(bd.getAOP_POINT_METHOD());
-			strIC = bd.getAOP_INTERCEPTER();
+			strAfter	=	BusinessHelper.revert(bd.getAFT_INTERCEPTER());
+			strBefore	=	BusinessHelper.revert(bd.getBEF_INTERCEPTER());
+			strIC = bd.getCLASS_INTERCEPTER();
 		}
 		else
 		{
-			strAfter	=	BusinessHelper.revert(bc.getAOP_POINT_CLASS());
-			strBefore	=	BusinessHelper.revert(bc.getAOP_POINT_METHOD());
-			strIC = bc.getAOP_INTERCEPTER();
+			strAfter	=	BusinessHelper.revert(bc.getAFT_INTERCEPTER());
+			strBefore	=	BusinessHelper.revert(bc.getBEF_INTERCEPTER());
+			strIC = bc.getCLASS_INTERCEPTER();
 		}
 
 		if(strIC.equals(BlankField.BC_CONDITIONAL_INTERCEPTER_CLASS)
@@ -75,14 +75,10 @@
 		
 		out.println(strBizCol);
 		out.println(strBizProc);
-		// out.println(bc.size());
-		
 		
 		out.println("Original Class Name = " + strIC);
 		out.println(strAfter);
 		out.println(strBefore);
-		//out.println(BlankField.BC_CONDITIONAL_INTERCEPTER_CLASS);
-		//out.println(BlankField.BC_SIMPLE_INTERCEPTER_CLASS);
 
 		out.println(strICType);
 		// Package 가 있는 경우.
@@ -138,11 +134,8 @@
 
 			out.println("<textarea cols='150' rows='30'><![CDATA[" + res.toIntercepterLogicXml() +"]]></textarea>");
 
-			// Package + Class Name 으로 Build
 			strCompileResult = res.build(strPKG,strIC);
-			// BizData 에는 Package 와 Class Name 이 연결되어 저장.
 			
-			//strCompileResult = BusinessHelper.revert(strCompileResult);
 			if(strCompileResult.equals(""))
 			{
 				strCompileResult  =  "정상";

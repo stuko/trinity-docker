@@ -24,9 +24,9 @@ EJB = SERVICE_NAME, SOAP = SERVICE, SQL = SQL
 
 	String strColbizname		= request.getParameter("colbizname");
 	String strBizName			= request.getParameter("BizName");
-	String strAopInter			= "";
-	String strAopPointCls		= "";
-	String strAopPointMethod	= "";
+	String strClassIntercepter			= "";
+	String strAftIntercepter		= "";
+	String strBefIntercepter	= "";
 	String strDataSource		= "";
 	String strEjbMethod			= "";
 	String strFactory			= "";
@@ -54,9 +54,9 @@ EJB = SERVICE_NAME, SOAP = SERVICE, SQL = SQL
 	{
 		bizdata = xmlResource.searchBusinessDataEqualsServiceName(strColbizname,strBizName);
 
-		strAopInter			=	bizdata.getAOP_INTERCEPTER();
-		strAopPointCls		=	BusinessHelper.convert(bizdata.getAOP_POINT_CLASS());
-		strAopPointMethod	=	BusinessHelper.convert(bizdata.getAOP_POINT_METHOD());
+		strClassIntercepter		=	bizdata.getCLASS_INTERCEPTER();
+		strAftIntercepter		=	BusinessHelper.convert(bizdata.getAFT_INTERCEPTER());
+		strBefIntercepter	=	BusinessHelper.convert(bizdata.getBEF_INTERCEPTER());
 		strDataSource		=	bizdata.getDATA_DATASOURCE();
 		strEjbMethod		=	bizdata.getEJBCreateMethod();
 		strFactory			=	bizdata.getFACTORY();
@@ -67,7 +67,7 @@ EJB = SERVICE_NAME, SOAP = SERVICE, SQL = SQL
 		strServiceName		=	bizdata.getSERVICE_NAME();
 		strejbhome_interface=   bizdata.getEJBHOME_INTERFACE();
 		strejbcreate_method =   bizdata.getEJBCreateMethod();
-		strServiceName      =   BusinessHelper.convert(strServiceName);
+		strService     =   BusinessHelper.convert(strService);
 
 		strSQL				=	BusinessHelper.convert(bizdata.getSQL());
 		strSubSQL			=	BusinessHelper.convert(bizdata.getSubSQL()); 
@@ -91,7 +91,7 @@ EJB = SERVICE_NAME, SOAP = SERVICE, SQL = SQL
 		
 		
 	} catch (Exception e) {
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>
 
@@ -107,7 +107,7 @@ function createInterceptor()
 {
 	with(frm)
 	{
-		if(aop_point_method.value == null && aop_point_class.value == null)
+		if(bef_intercepter.value == null && aft_intercepter.value == null)
 		{
 			alert("If you want to write interceptor, you should enter the before and after code.");
 			return;
@@ -206,14 +206,6 @@ function AddFamily(str)
 	    tCell4.align = "center";
 	    tCell4.innerHTML =  "<button name='delete' type='button' class='btn btn-danger' onClick='javascript:delRow(\"AddChild_Tr_New_" + skey + "\")' value='Delete'>Delete</button>";
 
-	    //두번째row
-	    //var tRow2 = Tbl.insertRow();
-	    //var tCell5 = tRow2.insertCell();
-
-	    //tCell5.colSpan = "4";
-	    //tCell5.className = "dot";
-	    //tCell5.height = "1";
-
 	    fNum++;
 	}//end for
 }
@@ -256,12 +248,8 @@ function defaultSQL()
 {
 	with(frm)
 	{
-		// factory.value='';
-		// jnpinterface.value='';
-		// jndiname.value='';
 		data_datasource.value='java:comp/env/jdbc/bestmember';
-		// biz_url.value='';
-		service_name.value='';
+		service.value='';
 	}
 }
 
@@ -297,7 +285,7 @@ function selectType(num)
 	'  		</tr>' +
 	'		<tr>' +
 	'    	  <td class="left" width="200">SQL</td>' +
-	'    	  <td>&nbsp;<textarea class="styled" name="service_name" style="width:600px;height:400px;" nowrap></textarea></td>	' +
+	'    	  <td>&nbsp;<textarea class="styled" name="service" style="width:600px;height:400px;" nowrap></textarea></td>	' +
 	'  		</tr>' +
 	'	</tbody>' +
 	'</Table>	';
@@ -324,7 +312,7 @@ function selectType(num)
 	'  		</tr>' +
 	'		<tr>' +
 	'    	  <td class="left" width="200">Parent SQL</td>' +
-	'    	  <td>&nbsp;<textarea class="styled" name="service_name" style="width:470px;height:100px;" nowrap></textarea></td>	' +
+	'    	  <td>&nbsp;<textarea class="styled" name="service" style="width:470px;height:100px;" nowrap></textarea></td>	' +
 	'  		</tr>' +
 	'		<tr>' +
 	'    	  <td class="left" width="200">Child SQL</td>' +
@@ -355,7 +343,7 @@ function selectType(num)
 	'  		</tr>' +
 	'		<tr>' +
 	'    	  <td class="left" width="200">SQL</td>' +
-	'    	  <td>&nbsp;<textarea class="styled" name="service_name" style="width:470px;height:100px;" nowrap></textarea></td>	' +
+	'    	  <td>&nbsp;<textarea class="styled" name="service" style="width:470px;height:100px;" nowrap></textarea></td>	' +
 	'  		</tr>' +
 	'	</tbody>' +
 	'</Table>	';
@@ -398,7 +386,7 @@ function selectType(num)
 	'  		</tr> ' +
 	'		<tr> ' +
 	'    	  <td class="left" width="200">EJB Interface Method(EJB 2.0 ver)</td> ' +
-	'    	  <td>&nbsp;<textarea class="styled" name="service_name" style="width:470px;height:100px;"><%=strServiceName%></textarea></td>	 ' +
+	'    	  <td>&nbsp;<textarea class="styled" name="service" style="width:470px;height:100px;"><%=strService%></textarea></td>	 ' +
 	'  		</tr> ' +
 	'	</tbody>' +
 	'</Table> ';
@@ -429,7 +417,7 @@ function selectType(num)
 	'  		</tr> ' +
 	'		<tr> ' +
 	'    	  <td class="left" width="200">SOAP Service method</td> ' +
-	'    	  <td>&nbsp;<textarea class="styled" name="service_name" style="width:470px;height:100px;"><%=strServiceName%></textarea></td>	 ' +
+	'    	  <td>&nbsp;<textarea class="styled" name="service" style="width:470px;height:100px;"><%=strService%></textarea></td>	 ' +
 	'  		</tr> ' +
 	'	</tbody>' +
 	'</Table> ';
@@ -453,7 +441,7 @@ function selectType(num)
 	'  		</tr> ' +
 	'		<tr> ' +
 	'    	  <td class="left" width="200">POJO Method Name</td> ' +
-	'    	  <td>&nbsp;<textarea class="styled" name="service_name" style="width:470px;height:100px;"><%=strServiceName%></textarea></td>	 ' +
+	'    	  <td>&nbsp;<textarea class="styled" name="service" style="width:470px;height:100px;"><%=strService%></textarea></td>	 ' +
 	'  		</tr> ' +
 	'	</tbody>' +
 	'</Table> ';
@@ -495,7 +483,7 @@ function selectType(num)
 	'  		</tr> ' +
 	'		<tr> ' +
 	'    	  <td class="left" width="200">process name</td> ' +
-	'    	  <td>&nbsp;<textarea class="styled" name="service_name" style="width:510px;height:100px;"><%=strServiceName%></textarea></td>	 ' +
+	'    	  <td>&nbsp;<textarea class="styled" name="service" style="width:510px;height:100px;"><%=strService%></textarea></td>	 ' +
 	'  		</tr> ' +
 	'	</tbody>' +
 	'</Table> ';
@@ -510,21 +498,17 @@ function selectType(num)
 		{
 			div.innerHTML = DIV_SQL;
 			var strData = SQLTEXT.innerHTML;
-			frm.service_name.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
-			//frm.service_name.value = SQLTEXT.innerHTML;
-
+			frm.service.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
 		}
 	}
 	else if(num == 1)  // MULTI_SQL
 	{
 		div = document.getElementById('DIV_PROCESS');
-		// if(div != null) div.innerHTML = DIV_MULTI;
 		if(div != null)
 		{
 			div.innerHTML = DIV_MULTI;
-			//frm.service_name.innerHTML = SQLTEXT.innerHTML;
 			var strData = SQLTEXT.innerHTML;
-			frm.service_name.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
+			frm.service.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
 		}
 
 	}
@@ -561,10 +545,8 @@ function selectType(num)
 			div.innerHTML = DIV_SUB_SQL;
 			var strData = SQLTEXT.innerHTML;
 			var strSubData = SUBSQLTEXT.innerHTML;
-			frm.service_name.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
+			frm.service.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
 			frm.sub_service_name.value = strSubData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
-			//frm.service_name.value = SQLTEXT.innerHTML;
-
 		}
 	}
 
@@ -621,14 +603,12 @@ function doRun(callerName, REQ)
 		div_obj.style.position = "absolute";
 		div_obj.style.left = (posX+10) + 'px';
 		div_obj.style.top = (posY+10) + 'px';
-		//fnLocateDivInClickEventNoScroll("div_search_layout",posX,posY );
 	}
 	
 }
 
 function fnSetData(data,key)
 {
-	//alert(key);
 	with(frm)
 	{
 		var obj = eval("frm."+key);
@@ -806,7 +786,7 @@ function fnSetData(data,key)
 		<tr>
 	  	<tr>
 		  <td>Interceptor class name</td>
-		  <td>&nbsp;<input type="text" class="styled" name="aop_intercepter" size="50" value="<%=strAopInter%>">
+		  <td>&nbsp;<input type="text" class="styled" name="class_intercepter" size="50" value="<%=strClassIntercepter%>">
 		  &nbsp;<SELECT NAME='intercepter_type' onChange="javascript:selectIntercepterType(this.selectedIndex);">
 			    <OPTION value='' selected>Enter the class name</OPTION>
 			    <OPTION value='com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter'>Conditional</OPTION>
@@ -816,7 +796,7 @@ function fnSetData(data,key)
   		</tr>
   		<tr>
 		  <td>Before</td>
-		  <td>&nbsp;<textarea class="styled code" name="aop_point_method" id="aop_point_method" style="width:600px;height:300px;" wordWrap="true"></textarea>
+		  <td>&nbsp;<textarea class="styled code" name="bef_intercepter" id="bef_intercepter" style="width:600px;height:300px;" wordWrap="true"></textarea>
                <select name="ref_before" id="ref_before" class="styled">
                    <option value=''>Please select below code</option>
                    <option value='"create".equals(request.getFieldValue("code"))'>Register process</option>
@@ -830,7 +810,7 @@ function fnSetData(data,key)
   		</tr>
   		<tr>
     	  <td>After</td>
-    	  <td>&nbsp;<textarea class="styled code" name="aop_point_class" style="width:600px;height:300px;"  wordWrap="true"></textarea></td>
+    	  <td>&nbsp;<textarea class="styled code" name="aft_intercepter" style="width:600px;height:300px;"  wordWrap="true"></textarea></td>
   		</tr>
   		</tbody>
   		</table>
@@ -911,13 +891,13 @@ function fnSetData(data,key)
 </form>
 <DIV id="SQLTEXT" style="visibility:hidden"><%=strSQL%></DIV>
 <DIV id="SUBSQLTEXT" style="visibility:hidden"><%=strSubSQL%></DIV>
-<DIV id="AOPBEFORE" style="visibility:hidden"><%=strAopPointMethod%></DIV>
-<DIV id="AOPAFTER" style="visibility:hidden"><%=strAopPointCls%></DIV>
+<DIV id="BEF_INTERCEPTER" style="visibility:hidden"><%=strBefIntercepter%></DIV>
+<DIV id="AFT_INTERCEPTER" style="visibility:hidden"><%=strAftIntercepter%></DIV>
 <script>
 
 $(function(){
     $('#ref_before').change(function(){
-        $('#aop_point_method').val($(this).val());    
+        $('#bef_intercepter').val($(this).val());    
     });
 });
 
@@ -942,25 +922,19 @@ function getObj()
 
 function selectIntercepterType(idx)
 {
-	if(idx != 0) frm.aop_intercepter.value = frm.intercepter_type[idx].value;
+	if(idx != 0) frm.class_intercepter.value = frm.intercepter_type[idx].value;
 }
 
 selectType(frm.biz_type.selectedIndex);
-var strData = AOPBEFORE.innerHTML;
-// alert(strData.replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/\<BR\>/g,"\n"));
-frm.aop_point_method.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
-// frm.aop_point_method.innerHTML = strData;
-// alert(frm.aop_point_method.value);
-strData = AOPAFTER.innerHTML;
-frm.aop_point_class.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
-// frm.aop_point_class.innerHTML = strData;
-// alert(strData);
-// alert(frm.aop_point_class.value);
+var strData = BEF_INTERCEPTER.innerHTML;
+frm.bef_intercepter.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
+strData = AFT_INTERCEPTER.innerHTML;
+frm.aft_intercepter.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
 </script>
 
 <%
 	} catch (Exception e) {
 		out.println(e.toString());
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>

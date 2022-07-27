@@ -79,7 +79,6 @@ function AddFamily(str)
 		    //첫번째row
 			var tRow1 = createElement("TR","","");
 			Tbl.appendChild(tRow1);
-		    //var tRow1 = Tbl.insertRow();
 			var skey = _rand();
 		    tRow1.setAttribute("id","AddChild_Tr_New_" + skey);
 			var tCell1 = createElement("TD","","");
@@ -88,9 +87,6 @@ function AddFamily(str)
 			tRow1.appendChild(tCell1);
 			tRow1.appendChild(tCell2);
 			tRow1.appendChild(tCell3);
-		    //var tCell1 = tRow1.insertCell();
-		    //var tCell2 = tRow1.insertCell();
-		    //var tCell3 = tRow1.insertCell();		    
 		        
 		    tCell1.bgColor = "#F6FCFF";
 		    tCell1.align = "center";
@@ -238,28 +234,6 @@ function showAction(div_object)
 			<td class="left">&nbsp;Action group (Context)&nbsp;&nbsp;</td>
 			<td><input type="text"  class="styled" name="Context" size="40" value="<%=strContext %>"></input></td>
 		  </tr>
-<!--
-		 </tbody>
-		 </table>
-<br>
-    	<a href="javascript:showAction('div_collection');">
-		<img src="/jsp/anaconda/img/plus.png" width="10px" height="10px" border="0" absmiddle></img>&nbsp;More
-		</a>
-		  &nbsp;&nbsp;
-<br>
-<br>
-		<div id="div_collection" style="display:none;">
-		<p style="color:blue;font-weight:bold;size:13px;margin:0 0 0 0;">* Additional action info.</p>
-		<hr style="margin:0 0 0 0;"/>	
-		<br>
-		<table class="table_hydra" cellspacing="0" cellpadding="0">
-		<caption>Create action group</caption>
-		<colgroup>
-		<col width="30%">
-		<col>
-		</colgroup>
-		<tbody>
--->
 		  <tr>
 			<td class="left">&nbsp;Layout&nbsp;&nbsp;</td>
 			<td><input type="text" name="Layout"  class="styled" size="40" value="<%=strLayout %>"></input>&nbsp;&nbsp;<a href="javascript:fnSearchLayout();" style="color:blue;"><img src="/jsp/anaconda/img/search_result.png" width="10px" height="10px" border="0" align="absmiddle"></img>Search</a></td>
@@ -305,25 +279,11 @@ function showAction(div_object)
 			out.println("<td width=\"15%\" bgcolor=\"#F6FCFF\"><input type='hidden' /><button name='delete' type='button' class='btn btn-danger' onClick='javascript:delRow(\"AddChild_Td_"+i+"\")' value='Delete' >Delete</button><input type='hidden' /></td>");
 			out.println("</tr>");
 		}	
-		//xmlResource.release();
 	}
 %>
 		
  	    </tbody>
 </table>
- <!--table width="100%" border="0" align="center" cellpadding="2" cellspacing="2">
-	<tr>
- 	<td width='30%' height='25' align='left'>
- 	 <%
-		if(strCode.equals("upd")) 
-		{
-	%>
-			<button type="button" class="btn btn-secondary" name="" value="Copy" onClick="javascript:copyWebActionCollection()">Copy</button>
-	<%} %>
-	<input type="submit" class="button white" name="" value="<%=strButtonName%>" onClick="return chkForm(this.form)">
-	<input type="button" class="button white" name="" value="Back" onClick="javascript:history.back();"></td>
-	</tr>
- </table-->	  
  </form>
  
  
@@ -350,6 +310,6 @@ function getObj()
 <p></p>
 <%
  	} catch (Exception e) {
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>

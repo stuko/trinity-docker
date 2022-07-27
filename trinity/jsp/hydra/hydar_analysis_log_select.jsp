@@ -78,7 +78,7 @@ $(document).ready(function(){
 <%
 }catch(Exception e)
 {
-	ExceptionCenter.catchException(e);
+	e.printStackTrace();
 	out.println(e.toString());
 }
 %>

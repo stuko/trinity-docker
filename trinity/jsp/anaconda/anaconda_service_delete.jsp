@@ -11,7 +11,7 @@
 		BizLogicXmlResource xmlResource = BizLogicXmlResource.getInstance();	
 		xmlResource.removeBusinessCollectionFile(strBizCol);
 		xmlResource.release();
-	} catch (Exception e) {ExceptionCenter.catchException(e);}
+	} catch (Exception e) {e.printStackTrace();}
 %>
 <html>
 <head>

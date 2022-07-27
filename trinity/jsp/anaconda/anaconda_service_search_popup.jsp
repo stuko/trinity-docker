@@ -86,7 +86,7 @@ function fn_FrmInput(args){
 					out.println("</tr>");				    
 				}	
 				xmlResource.release();
-			} catch (Exception e) {	ExceptionCenter.catchException(e); }
+			} catch (Exception e) {	e.printStackTrace(); }
 		%>
 		</tbody>
 	</table>

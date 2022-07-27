@@ -44,7 +44,7 @@
 			strSessionValue = auth.getAuthItem(("MEMBER_NAME"));	
 		}
 
-		System.out.println(strSessionValue);
+		// System.out.println(strSessionValue);
 
 		String application_domain = helper.nullToString(request.getParameter("application_domain"));
 		String application_context = helper.nullToString(request.getParameter("application_context"));
@@ -73,7 +73,7 @@
 		//out.println(application_key);
 		if(helper.checkBusinessNull(application_key))
 		{
-			System.out.println(application_key);
+			// System.out.println(application_key);
 			xs = xsm.getXtremeSite(application_key);
 			if(xs != null)
 			{
@@ -146,7 +146,7 @@
 
 	} catch (Exception e) {
 	    e.printStackTrace();
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 		out.println(e.toString());
 	}
 %>

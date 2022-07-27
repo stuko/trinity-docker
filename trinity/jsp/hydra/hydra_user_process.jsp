@@ -21,6 +21,6 @@
 	catch (Exception e) 
 	{
 		e.printStackTrace();
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>

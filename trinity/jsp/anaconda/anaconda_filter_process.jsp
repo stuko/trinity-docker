@@ -38,24 +38,24 @@
 				
 		if (strCode.equals("ins") || strCode.equals("upd") )
 		{
-			System.out.println("strCode="+strCode);
+			// System.out.println("strCode="+strCode);
 		    if(	strCode.equals("ins"))
 		    {
-		    	System.out.println("INS=====");		    	
+		    	// System.out.println("INS=====");		    	
 				strActColName = autoseq.getFilterCollectionSeq();	
 				// webActionFilterCollection = xmlResource.createWebActionFilterCollection(strActColName);
-				System.out.println("strActColName="+strActColName);
+				// System.out.println("strActColName="+strActColName);
 			}
 			else
 			{
-				System.out.println("NOT INS=====");
+				// System.out.println("NOT INS=====");
 				webActionFilterCollection = xmlResource.getWebActionFilterCollection(strActColName);
 			}
 			
 			boolean Found = false;
 			ArrayList foundData = new ArrayList();
 
-			System.out.println("strActFilterKorName.length=="+strActFilterKorName.length);
+			// System.out.println("strActFilterKorName.length=="+strActFilterKorName.length);
 
 			for (int i=0; i<strActFilterKorName.length; i++)
 			{	
@@ -68,10 +68,10 @@
 					strActName = strAct_Name[i];
 				}
 
-				System.out.println("strActColName=="+strActColName);
-				System.out.println("strActName=="+strActName);
-				System.out.println("strActFilterKorName[i]=="+strActFilterKorName[i]);
-				System.out.println("forward=="+forward[i]);
+				// System.out.println("strActColName=="+strActColName);
+				// System.out.println("strActName=="+strActName);
+				// System.out.println("strActFilterKorName[i]=="+strActFilterKorName[i]);
+				// System.out.println("forward=="+forward[i]);
 				
 				xmlResource.update(strActColName
 										 , strActColKorName
@@ -98,14 +98,14 @@
 			xmlResource.save();
 			RTN_CODE ="100";
 		}
-		// System.out.println("getFILTERCOLLECTION_NAME====="+webActionFilterCollection.getFILTERCOLLECTION_NAME());
+		// // System.out.println("getFILTERCOLLECTION_NAME====="+webActionFilterCollection.getFILTERCOLLECTION_NAME());
 		
 		
 		xmlResource.release();
 
 	} catch (Exception e) {
 	    e.printStackTrace();
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 		out.println(e.toString());
 	}
 %>

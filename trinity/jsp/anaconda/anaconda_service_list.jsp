@@ -277,7 +277,9 @@ function fn_SelectServiceGroup(select)
 					    int i = 0;
 					    for(int j =0 ;iterator.hasNext();j++)
 					    {
-							bizdata = (BusinessData)iterator.next();
+							Object object = iterator.next();
+							if(!(object instanceof BusinessData)) continue;
+							bizdata = (BusinessData)object;
 							
 							if(!bizdata.hasOwner(strSessionValue)) continue; 
 							
@@ -321,7 +323,7 @@ function fn_SelectServiceGroup(select)
 				}	
 				xmlResource.release();
 			} catch (Exception e) {
-				ExceptionCenter.catchException(e);
+				e.printStackTrace();
 			}
 		%>
 		</tbody>

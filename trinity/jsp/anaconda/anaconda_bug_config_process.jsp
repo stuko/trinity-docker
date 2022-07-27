@@ -36,6 +36,6 @@
 	} 
 	catch (Exception e) 
 	{
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>

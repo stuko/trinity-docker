@@ -39,9 +39,9 @@
 	try
 	{
                 String me = "Default";
-                System.out.println("#### CODE #####");
-                System.out.println(code);
-                System.out.println("#### CODE #####");
+                // System.out.println("#### CODE #####");
+                // System.out.println(code);
+                // System.out.println("#### CODE #####");
 		BusinessData businessData = (BusinessData)request.getAttribute(InitClass.getBusinessDataValue());
 		if(code.equals("save"))
 		{
@@ -97,11 +97,11 @@
 		else if(code.equals("save_wac"))
 		{
                         me = "save_wac";
-			System.out.println("###### SAVE WAC " + application_domain + "/" + application_context + " ######");
+			// System.out.println("###### SAVE WAC " + application_domain + "/" + application_context + " ######");
 			xs = xsm.getSite(application_domain,application_context);
 			if(xs != null)
 			{
-				System.out.println("############ XS IS NOT NULL ###############");
+				// System.out.println("############ XS IS NOT NULL ###############");
 				String[] wacList = request.getParameterValues("wac_checked_values");
 				if(wacList != null)
 				{
@@ -111,7 +111,7 @@
 						hm = new HashMap();
 						xs.setWacList(hm);
 					}
-					System.out.println("############ WAC IS NOT NULL ###############");
+					// System.out.println("############ WAC IS NOT NULL ###############");
 					Set keys = hm.keySet();
 					Object[] arrKey = keys.toArray();
 					//---------------------------------------------------------------------
@@ -186,12 +186,12 @@
 		else if(code.equals("save_layout"))
 		{
                         me = "layout";
-			System.out.println("#### SAVE WAC " + application_domain + "/" + application_context + " #####");
+			// System.out.println("#### SAVE WAC " + application_domain + "/" + application_context + " #####");
 			xs = xsm.getSite(application_domain,application_context);
 			if(xs != null)
 			{
                                 me = "xm is not null";
-				System.out.println("############ XS IS NOT NULL ###############");
+				// System.out.println("############ XS IS NOT NULL ###############");
 				String wac_name = request.getParameter("application_wac_name");
 				String layout_name = request.getParameter("application_layout");
 				xs.addWacList(wac_name,layout_name);
@@ -217,6 +217,6 @@
 	} 
 	catch (Exception e) 
 	{
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>

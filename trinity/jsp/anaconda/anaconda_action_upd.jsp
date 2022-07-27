@@ -23,8 +23,6 @@
 	String strLayoutKorName	= request.getParameter("LayoutKorName");
 	
 //등록시 사용하는 파라미터
-//	System.out.println("strCode="+strCode);
-//	System.out.println("strActColName="+strActColName);
 	String strContext = request.getParameter("Context");
 
 	String strActName = "";
@@ -46,9 +44,9 @@
 	String strActDesc[] = request.getParameterValues("ActDesc");
 	String nextaction = request.getParameter("nextaction");
 	String bizservice = request.getParameter("bizservice");
-	String aop_intercepter = request.getParameter("aop_intercepter");
-	String aop_pointclass = request.getParameter("aop_point_class");
-	String aop_pointmethod = request.getParameter("aop_point_method");
+	String class_intercepter = request.getParameter("class_intercepter");
+	String aft_intercepter = request.getParameter("aft_intercepter");
+	String bef_intercepter = request.getParameter("bef_intercepter");
 	String korname = request.getParameter("korname");
 	String filter_ignore = request.getParameter("filter_ignore");
 	String forward_type = request.getParameter("forward_type");
@@ -82,7 +80,6 @@
 			{
 				webActionCollection = xmlResource.getWebActionCollection(strActColName);
 			}
-			System.out.println(strActColName);
 		    webActionCollection.setWEB_CONTEXT(strContext);
 		    webActionCollection.setLAYOUT_NAME(strLayoutName);
 		    
@@ -166,22 +163,9 @@
 				}
 				if( forward == null || forward.equals("null") || forward.equals("") || forward.trim().length() == 0)
 				{	
-ExceptionCenter.debug(this,"---- forward is null -------");					
-ExceptionCenter.debug(this,"forward : ["+forward+"]");
-ExceptionCenter.debug(this,"---- forward is null -------");					
-					
 					forward = autoseq.getViewSeq();
-ExceptionCenter.debug(this,"---- forward is created -------");					
-ExceptionCenter.debug(this,"forward : ["+forward+"]");
-ExceptionCenter.debug(this,"---- forward is created  -------");					
-
-
 				}else{
-ExceptionCenter.debug(this,"---- forward is Not null -------");					
-ExceptionCenter.debug(this,"forward : ["+forward+"]");
-ExceptionCenter.debug(this,"---- forward is Not null -------");					
-
-                                }
+                }
 		
 				WebAction webActionUpd = xmlResource.updateAction( strActColName
 									     , strActColKorName
@@ -197,9 +181,9 @@ ExceptionCenter.debug(this,"---- forward is Not null -------");
 										 , desc
 										 , nextaction
 										 , bizservice
-										 , aop_intercepter
-										 , aop_pointclass
-										 , aop_pointmethod
+										 , class_intercepter
+										 , aft_intercepter
+										 , bef_intercepter
 										 , filter_ignore
 										 , forward_type);
 				webActionUpd.setERROR_PAGE(error_page);
@@ -340,22 +324,6 @@ ExceptionCenter.debug(this,"---- forward is Not null -------");
 					);
 			bizXmlResource.save(bizXmlResource.getBusinessCollection(bseq));
 			bizXmlResource.release();
-			/**	
-			viewXmlResource.createView( strCols
-					 ,strKorCols
-					 ,vseq
-					 ,action.getKOR_NAME()
-					 ,null
-					 ,null
-					 ,null
-					 ,null
-					 ,null
-					 ,null
-					 ,action.getKOR_NAME()
-					 );
-			viewXmlResource.save();
-			viewXmlResource.release();
-			**/
 
 			xmlResource.save(xmlResource.getWebActionCollection(strCols));
 			
@@ -376,27 +344,6 @@ ExceptionCenter.debug(this,"---- forward is Not null -------");
 			String vseq = autoseq.getViewSeq();
 			// action.setBIZ_SERVICE(bseq);
 			action.setFORWARD(vseq);
-			/**
-			bizXmlResource.createBusinessData(bseq
-					,action.getKOR_NAME()
-					,"ChangeIt"
-					,action.getKOR_NAME()
-					,null
-					,null
-					,null
-					,null
-					,null
-					,null
-					,null
-					,null
-					,null
-					,null
-					,null
-					,null
-					);
-			bizXmlResource.save();
-			bizXmlResource.release();
-			**/	
 			viewXmlResource.createView( strCols
 					 ,strKorCols
 					 ,vseq
@@ -434,16 +381,11 @@ ExceptionCenter.debug(this,"---- forward is Not null -------");
 					webActionCollection.addWebAction(targetAction);
 				if("Y".equals(viewCopy))
 				{
-					ExceptionCenter.debug("#####################New View################");
 					ViewXmlResource viewResource = ViewXmlResource.getInstance();	
 					View view = viewResource.copyView(null,targetAction.getFORWARD());
 					viewResource.save(viewXmlResource.createViewCollection(view.getVIEW_COLLECTION_NAME()));
 					viewResource.release();
 					targetAction.setFORWARD(view.getFORWARD_NAME());
-				}
-				else
-				{
-					ExceptionCenter.debug("#####################" + viewCopy +"################");
 				}
 				xmlResource.save(webActionCollection);
 			}
@@ -484,8 +426,7 @@ ExceptionCenter.debug(this,"---- forward is Not null -------");
 		xmlResource.release();
 
 	} catch (Exception e) {
-	    e.printStackTrace();
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 		out.println(e.toString());
 	}
 %>
@@ -526,7 +467,7 @@ else if(RTN_CODE == '500') // insert OK
 	//opener.location.href = "/jsp/WebAction/Action_List.jsp";           
 	//self.close();	      
 }
-location.href = "/Anaconda.do?CMD=CMD_SEQ_108164918711286971872119&WAC=<%=strActColName%>";   
+	location.href = "/Anaconda.do?CMD=CMD_SEQ_108164918711286971872119&WAC=<%=strActColName%>";   
 </script>
 </body>
 </html>

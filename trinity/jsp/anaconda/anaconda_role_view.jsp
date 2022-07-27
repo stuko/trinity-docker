@@ -17,7 +17,7 @@
 <%
 	BusinessHelper helper  = new BusinessHelper();
 	String strColName= request.getParameter("Col");
-	System.out.println(strColName);
+	// System.out.println(strColName);
 	strColName = helper.getRoleString();
 	String strRole= request.getParameter("Role");
 	String strRoleName = "";	
@@ -73,7 +73,7 @@
 
 
 	} catch (Exception e) {
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>
 

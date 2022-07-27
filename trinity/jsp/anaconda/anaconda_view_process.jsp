@@ -213,6 +213,6 @@
         }else{
             out.println("{Result : \"Success\"}");
         }
-	} catch (Exception e) {ExceptionCenter.catchException(e);}
+	} catch (Exception e) {e.printStackTrace();}
 %>
 

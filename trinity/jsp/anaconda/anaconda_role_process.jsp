@@ -31,16 +31,16 @@
 	String strRoleClickMessage= request.getParameter("RoleClickMessage");
 	//String strNameSpace = request.getParameter("NameSpace");
 	
-	System.out.println(strColName);
-	System.out.println(strRoleName);
-	System.out.println(strRoleType);
-	System.out.println(strRoleUrl);
-	System.out.println(strRoleValue);
-	System.out.println(strParent);
-	System.out.println(strExpression);
-	System.out.println(strRoleFieldName);
-	System.out.println(strRoleUrlType);
-	System.out.println(strRoleClickMessage);
+	// System.out.println(strColName);
+	// System.out.println(strRoleName);
+	// System.out.println(strRoleType);
+	// System.out.println(strRoleUrl);
+	// System.out.println(strRoleValue);
+	// System.out.println(strParent);
+	// System.out.println(strExpression);
+	// System.out.println(strRoleFieldName);
+	// System.out.println(strRoleUrlType);
+	// System.out.println(strRoleClickMessage);
 	
 	
 	try
@@ -169,7 +169,7 @@
 		xmlResource.save(xmlResource.getRoleCollection(strColName));
 		xmlResource.release();
 	} catch (Exception e) {
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>
 

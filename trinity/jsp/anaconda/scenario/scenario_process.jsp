@@ -17,7 +17,7 @@
 	String strSearch	= request.getParameter("search");
 	String strTitle	= request.getParameter("scenario_title") != null ? URLDecoder.decode(request.getParameter("scenario_title"),"UTF-8") : request.getParameter("scenario_title");
 	String strObject	= request.getParameter("scenario_object") != null ? URLDecoder.decode(request.getParameter("scenario_object"),"UTF-8") : request.getParameter("scenario_object");
-        System.out.println("#####-->" + strObject);
+        // System.out.println("#####-->" + strObject);
         strObject = strObject.replace("\n","<BR>");
 	String strKey  = request.getParameter("scenario_key");
 	String strRtn = "";
@@ -156,7 +156,7 @@
 	} 
 	catch (Exception e) 
 	{
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>
 

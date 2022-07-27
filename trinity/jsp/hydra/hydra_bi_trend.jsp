@@ -242,7 +242,7 @@ if(error_queue.getCount() > 0)
 <%
 }catch(Exception e)
 {
-	ExceptionCenter.catchException(e);
+	e.printStackTrace();
 	out.println(e.toString());
 }
 %>

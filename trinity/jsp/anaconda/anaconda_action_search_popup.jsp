@@ -94,7 +94,7 @@ function fn_FrmInput(data)
 					}	
 				}
 			} catch (Exception e) {
-				ExceptionCenter.catchException(e);
+				e.printStackTrace();
 			}
 		%>
 		</tbody>

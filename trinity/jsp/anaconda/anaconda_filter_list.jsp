@@ -109,7 +109,7 @@ function fnFilterDelete(args)
 					}					
 				}
 			} catch (Exception e) {
-				ExceptionCenter.catchException(e);
+				e.printStackTrace();
 			}
 		%>
 		</tbody>

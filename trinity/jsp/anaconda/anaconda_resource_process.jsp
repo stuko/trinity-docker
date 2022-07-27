@@ -446,12 +446,12 @@
 				}
 			}
 			strRtn = resource.httpXmlData(businessData,collection);
-			System.out.println(strRtn);
+			// System.out.println(strRtn);
 		}
 		out.print(strRtn);
 	}
 	catch (Exception e) 
 	{
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>

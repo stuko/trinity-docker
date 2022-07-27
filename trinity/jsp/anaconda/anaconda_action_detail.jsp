@@ -10,14 +10,10 @@
 <%@ page import="com.stuko.anaconda.business.BusinessHelper"%>
 
 <%
-	// request.setCharacterEncoding("EUC-KR");
 	String 	strActColName		= request.getParameter("ActColName");
-	// String 	strActColKorName	= (new String(request.getParameter("ActKorColName").getBytes("8859_1"),"euc-kr"));
 	String 	strActColKorName	= request.getParameter("ActKorColName");
 	String 	name 				= request.getParameter("ActName");
-	// String 	korname				= (new String(request.getParameter("ActKorName").getBytes(),"euc-kr"));
 	String 	korname				= request.getParameter("ActKorName");
-//	String	korname 			= request.getParameter("ActKorName");
 	String	command				= null;
 	String	isauth				= null;
 	String	default_parameter	= null;
@@ -28,9 +24,9 @@
 	String	desc				= null;
 	String	nextaction			= null;
 	String	bizservice			= null;
-	String	aop_intercepter		= null;
-	String	aop_pointclass		= null;
-	String	aop_pointmethod		= null;
+	String	class_intercepter		= null;
+	String	aft_intercepter		= null;
+	String	bef_intercepter		= null;
 	String  filter_ignore       = null;
 	String  action_forward_type = null;
 	String  error_page          = null;
@@ -54,9 +50,9 @@
 		filter_ignore = action.getFILTER_IGNORE();
 		nextaction = action.getNEXT_ACTION();
 		bizservice = action.getBIZ_SERVICE();
-		aop_intercepter = action.getAOP_INTERCEPTER();
-		aop_pointclass = BusinessHelper.convert(action.getAOP_POINT_CLASS());
-		aop_pointmethod = BusinessHelper.convert(action.getAOP_POINT_METHOD());
+		class_intercepter = action.getCLASS_INTERCEPTER();
+		aft_intercepter = BusinessHelper.convert(action.getAFT_INTERCEPTER());
+		bef_intercepter = BusinessHelper.convert(action.getBEF_INTERCEPTER());
 		action_forward_type = action.getFORWARD_TYPE();
 		error_page = action.getERROR_PAGE();
 		korname = action.getKOR_NAME();
@@ -72,7 +68,7 @@
 		}
 
 	} catch (Exception e) {
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>
 <script language="javascript">
@@ -162,7 +158,7 @@ function createInterceptor()
 {
 	with(frm)
 	{
-		if(aop_point_method.value == null && aop_point_class.value == null)
+		if(bef_intercepter.value == null && aft_intercepter.value == null)
 		{
 			alert("If you want to make interceptor class, You have to write before or after interceptor source");
 			return;
@@ -422,19 +418,7 @@ function showAction(div_object)
 		  <td class="list_top" width="200">Owner</td>
 		  <td>&nbsp;<input type="text" class="styled" name="owner" size="20" value="<%=strSessionValue%>"></td>
   		</tr> 		
-  		<!--tr>
-		  <td class="list_top" width="200">aop_intercepter</td>
-		  <td>&nbsp;<input type="text" class="styled" name="aop_intercepter" size="55" value="<%=aop_intercepter%>"></td>
-  		</tr>
-  		<tr>
-		  <td class="list_top" width="200">aop_pointclass</td>
-		  <td>&nbsp;<input type="text" class="styled" name="aop_pointclass" size="55" value="<%=aop_pointclass%>"></td>
-  		</tr>
-  		<tr>
-		  <td class="list_bottom" width="200">aop_pointmethod</td>
-		  <td>&nbsp;<input type="text" class="styled" name="aop_pointmethod" size="55" value="<%=aop_pointmethod%>"></td>
-  		</tr-->
-		</tbody>
+  		</tbody>
 		</table>
 		</div>
 
@@ -470,7 +454,7 @@ function showAction(div_object)
 		<tbody>
   		<tr>
 		  <td class="left">Class</td>
-		  <td>&nbsp;<input type="text" class="styled" name="aop_intercepter" size="50" value="<%=aop_intercepter%>">
+		  <td>&nbsp;<input type="text" class="styled" name="class_intercepter" size="50" value="<%=class_intercepter%>">
 		  &nbsp;<SELECT NAME='intercepter_type' onChange="javascript:selectIntercepterType(this.selectedIndex);">
 			    <OPTION value='' selected>write directly</OPTION>
 			    <OPTION value='com.stuko.anaconda.intercepter.ConditionalActionIntercepter'>Conditional</OPTION>
@@ -480,11 +464,11 @@ function showAction(div_object)
   		</tr>
   		<tr>
 		  <td class="left">Before</td>
-		  <td>&nbsp;<textarea class="styled code" name="aop_point_method" style="width:90%;height:100px;" wordWrap="true"></textarea></td>
+		  <td>&nbsp;<textarea class="styled code" name="bef_intercepter" style="width:90%;height:100px;" wordWrap="true"></textarea></td>
   		</tr>
   		<tr>
     	  <td class="left">After</td>
-    	  <td>&nbsp;<textarea class="styled code" name="aop_point_class" style="width:90%;height:100px;"  wordWrap="true"></textarea></td>
+    	  <td>&nbsp;<textarea class="styled code" name="aft_intercepter" style="width:90%;height:100px;"  wordWrap="true"></textarea></td>
   		</tr>
 		</tbody>
 	  </table>
@@ -501,8 +485,8 @@ function showAction(div_object)
 </form>
 <br>
 
-<DIV id="AOPBEFORE" style="visibility:hidden"><%=aop_pointmethod%></DIV>
-<DIV id="AOPAFTER" style="visibility:hidden"><%=aop_pointclass%></DIV>
+<DIV id="BEFORE" style="visibility:hidden"><%=bef_intercepter%></DIV>
+<DIV id="AFTER" style="visibility:hidden"><%=aft_intercepter%></DIV>
 <SCRIPT LANGUAGE="JavaScript">
 
 $(function(){
@@ -511,21 +495,15 @@ $(function(){
     });
 });
 
-<!--
+
 function selectIntercepterType(idx)
 {
-	if(idx != 0) frm.aop_intercepter.value = frm.intercepter_type[idx].value;
+	if(idx != 0) frm.class_intercepter.value = frm.intercepter_type[idx].value;
 }
 
-var strData = AOPBEFORE.innerHTML;
-// alert(strData.replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/\<BR\>/g,"\n"));
-frm.aop_point_method.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
-// frm.aop_point_method.innerHTML = strData;
-// alert(frm.aop_point_method.value);
-strData = AOPAFTER.innerHTML;
-frm.aop_point_class.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
-// frm.aop_point_class.innerHTML = strData;
-// alert(strData);
-// alert(frm.aop_point_class.value);
-//-->
+var strData = BEFORE.innerHTML;
+frm.bef_intercepter.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
+strData = AFTER.innerHTML;
+frm.aft_intercepter.value = strData.replace(/&#47;/g,"/").replace(/&gt;/g,">").replace(/&lt;/g,"<").replace(/&quot;/g,"\"").replace(/<BR>/g,"\r\n").replace(/&#39;/g,"\'").replace(/&amp;/g,"&");
+
 </SCRIPT>

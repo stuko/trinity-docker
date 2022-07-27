@@ -28,6 +28,6 @@
 		out.print(strRtn);
 	} catch (Exception e) {
 		// out.println(e.toString());
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>

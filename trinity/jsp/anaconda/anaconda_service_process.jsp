@@ -38,15 +38,12 @@
 	String strFieldType[] 		= request.getParameterValues("field_type");
 	String strFieldValue[] 		= request.getParameterValues("field_value");	
 	String str_BizName			= request.getParameter("business_name");	
-	String str_AopInter			= request.getParameter("aop_intercepter");
-	str_AopInter  = str_AopInter == null ? "" : str_AopInter;
-	//str_AopInter                = new String(str_AopInter.getBytes("8859_1"),"euc-kr");
-	String str_AopPointCls		= request.getParameter("aop_point_class");
-	str_AopPointCls  = str_AopPointCls == null ? "" : str_AopPointCls;
-	//str_AopPointCls             = new String(str_AopPointCls.getBytes("8859_1"),"euc-kr");
-	String str_AopPointMethod	= request.getParameter("aop_point_method");
-	str_AopPointMethod  = str_AopPointMethod == null ? "" : str_AopPointMethod;	
-	//str_AopPointMethod          = new String(str_AopPointMethod.getBytes("8859_1"),"euc-kr");
+	String str_class_intercepter			= request.getParameter("class_intercepter");
+	str_class_intercepter  = str_class_intercepter == null ? "" : str_class_intercepter;
+	String str_aft_intercepter		= request.getParameter("aft_intercepter");
+	str_aft_intercepter  = str_aft_intercepter == null ? "" : str_aft_intercepter;
+	String str_bef_intercepter	= request.getParameter("bef_intercepter");
+	str_bef_intercepter  = str_bef_intercepter == null ? "" : str_bef_intercepter;	
 	String str_DataSource		= request.getParameter("data_datasource");
 	String str_EjbMethod		= request.getParameter("ejbcreatemethod");
 	String str_Factory			= request.getParameter("factory");
@@ -57,8 +54,6 @@
 
     str_ServiceName = (str_ServiceName == null || str_ServiceName.equals("null") ? "" : 	str_ServiceName);
 
-//	String str_Service			= request.getParameter("service");
-//	String str_SQL				= request.getParameter("biz_sql");
 	String str_BizType			= request.getParameter("biz_type");	
 	String str_Url				= request.getParameter("biz_url");
 	String strejbhome_interface	= request.getParameter("ejbhome_interface");
@@ -108,15 +103,13 @@
 		} else if (strCode.equals("mod")) {	//subject,webpage 신규등록 후 특정 webpage의 내용들을 변경 및 필드추가 로직
 			BusinessData bizdata = null;
 			businessCollection = xmlResource.getBusinessCollection(strColBizName);
-			//businessCollection.setBIZ_COLLECTION_KOR_NAME(strColKorBizName);
-			//cache time 셋팅			
 			businessCollection.setCACHE_TIME(long_Cache);
 			businessCollection.setCOUNT(strCount);
 			bizdata = businessCollection.getBusinessData(str_BizName);			
 
-			bizdata.setAOP_INTERCEPTER(str_AopInter);
-			bizdata.setAOP_POINT_CLASS(str_AopPointCls);
-			bizdata.setAOP_POINT_METHOD(str_AopPointMethod);			
+			bizdata.setCLASS_INTERCEPTER(str_class_intercepter);
+			bizdata.setAFT_INTERCEPTER(str_aft_intercepter);
+			bizdata.setBEF_INTERCEPTER(str_bef_intercepter);			
 			bizdata.setDATA_DATASOURCE(str_DataSource);
 			bizdata.setEJBCreateMethod(str_EjbMethod);			
 			bizdata.setFACTORY(str_Factory);
@@ -124,16 +117,11 @@
 			bizdata.setJNPINTERFACE(str_JnpInter);
 			bizdata.setPOJO_CLASS(str_PojoCls);
 			bizdata.setSERVICE_NAME(str_ServiceName);
-//			bizdata.setSERVICE(str_Service);			
-//			bizdata.setSQL(str_SQL);
 			bizdata.setTYPE(str_BizType);
 			bizdata.setURL(str_Url);
 			bizdata.setEJBHOME_INTERFACE(strejbhome_interface);
 			bizdata.setEJBCreateMethod(strejbcreate_method);
 			
-//			한줄만 남았을경우도 삭제 하기 위해서 아래 IF 문 주석처리하고 122라인, 143라인 IF문 처리했음
-//			if (strFieldName != null)
-//			{
 				Iterator iterator = null;
 				String strName = "";
 				ArrayList arrData = new ArrayList();
@@ -168,7 +156,6 @@
 						bizdata.setFieldValue(strFieldName[i], strFieldType[i], strFieldValue[i]);
 					}		
 				} 
-//			}
 			
 			xmlResource.save(businessCollection);			
 			xmlResource.release();
@@ -193,18 +180,10 @@
 			tmpBusinessCollection.setCOUNT(strCount);
 			tmpBusinessCollection.setPATH(businessCollection.getPATH());
 			tmpBusinessCollection.setBIZ_COLLECTION_KOR_NAME(strColKorBizName);
-			tmpBusinessCollection.setAOP_INTERCEPTER(request.getParameter("aop_intercepter"));
-			tmpBusinessCollection.setAOP_POINT_METHOD(request.getParameter("aop_point_method"));
-			tmpBusinessCollection.setAOP_POINT_CLASS(request.getParameter("aop_point_class"));
-
+			tmpBusinessCollection.setCLASS_INTERCEPTER(request.getParameter("class_intercepter"));
+			tmpBusinessCollection.setBEF_INTERCEPTER(request.getParameter("bef_intercepter"));
+			tmpBusinessCollection.setAFT_INTERCEPTER(request.getParameter("aft_intercepter"));
 			tmpBusinessCollection.setAnacondaRule(request.getParameter("anaconda_rule"));
-			//ExceptionCenter.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-			ExceptionCenter.debug(tmpBusinessCollection.getAOP_INTERCEPTER());
-			ExceptionCenter.debug(tmpBusinessCollection.getAOP_POINT_CLASS());
-			ExceptionCenter.debug(tmpBusinessCollection.getAOP_POINT_METHOD());
-			ExceptionCenter.debug(tmpBusinessCollection.getAnacondaRule());
-			//ExceptionCenter.debug("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-			//System.out.println("----------------------------------------------------" + request.getParameter("aop_point_method"));
 
 			for (int i=0; i<strBizName.length; i++)
 			{
@@ -225,49 +204,6 @@
 			}
 			xmlResource.removeBusinessCollection(strColBizName);
 			xmlResource.addBusinessCollection(tmpBusinessCollection);
-
-
-
-			/**
-			-----------------------------------------------------------------------------
-			-- 2008-04-07 프로세스 순서를 유지하기 위해 수정됨.
-			-----------------------------------------------------------------------------
-			for(;iterator.hasNext();)
-			{
-				bizdata = (BusinessData)iterator.next();
-				String strName = bizdata.getBusinessName();				
-				boolean isFound = false;
-				for (int i=0; i<strBizName.length; i++)
-				{
-					if(strName.equals(strBizName[i]))
-					{
-					    isFound = true;
-						break;
-					}				
-				}	
-				if(!isFound)arrData.add(strName);
-			}
-			
-			iterator = arrData.iterator();
-			for(;iterator.hasNext();)
-			{
-				String strName = (String)iterator.next();
-				businessCollection.removeBusinessData(strName);
-			}
-			
-			for (int i=0; i<strBizName.length; i++)
-			{
-				bizdata = businessCollection.createBusinessData(strBizName[i]);				
-
-				if(strDesc[i] != null)
-				{
-					bizdata.setDESC(new String(strDesc[i].getBytes("8859_1"),"euc-kr"));				
-				}
-			}	
-
-			**/
-
-			
 			xmlResource.save(tmpBusinessCollection);			
 			xmlResource.release();
 		} 
@@ -309,7 +245,7 @@
 		}
 
 	} catch (Exception e) {
-		ExceptionCenter.catchException(e);
+		e.printStackTrace();
 	}
 %>
 

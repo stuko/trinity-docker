@@ -92,7 +92,7 @@ function fnSelect()
 					out.println("</tr>");
 				}
 			} catch (Exception e) {
-				ExceptionCenter.catchException(e);
+				e.printStackTrace();
 			}
 		%>
 		</tbody>
