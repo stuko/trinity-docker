@@ -31,8 +31,15 @@ services:
         JDBC_PASS: sa
       ports:
         - "8800:8080"
+        - "8843:8443"
       volumes:
         - ./trinity:/usr/local/tomcat/webapps/ROOT
+#        - ./config/trinity-docker.crt:/usr/local/tomcat/conf/trinity-docker.crt
+#        - ./config/trinity-docker.csr:/usr/local/tomcat/conf/trinity-docker.csr
+#        - ./config/trinity-docker.key:/usr/local/tomcat/conf/trinity-docker.key
+#        - ./config/opelssl-trinity-docker.crt:/usr/local/tomcat/conf/trinity-docker.crt
+#        - ./config/opelssl-trinity-docker.csr:/usr/local/tomcat/conf/trinity-docker.csr
+        - ./config/trinity-docker.key:/usr/local/tomcat/conf/trinity-docker.key
         - ./config/server.xml:/usr/local/tomcat/conf/server.xml
         - ./config/context.xml:/usr/local/tomcat/conf/context.xml
         - ./lib/hsqldb.jar:/usr/local/tomcat/lib/hsqldb.jar
