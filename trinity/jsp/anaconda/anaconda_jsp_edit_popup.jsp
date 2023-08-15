@@ -383,10 +383,10 @@ function fnAddTrinityTab() {
   <tr>
    <td colspan="4">
 
-   <div class="container" style="margin-top:20px">
+   <div class="container" style="margin-top:20px;margin-left:25px">
       <div class="row">
         <div class="col">
-           <div id="summernote" name="summernote" style="color:#bfff00;width:100%;height:100%;"></div>
+           <div id="summernote" name="summernote" style="color:#bfff00;width:90%;height:90%;"></div>
         </div>
       </div>
    <div>
@@ -544,6 +544,9 @@ BusinessCollection bc = RequestHelper.getBusinessCollection(request,"getList");
 
 })();
 </script>
+
+
+
 
 
 
