@@ -5,4 +5,3 @@ TRINITY 3.0 Web Development Framework
 - docker-compose up
 - docker-compose down
 
-
