@@ -1,4 +1,0 @@
-<footer class="container">
-     <p>&copy; Company 2017</p>
-</footer>
-
