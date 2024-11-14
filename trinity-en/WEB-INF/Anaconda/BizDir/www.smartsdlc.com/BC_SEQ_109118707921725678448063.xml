@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/www.smartsdlc.com/BC_SEQ_109118707921725678448063.xml" USER="null" id="BC_SEQ_109118707921725678448063"><BC_SEQ_109118707921725678448063 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="코인모형훈련결과변수점수" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_109118707921725678448063" referenceKey="null"><store_model_perf DATASOURCE="java:comp/env/jdbc/ID100407951201685951976258" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Insert Into coin_slope_model_perf(code, date, time,name, model, score, test_score)&lt;BR&gt;Values(?,?,?,?,?,?,?)&lt;BR&gt;" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="code" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="date" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="time" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="model" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="score" SEQ="6" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="test_score" SEQ="7" TYPE="DOUBLE" VALUE=""/>
+</store_model_perf></BC_SEQ_109118707921725678448063></xml>

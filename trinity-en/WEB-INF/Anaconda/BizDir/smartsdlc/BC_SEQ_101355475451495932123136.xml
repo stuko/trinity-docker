@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/smartsdlc/BC_SEQ_101355475451495932123136.xml" USER="null" id="BC_SEQ_101355475451495932123136"><BC_SEQ_101355475451495932123136 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="칼럼 프로파일링 수정-AJAX" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;null&lt;BR&gt;" aop_point_method="&lt;BR&gt;null&lt;BR&gt;" business_rule="null" id="BC_SEQ_101355475451495932123136" referenceKey="null"><updateColumnProfile DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="&lt;BR&gt;UPDATE rule_factor&lt;BR&gt;SET factor_name = ?, factor_statement = ? , factor_from = ? , parent_seq = ?&lt;BR&gt;WHERE seq = ?&lt;BR&gt;" TYPE="SQL" aop_point_class="&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="factor_name" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="factor_statement" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="factor_from" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="parent_seq" SEQ="4" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="5" TYPE="INT" VALUE=""/>
+</updateColumnProfile></BC_SEQ_101355475451495932123136></xml>

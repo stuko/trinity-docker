@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_104429442141563839657163.xml" USER="null" id="BC_SEQ_104429442141563839657163"><BC_SEQ_104429442141563839657163 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="나의 챗봇 생성 혹은 수정하기" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_104429442141563839657163" referenceKey="null"><getMyChatBot DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="select *&lt;BR&gt;from   Chat&lt;BR&gt;where  channelId = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="chatbot" SEQ="1" TYPE="STRING" VALUE=""/>
+</getMyChatBot><insertChatBot JNDINAME="BC_SEQ_102600597801563837078158" KIND="DATA" OWNER="sa" REMOTE="false" TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="(result.getReturnObject(&quot;getMyChatBot&quot;) == null) ||  (((com.stuko.anaconda.business.BusinessCollection)result.getReturnObject(&quot;getMyChatBot&quot;)).size() == 0)">
+</insertChatBot><updateChatBot JNDINAME="BC_SEQ_104827386341563837105515" KIND="DATA" OWNER="sa" REMOTE="false" TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="(result.getReturnObject(&quot;getMyChatBot&quot;) != null) &amp;&amp;  (((com.stuko.anaconda.business.BusinessCollection)result.getReturnObject(&quot;getMyChatBot&quot;)).size() &gt; 0)">
+</updateChatBot><saveChatBotMaster DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO ChatBot (Token,SecretKey,ChatBotKey,ChatBotName,ChatBotChannel)&lt;BR&gt;Values(?,?,?,?,?)&lt;BR&gt;On Duplicate Key Update&lt;BR&gt;ChatBotKey = ?, ChatBotName = ?, ChatBotChannel = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.clientId" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.secretKey" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="token" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="chatbot" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="token1" SEQ="6" TYPE="REFERENCE" VALUE="token"><![CDATA[token]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name1" SEQ="7" TYPE="REFERENCE" VALUE="name"><![CDATA[name]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="chatbot1" SEQ="8" TYPE="REFERENCE" VALUE="chatbot"><![CDATA[chatbot]]></FIELD>
+</saveChatBotMaster></BC_SEQ_104429442141563839657163></xml>

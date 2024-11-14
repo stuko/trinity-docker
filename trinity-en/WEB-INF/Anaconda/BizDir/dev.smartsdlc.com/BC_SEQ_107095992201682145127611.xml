@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_107095992201682145127611.xml" USER="null" id="BC_SEQ_107095992201682145127611"><BC_SEQ_107095992201682145127611 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="프로파일링 조건 수정" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_107095992201682145127611" referenceKey="null"><update DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="update rule_factor_match&lt;BR&gt;set match_value = ? , equal_yn = ?&lt;BR&gt;where factor_name = ? &lt;BR&gt;and     match_name = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="match_value" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="equal_yn" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="factor_name" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="match_name" SEQ="4" TYPE="STRING" VALUE=""/>
+</update></BC_SEQ_107095992201682145127611></xml>

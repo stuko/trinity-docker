@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_103357236401594648079203.xml" USER="null" id="BC_SEQ_103357236401594648079203"><BC_SEQ_103357236401594648079203 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="대화 시나리오 프로파일 이미지 업로드" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_103357236401594648079203" referenceKey="null"><saveFile JNDINAME="BC_SEQ_104206998591511534105307" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="AfterUploadProcess" TYPE="BP">
+</saveFile><saveImageInfo DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE PUBLIC_SCENARIO&lt;BR&gt;SET PS_IMAGE = ? &lt;BR&gt;WHERE PS_KEY = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="multipart.filelink.1" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="FILE_KEY" SEQ="2" TYPE="STRING" VALUE=""/>
+</saveImageInfo><uploadResult DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT ? as PATH , ? as FILE_KEY , ? as M_FILE_NAME , ? as M_SUB_DIR" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="multipart.path" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="FILE_KEY" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="FILE_NAME" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="multipart.subdir" SEQ="4" TYPE="STRING" VALUE=""/>
+</uploadResult></BC_SEQ_103357236401594648079203></xml>

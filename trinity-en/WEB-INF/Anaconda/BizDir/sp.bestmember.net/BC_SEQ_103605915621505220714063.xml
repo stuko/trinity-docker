@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_103605915621505220714063.xml" USER="null" id="BC_SEQ_103605915621505220714063"><BC_SEQ_103605915621505220714063 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="회의록 작성하기" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_103605915621505220714063" referenceKey="null"><createMeetingMinute DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Insert Into MeetingMinute(MeetingCode, MeetingAgenda, MeetingRequestCode, MeetingRequestType, MeetingTime, MeetingMember, MeetingContents, Sourcecode , PMCode)&lt;BR&gt;Values(?,?,?,?,?,?,?,?,?)&lt;BR&gt;&lt;BR&gt;" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;&lt;BR&gt;request.setFieldValue(&quot;MeetingCode&quot;,AutoSeq.genKey(&quot;MM&quot;));&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="MeetingCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MeetingAgenda" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MeetingRequestCode" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MeetingRequestType" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MeetingTime" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MeetingMember" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MeetingContents" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SourceCode" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PMCode" SEQ="9" TYPE="STRING" VALUE=""/>
+</createMeetingMinute></BC_SEQ_103605915621505220714063></xml>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/DefaultDir/sp.bestmember.net/DEFAULT_SEQ_105114105661516066706218.xml" USER="null" id="DEFAULT_SEQ_105114105661516066706218"><DEFAULT_SEQ_105114105661516066706218 DEFAULT_XML_DATA_COLLECTION_KOR_NAME="" type=""><Member type="TABLE"><SYSTEMID KIND="DATA" REMOTE="false">
+<FIELD KIND="ITEM" LENGTH="0" NAME="Account" SEQ="1" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ChannelId" SEQ="2" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Password" SEQ="3" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Email" SEQ="4" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="EnterDateTime" SEQ="5" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="UpdateDateTime" SEQ="6" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MemberStatus" SEQ="7" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="role" SEQ="8" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="9" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ChannelUserId" SEQ="10" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Accept" SEQ="11" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Point" SEQ="12" TYPE="int" VALUE=""/>
+</SYSTEMID></Member><rule_context_hist type="TABLE"><SYSTEMID KIND="DATA" REMOTE="false">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="create_datetime" SEQ="2" TYPE="timestamp" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rule_seq" SEQ="3" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="parameter" SEQ="4" TYPE="text" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="result" SEQ="5" TYPE="text" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="channel" SEQ="6" TYPE="varchar" VALUE=""/>
+</SYSTEMID></rule_context_hist><Channel type="TABLE"><SYSTEMID KIND="DATA" REMOTE="false">
+<FIELD KIND="ITEM" LENGTH="0" NAME="ChannelId" SEQ="1" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ProjectCode" SEQ="2" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="TeamName" SEQ="3" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ChannelGubun" SEQ="4" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="LastSendType" SEQ="5" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="LastSendTitle" SEQ="6" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="LastSendTime" SEQ="7" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PhoneNumber" SEQ="8" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="X" SEQ="9" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Y" SEQ="10" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="BotName" SEQ="11" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Vendor" SEQ="12" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="CSeq" SEQ="13" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="TeamCode" SEQ="14" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="GroupChannelId" SEQ="15" TYPE="varchar" VALUE=""/>
+</SYSTEMID></Channel><CapabilityLevel Business.Service.Name="BC_SEQ_106376548341535383049531" type="TABLE"><SYSTEMID KIND="DATA" REMOTE="false">
+<FIELD KIND="ITEM" LENGTH="0" NAME="CapEstDateTime" SEQ="1" TYPE="VARCHAR" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="TeamBuildingCode" SEQ="2" TYPE="VARCHAR" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="CapEstLevel" SEQ="3" TYPE="TINYINT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="CurrentCapYN" SEQ="4" TYPE="VARCHAR" VALUE=""/>
+</SYSTEMID></CapabilityLevel></DEFAULT_SEQ_105114105661516066706218></xml>

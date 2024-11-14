@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/dev.bestmember.net/BC_SEQ_107050185711580277964463.xml" USER="null" id="BC_SEQ_107050185711580277964463"><BC_SEQ_107050185711580277964463 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME=" 대화 인텐트 관리 -&gt;  대화 인텐트 등록 -&gt; 대화 인텐트 정보 등록 프로세스" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_107050185711580277964463" referenceKey="null"><insertIntent DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO INTENT(IT_KEY, IT_NAME, IT_DESC, IG_KEY) &lt;BR&gt;VALUES(?,?,?,?)" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="IT_KEY" SEQ="1" TYPE="KEY" VALUE="IT"><![CDATA[IT]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="IT_NAME" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="IT_DESC" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="IG_KEY" SEQ="4" TYPE="STRING" VALUE=""/>
+</insertIntent></BC_SEQ_107050185711580277964463></xml>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_100884888621678865586211.xml" USER="null" id="BC_SEQ_100884888621678865586211"><BC_SEQ_100884888621678865586211 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="null" BIZ_COLLECTION_KOR_NAME="XML서비스 -coin_slope_stats_meta" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="" aop_point_method="" business_rule="null" id="BC_SEQ_100884888621678865586211" referenceKey="null"><coin_slope_stats_meta_insert DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO coin_slope_stats_meta (code,channelId,name,from_percent,to_percent,meta_type) VALUES(?,?,?,?,?,?)" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;create&quot;.equals(request.getFieldValue(&quot;gubun&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="code" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="channelId" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="from_percent" SEQ="4" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="to_percent" SEQ="5" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="meta_type" SEQ="6" TYPE="STRING" VALUE=""/>
+</coin_slope_stats_meta_insert><coin_slope_stats_meta_update DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE coin_slope_stats_meta SET from_percent= ?,to_percent= ? , meta_type= ? WHERE code = ?  AND channelId = ?  AND name = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;update&quot;.equals(request.getFieldValue(&quot;gubun&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="from_percent" SEQ="1" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="to_percent" SEQ="2" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="meta_type" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="code" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="channelId" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="6" TYPE="STRING" VALUE=""/>
+</coin_slope_stats_meta_update><coin_slope_stats_meta_delete DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="DELETE FROM coin_slope_stats_meta WHERE code = ?  AND channelId = ?  AND name = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;delete&quot;.equals(request.getFieldValue(&quot;gubun&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="code" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="channelId" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="3" TYPE="STRING" VALUE=""/>
+</coin_slope_stats_meta_delete><coin_slope_stats_meta_read DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT code,channelId,name,from_percent,to_percent,use_yn,meta_type FROM coin_slope_stats_meta WHERE code = ?  AND channelId = ?  AND name = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;read&quot;.equals(request.getFieldValue(&quot;gubun&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="code" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="channelId" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="3" TYPE="STRING" VALUE=""/>
+</coin_slope_stats_meta_read><coin_slope_stats_meta_list DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT code,channelId,name,from_percent,to_percent,use_yn,meta_type FROM coin_slope_stats_meta WHERE code = ?  AND channelId = ?  AND name = ?  LIMIT ? , 10" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="if(!&quot;list&quot;.equals(request.getFieldValue(&quot;gubun&quot;))){This.doProcessSkip(true);}else{if(request.getFieldValue(&quot;pos&quot;) == null) request.setFieldValue(&quot;pos&quot;,&quot;0&quot;);}">
+<FIELD KIND="ITEM" LENGTH="0" NAME="code" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="channelId" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="pos" SEQ="4" TYPE="INT" VALUE=""/>
+</coin_slope_stats_meta_list></BC_SEQ_100884888621678865586211></xml>

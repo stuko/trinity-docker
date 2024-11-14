@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_107900779371630710428085.xml" USER="null" id="BC_SEQ_107900779371630710428085"><BC_SEQ_107900779371630710428085 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME=" DUNA 결과 변수 매핑 시나리오 &gt; MAPPING 생성" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_107900779371630710428085" referenceKey="null"><create DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO OUTPUT_MAPPING( M_TGT_NAME, M_TGT_VALUE ) VALUES(?,?)" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="M_TGT_NAME" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="M_TGT_VALUE" SEQ="2" TYPE="KEY" VALUE=""/>
+</create></BC_SEQ_107900779371630710428085></xml>

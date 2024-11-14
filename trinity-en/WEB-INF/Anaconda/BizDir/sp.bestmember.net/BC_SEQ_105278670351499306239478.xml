@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_105278670351499306239478.xml" USER="null" id="BC_SEQ_105278670351499306239478"><BC_SEQ_105278670351499306239478 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="프로젝트 역할과 일정 수정" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_105278670351499306239478" referenceKey="null"><assignRole DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE ProjectActivity&lt;BR&gt;Set    RoleCode = ?&lt;BR&gt;Where  PMCode = ?&lt;BR&gt;And    ActivityCode = ?&lt;BR&gt;" TYPE="SQL" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="RoleCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PMCode" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ActivityCode" SEQ="3" TYPE="STRING" VALUE=""/>
+</assignRole><updateProjectSchedule DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="&lt;BR&gt;UPDATE Schedule&lt;BR&gt;SET    StartDateTime = ? , EndDateTime = ? , Progress = ?&lt;BR&gt;WHERE  PMCode = ? and PMActivityCode = ?&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" TYPE="SQL" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="StartDateTime" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="EndDateTime" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Progress" SEQ="3" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PMCode" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ActivityCode" SEQ="5" TYPE="STRING" VALUE=""/>
+</updateProjectSchedule></BC_SEQ_105278670351499306239478></xml>

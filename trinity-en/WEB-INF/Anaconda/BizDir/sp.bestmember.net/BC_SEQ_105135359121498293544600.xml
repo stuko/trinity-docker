@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_105135359121498293544600.xml" USER="null" id="BC_SEQ_105135359121498293544600"><BC_SEQ_105135359121498293544600 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="질문 스케줄 수정" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;null&lt;BR&gt;" aop_point_method="&lt;BR&gt;null&lt;BR&gt;" business_rule="null" id="BC_SEQ_105135359121498293544600" referenceKey="null"><updateSchedule DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Update QuestSchedule&lt;BR&gt;Set    IsRepeat = ? , FixedTime = ?, FixedWeek = ?, FixedDay = ?, FixedMonth = ? ,FixedYear = ? , QCode = ?&lt;BR&gt;Where QSCode = ?&lt;BR&gt;" TYPE="SQL" aop_point_class="&lt;BR&gt;null&lt;BR&gt;" aop_point_method="&lt;BR&gt;null&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="IsRepeat" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="FixedTime" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="FixedWeek" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="FixedDay" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="FixedMonth" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="FixedYear" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QSCode" SEQ="8" TYPE="STRING" VALUE=""/>
+</updateSchedule></BC_SEQ_105135359121498293544600></xml>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/localhost/BC_SEQ_109068212171350086364953.xml" USER="null" id="BC_SEQ_109068212171350086364953"><BC_SEQ_109068212171350086364953 AnacondaRule="" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="Rule 관리 화면" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="null " aop_point_method="null " business_rule="null" id="BC_SEQ_109068212171350086364953" referenceKey=""><GetRuleList DATASOURCE="java:comp/env/jdbc/hsql" DESC="룰 리스트 가져오기" KIND="DATA" OWNER="sa" SERVICE_NAME="SELECT RULE_KEY, RULE_NAME, RULE_DESC&lt;BR&gt;FROM ANACONDA_RULE " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;)) ">
+</GetRuleList><CreateRule DATASOURCE="java:comp/env/jdbc/hsql" DESC="룰 생성하기" KIND="DATA" OWNER="sa" SERVICE_NAME="INSERT INTO ANACONDA_RULE&lt;BR&gt;(RULE_NAME, RULE_DESC&lt;BR&gt;,R_WHO&lt;BR&gt;,R_WHEN&lt;BR&gt;,R_WHERE&lt;BR&gt;,R_WHAT_TYPE&lt;BR&gt;,R_WHAT)&lt;BR&gt;VALUES &lt;BR&gt;(?,?,?,?,?,?,?)&lt;BR&gt; " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="null " aop_point_method="&quot;create&quot;.equals(request.getFieldValue(&quot;code&quot;)) ">
+<FIELD KIND="ITEM" LENGTH="0" NAME="RULE_NAME" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="RULE_DESC" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="R_WHO" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="R_WHEN" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="R_WHERE" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="R_WHAT_TYPE" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="R_WHAT" SEQ="7" TYPE="STRING" VALUE=""/>
+</CreateRule><UpdatRule DATASOURCE="java:comp/env/jdbc/hsql" DESC="룰 수정하기" KIND="DATA" OWNER="sa" SERVICE_NAME="UPDATE ANACONDA_RULE&lt;BR&gt;SET RULE_NAME = ?&lt;BR&gt; ,RULE_DESC = ?&lt;BR&gt; ,RULE_WHO = ?&lt;BR&gt; ,RULE_WHEN = ?&lt;BR&gt; ,RULE_WHERE = ?&lt;BR&gt; ,RULE_WHAT_TYPE = ?&lt;BR&gt; ,RULE_WHAT = ?&lt;BR&gt;WHERE RULE_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="null " aop_point_method="&quot;update&quot;.equals(request.getFieldValue(&quot;code&quot;)) ">
+<FIELD KIND="ITEM" LENGTH="0" NAME="RULE_NAME" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="RULE_DESC" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="R_WHO" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="R_WHEN" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="R_WHERE" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="R_WHAT_TYPE" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="R_WHAT" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="RULE_KEY" SEQ="8" TYPE="INT" VALUE=""/>
+</UpdatRule><DeleteRule DATASOURCE="java:comp/env/jdbc/hsql" DESC="룰 삭제하기" KIND="DATA" OWNER="sa" SERVICE_NAME="DELETE FROM ANACONDA_RULE WHERE RULE_KEY = ?" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="null " aop_point_method="&quot;delete&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="RULE_KEY" SEQ="1" TYPE="INT" VALUE=""/>
+</DeleteRule><GetRule DATASOURCE="java:comp/env/jdbc/hsql" DESC="룰 상세보기" KIND="DATA" OWNER="sa" SERVICE_NAME="SELECT * FROM ANACONDA_RULE WHERE RULE_KEY = ?" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="null " aop_point_method="&quot;read&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="RULE_KEY" SEQ="1" TYPE="INT" VALUE=""/>
+</GetRule></BC_SEQ_109068212171350086364953></xml>

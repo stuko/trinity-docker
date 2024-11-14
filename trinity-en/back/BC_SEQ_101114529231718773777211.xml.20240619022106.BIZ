@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/www.smartsdlc.com/BC_SEQ_101114529231718773777211.xml" USER="null" id="BC_SEQ_101114529231718773777211"><BC_SEQ_101114529231718773777211 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="알고리즘 추가" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_101114529231718773777211" referenceKey="null"><insert DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO algorithm_script(algorithm_name, script) &lt;BR&gt;VALUES(?,?)" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="algorithm_name" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="script" SEQ="2" TYPE="STRING" VALUE=""/>
+</insert></BC_SEQ_101114529231718773777211></xml>

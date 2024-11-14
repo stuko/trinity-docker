@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_102969434311584337630828.xml" USER="null" id="BC_SEQ_102969434311584337630828"><BC_SEQ_102969434311584337630828 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="XML서비스 -OAUTH_TOKEN" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_102969434311584337630828" referenceKey="null"><OAUTH_TOKEN_insert DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO OAUTH_TOKEN (OT_KEY,OT_CLIENTID,OT_SECRETKEY,OT_SITE,OT_TMP_KEY,OT_TOKEN,OT_RF_TOKEN ,OT_REQ_AUTH_URL, OT_REQ_TOKEN_URL,OT_EXPIRED_HOUR,OT_EXPIRED) VALUES(?,?,?,?,?,?,?,?,?,?,DATE_ADD(NOW(), INTERVAL ? HOUR)&lt;BR&gt;)" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;create&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_KEY" SEQ="1" TYPE="KEY" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_CLIENTID" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_SECRETKEY" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_SITE" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_TMP_KEY" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_TOKEN" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_RF_TOKEN" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_REQ_AUTH_URL" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_REQ_TOKEN_URL" SEQ="9" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="hour" SEQ="10" TYPE="REFERENCE" VALUE="OT_EXPIRED_HOUR"><![CDATA[OT_EXPIRED_HOUR]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="expired" SEQ="11" TYPE="REFERENCE" VALUE="OT_EXPIRED_HOUR"><![CDATA[OT_EXPIRED_HOUR]]></FIELD>
+</OAUTH_TOKEN_insert><OAUTH_TOKEN_update DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE OAUTH_TOKEN SET OT_CLIENTID= ?,OT_SECRETKEY= ?,OT_SITE= ?,OT_TMP_KEY= ?,OT_TOKEN= ?,OT_RF_TOKEN= ?,OT_REQ_AUTH_URL= ?,OT_REQ_TOKEN_URL= ?,OT_EXPIRED_HOUR = ?, OT_EXPIRED = DATE_ADD(NOW(), INTERVAL ? SECOND) , OT_REDIRECT_AUTH_URL= ?,OT_REDIRECT_TOKEN_URL= ?,OT_REQ_RF_TOKEN_URL= ? , OT_ISSUED = NOW()&lt;BR&gt;WHERE OT_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;update&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_CLIENTID" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_SECRETKEY" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_SITE" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_TMP_KEY" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_TOKEN" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_RF_TOKEN" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_REQ_AUTH_URL" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_REQ_TOKEN_URL" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="hour" SEQ="9" TYPE="REFERENCE" VALUE="OT_EXPIRED_HOUR"><![CDATA[OT_EXPIRED_HOUR]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="expired" SEQ="10" TYPE="REFERENCE" VALUE="OT_EXPIRED_HOUR"><![CDATA[OT_EXPIRED_HOUR]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_REDIRECT_AUTH_URL" SEQ="11" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_REDIRECT_TOKEN_URL" SEQ="12" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_REQ_RF_TOKEN_URL" SEQ="13" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_KEY" SEQ="14" TYPE="STRING" VALUE=""/>
+</OAUTH_TOKEN_update><OAUTH_TOKEN_delete DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="DELETE FROM OAUTH_TOKEN WHERE OT_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;delete&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+</OAUTH_TOKEN_delete><OAUTH_TOKEN_read DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT * FROM OAUTH_TOKEN WHERE OT_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;read&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="OT_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+</OAUTH_TOKEN_read><OAUTH_TOKEN_list DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT OT_KEY,OT_CLIENTID,OT_SECRETKEY,OT_SITE,OT_TMP_KEY,OT_TOKEN,OT_RF_TOKEN,OT_EXPIRED,OT_ISSUED ,OT_REQ_AUTH_URL, OT_REQ_TOKEN_URL&lt;BR&gt;FROM OAUTH_TOKEN &lt;BR&gt;LIMIT ?, 20&lt;BR&gt;" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="if(!&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;))){This.doProcessSkip(true);}else{if(request.getFieldValue(&quot;pos&quot;) == null) request.setFieldValue(&quot;pos&quot;,&quot;0&quot;);}">
+<FIELD KIND="ITEM" LENGTH="0" NAME="pos" SEQ="1" TYPE="INT" VALUE=""/>
+</OAUTH_TOKEN_list><selectTotalCount DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT COUNT(*) AS CNT FROM OAUTH_TOKEN" TYPE="SQL">
+</selectTotalCount></BC_SEQ_102969434311584337630828></xml>

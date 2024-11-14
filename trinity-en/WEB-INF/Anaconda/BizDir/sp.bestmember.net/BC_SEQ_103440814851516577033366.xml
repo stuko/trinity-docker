@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_103440814851516577033366.xml" USER="null" id="BC_SEQ_103440814851516577033366"><BC_SEQ_103440814851516577033366 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="REST 프로세스 수정" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_103440814851516577033366" referenceKey="null"><getSaaSDBInfo DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Select DBCode&lt;BR&gt;From   SaaSDB&lt;BR&gt;Where Account = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Account" SEQ="1" TYPE="STRING" VALUE=""/>
+</getSaaSDBInfo><modifySQLProcess KIND="DATA" OWNER="sa" POJO_CLASS="com.stuko.saas.trinity.RESTManager" REMOTE="false" SERVICE_NAME="modifySQLBusinessProcess" TYPE="POJO" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="import com.stuko.anaconda.business.*;&lt;BR&gt;if(&quot;SAAS_SQL&quot;.equals(request.getFieldValue(&quot;biz_type&quot;))){&lt;BR&gt;   BusinessCollection bc = (BusinessCollection)result.getReturnObject(&quot;getSaaSDBInfo&quot;);&lt;BR&gt;   if(bc != null &amp;&amp; bc.size() &gt; 0) {&lt;BR&gt;        request.setFieldValue(&quot;DBCode&quot;,bc.getBusinessData(0).getFieldValue(&quot;DBCode&quot;));&lt;BR&gt;   }&lt;BR&gt;}else{&lt;BR&gt;   This.doProcessSkip(true);&lt;BR&gt;}">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Email" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bizColName" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bizName" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="biz_type" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="service_name" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="jndiName" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_name" SEQ="7" TYPE="String[]" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_type" SEQ="8" TYPE="String[]" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_value" SEQ="9" TYPE="String[]" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SaaSDBService" SEQ="10" TYPE="STRING" VALUE="BC_SEQ_104484938141516596701405"><![CDATA[BC_SEQ_104484938141516596701405]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="DBCode" SEQ="11" TYPE="STRING" VALUE=""/>
+</modifySQLProcess><modifyPOJOProcess KIND="DATA" OWNER="sa" POJO_CLASS="com.stuko.saas.trinity.RESTManager" REMOTE="false" SERVICE_NAME="modifyPOJOBusinessProcess" TYPE="POJO" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;POJO&quot;.equals(request.getFieldValue(&quot;biz_type&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Email" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bizColName" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bizName" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="biz_type" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="pojoClassName" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="service_name" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_name" SEQ="7" TYPE="String[]" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_type" SEQ="8" TYPE="String[]" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_value" SEQ="9" TYPE="String[]" VALUE=""/>
+</modifyPOJOProcess><modifyJavaScriptProcess KIND="DATA" OWNER="sa" POJO_CLASS="com.stuko.saas.trinity.RESTManager" REMOTE="false" SERVICE_NAME="modifyJavaScriptProcess" TYPE="POJO" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;JAVASCRIPT&quot;.equals(request.getFieldValue(&quot;biz_type&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Email" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bizColName" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bizName" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="biz_type" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="pojoClassNam" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="service_name" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_name" SEQ="7" TYPE="String[]" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_type" SEQ="8" TYPE="String[]" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_value" SEQ="9" TYPE="String[]" VALUE=""/>
+</modifyJavaScriptProcess><modifyJavaProcess KIND="DATA" OWNER="sa" POJO_CLASS="com.stuko.saas.trinity.RESTManager" REMOTE="false" SERVICE_NAME="modifyJavaProcess" TYPE="POJO" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;JAVA&quot;.equals(request.getFieldValue(&quot;biz_type&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Email" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bizColName" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bizName" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="biz_type" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="pojoClassName" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="service_name" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_name" SEQ="7" TYPE="String[]" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_type" SEQ="8" TYPE="String[]" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_value" SEQ="9" TYPE="String[]" VALUE=""/>
+</modifyJavaProcess><modifyJsonProcess KIND="DATA" OWNER="sa" POJO_CLASS="com.stuko.saas.trinity.RESTManager" REMOTE="false" SERVICE_NAME="modifyJsonProcess" TYPE="POJO" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;JSON&quot;.equals(request.getFieldValue(&quot;biz_type&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Email" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bizColName" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bizName" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="biz_type" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="pojoClassName" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="service_name" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_name" SEQ="7" TYPE="String[]" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_type" SEQ="8" TYPE="String[]" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="field_value" SEQ="9" TYPE="String[]" VALUE=""/>
+</modifyJsonProcess></BC_SEQ_103440814851516577033366></xml>

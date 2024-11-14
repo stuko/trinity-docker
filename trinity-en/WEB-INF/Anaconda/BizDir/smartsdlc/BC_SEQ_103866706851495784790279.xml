@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/smartsdlc/BC_SEQ_103866706851495784790279.xml" USER="null" id="BC_SEQ_103866706851495784790279"><BC_SEQ_103866706851495784790279 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="성공 룰 스크립트 등록 -AJAX" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_103866706851495784790279" referenceKey="null"><checkChildRule DATASOURCE="session.jndi" DESC="자식 룰이 있는지 확인 한다." KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Select count(*) as 'ChildCount'&lt;BR&gt;From rule_context&lt;BR&gt;Where seq in ( select child_key from rule_relation where parent_key = ? )&lt;BR&gt;And   status = 'R'" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;BusinessCollection bc = (BusinessCollection)result.getReturnObject(&quot;checkChildRule&quot;);&lt;BR&gt;if(bc != null &amp;&amp; bc.size() &gt; 0){&lt;BR&gt;   request.setFieldValue(&quot;ChildCount&quot;, bc.getBusinessData(0).getFieldValue(&quot;ChildCount&quot;));&lt;BR&gt;}">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="INT" VALUE=""/>
+</checkChildRule><getMaxSeq DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="select (max(seq)+1) as new_seq  from rule_context " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="request.setFieldValue(&quot;new_seq&quot;,((com.stuko.anaconda.business.BusinessCollection)result.getReturnObject(&quot;getMaxSeq&quot;)).getBusinessData(0).getFieldValue(&quot;new_seq&quot;));&lt;BR&gt;request.setFieldValue(&quot;parent_seq&quot;,((com.stuko.anaconda.business.BusinessCollection)result.getReturnObject(&quot;getMaxSeq&quot;)).getBusinessData(0).getFieldValue(&quot;new_seq&quot;));">
+</getMaxSeq><createSuccessRule DATASOURCE="session.jndi" DESC="성공 룰 스크립트 추가" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="&lt;BR&gt;INSERT INTO rule_context(context_name,rule,parent_seq,context_desc,rule_condition,rule_group, msg, sql_statement,kind,q_code,status,priority,delimeter,anaconda_db_seq,service_name,trinity_command, seq)&lt;BR&gt;VALUES(?,?,?,?,?,?,?,?,?,?,'N',?,?,?,?,?,?)&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;if(BusinessHelper.checkBusinessNull(request.getFieldValue(&quot;Subject&quot;))){&lt;BR&gt;    request.setFieldValue(&quot;q_code&quot;,AutoSeq.genKey(&quot;Q&quot;));&lt;BR&gt;}&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="context_name" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rule" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="3" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="context_desc" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rule_condition" SEQ="5" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rule_group" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="msg" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="sql_statement" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="kind" SEQ="9" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="q_code" SEQ="10" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="priority" SEQ="11" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="delimeter" SEQ="12" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="anaconda_db_seq" SEQ="13" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="service_name" SEQ="14" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="trinity_command" SEQ="15" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="new_seq" SEQ="16" TYPE="INT" VALUE=""/>
+</createSuccessRule><createQuest JNDINAME="BC_SEQ_109469316661498293470875" KIND="DATA" OWNER="sa" REMOTE="false" TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;if(!BusinessHelper.checkBusinessNull(request.getFieldValue(&quot;q_code&quot;))){&lt;BR&gt;    This.doProcessSkip(true);&lt;BR&gt;}&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="Quest" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="RuleSeq" SEQ="2" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode1" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer1" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode2" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer2" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCcode3" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer3" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode4" SEQ="9" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer4" SEQ="10" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="11" TYPE="STRING" VALUE=""/>
+</createQuest><updateChildRule DATASOURCE="session.jndi" DESC="자식 룰이 있으면, 업데이트 해준다." KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Update rule_context&lt;BR&gt;Set parent_seq = ?&lt;BR&gt;Where parent_seq = ?&lt;BR&gt;And   status = 'R'" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="(((request.getFieldValue(&quot;ChildCount&quot;) != null) &amp;&amp; (!&quot;0&quot;.equals(request.getFieldValue(&quot;ChildCount&quot;)))) &amp;&amp; (request.getFieldValue(&quot;parent_seq&quot;) != null) &amp;&amp; (request.getFieldValue(&quot;seq&quot;) != null))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="parent_seq" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="2" TYPE="INT" VALUE=""/>
+</updateChildRule><updateRuleStatus DATASOURCE="session.jndi" DESC="새로 만든 룰의 상태를 R 로 해준다." KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Update rule_context&lt;BR&gt;Set status = 'R'&lt;BR&gt;Where parent_seq = ?&lt;BR&gt;And   status = 'N'" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="System.out.println(&quot;########## Final Result #############&quot;);&lt;BR&gt;System.out.println(&quot;ChildCount = [&quot;+request.getFieldValue(&quot;ChildCount&quot;)+&quot;] , parent_seq = [&quot;+request.getFieldValue(&quot;parent_seq&quot;)+&quot;]&quot;);&lt;BR&gt;System.out.println(&quot;########## Final Result #############&quot;);">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="INT" VALUE=""/>
+</updateRuleStatus><updateRuleRelation DATASOURCE="session.jndi" DESC="룰 하위 정보 수정" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Update rule_relation&lt;BR&gt;Set       parent_key = ? &lt;BR&gt;Where  parent_key = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="new_seq" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="2" TYPE="INT" VALUE=""/>
+</updateRuleRelation><addRuleRelation DATASOURCE="session.jndi" DESC="룰 관계 정보 추가" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Insert into rule_relation (parent_key, child_key) values(?,?)" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="new_seq" SEQ="2" TYPE="INT" VALUE=""/>
+</addRuleRelation></BC_SEQ_103866706851495784790279></xml>

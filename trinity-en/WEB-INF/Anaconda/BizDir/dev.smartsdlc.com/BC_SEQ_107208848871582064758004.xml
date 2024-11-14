@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_107208848871582064758004.xml" USER="null" id="BC_SEQ_107208848871582064758004"><BC_SEQ_107208848871582064758004 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="XML서비스 -SERVICE" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_107208848871582064758004" referenceKey="null"><SERVICE_insert DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO SERVICE (SVC_KEY,SVC_NAME,SVC_INTRODUCE,SVC_YN,SVC_DESC) VALUES(?,?,?,?,?)" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;create&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="1" TYPE="KEY" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_NAME" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_INTRODUCE" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_YN" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_DESC" SEQ="5" TYPE="STRING" VALUE=""/>
+</SERVICE_insert><SERVICE_update DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE SERVICE SET SVC_NAME= ?,SVC_INTRODUCE= ?,SVC_YN= ?,SVC_DESC= ? WHERE SVC_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;update&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_NAME" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_INTRODUCE" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_YN" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_DESC" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="5" TYPE="STRING" VALUE=""/>
+</SERVICE_update><SERVICE_delete DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="DELETE FROM SERVICE WHERE SVC_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;delete&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+</SERVICE_delete><SERVICE_read DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT SVC_KEY,SVC_REGDATE,SVC_NAME,SVC_INTRODUCE,SVC_YN,SVC_DESC FROM SERVICE WHERE SVC_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;read&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+</SERVICE_read><SERVICE_list DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT SVC_KEY,SVC_REGDATE,SVC_NAME,SVC_INTRODUCE,SVC_YN,SVC_DESC FROM SERVICE LIMIT ?, 10" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="if(!&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;))){&lt;BR&gt;   This.doProcessSkip(true);&lt;BR&gt;}else{&lt;BR&gt;   if(request.getFieldValue(&quot;pos&quot;) == null){&lt;BR&gt;       request.setFieldValue(&quot;pos&quot;, &quot;0&quot;);&lt;BR&gt;   }&lt;BR&gt;}">
+<FIELD KIND="ITEM" LENGTH="0" NAME="pos" SEQ="1" TYPE="INT" VALUE=""/>
+</SERVICE_list><selectTotalCount DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT COUNT(*) AS CNT&lt;BR&gt;FROM SERVICE&lt;BR&gt;" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+</selectTotalCount></BC_SEQ_107208848871582064758004></xml>

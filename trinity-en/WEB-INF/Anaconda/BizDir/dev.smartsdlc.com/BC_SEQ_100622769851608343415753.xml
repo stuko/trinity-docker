@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_100622769851608343415753.xml" USER="null" id="BC_SEQ_100622769851608343415753"><BC_SEQ_100622769851608343415753 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="타임라인 하위일정 삭제하기" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_100622769851608343415753" referenceKey="null"><deleteSub DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="DELETE FROM PLAN WHERE PL_KEY = ? AND PL_SEQ = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PL_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PL_SEQ" SEQ="2" TYPE="INT" VALUE=""/>
+</deleteSub></BC_SEQ_100622769851608343415753></xml>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_109469316661498293470875.xml" USER="null" id="BC_SEQ_109469316661498293470875"><BC_SEQ_109469316661498293470875 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="질문 작성" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_109469316661498293470875" referenceKey="null"><createQuest DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT Quest(QCode, Subject, Account, TeamCode , CreateDateTime,QuestType,RuleSeq)&lt;BR&gt;Values(?,?,?,?,date_format(now(),'%Y%m%d%h%i%s') ,?,?)&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;if(BusinessHelper.checkBusinessNull(request.getFieldValue(&quot;session.Account&quot;)))&lt;BR&gt;      request.setFieldValue(&quot;Account&quot;,request.getFieldValue(&quot;session.Account&quot;));&lt;BR&gt;&lt;BR&gt;request.setFieldValue(&quot;QCode&quot;,request.getFieldValue(&quot;q_code&quot;));&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Subject" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Account" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="TeamCode" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QuestType" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="6" TYPE="STRING" VALUE=""/>
+</createQuest><createAnswer1 JNDINAME="BC_SEQ_105696627401498293495358" KIND="DATA" OWNER="sa" REMOTE="false" TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;request.setFieldValue(&quot;Subject&quot;,request.getFieldValue(&quot;Answer1&quot;));&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Subject" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="3" TYPE="STRING" VALUE=""/>
+</createAnswer1><createAnswer2 JNDINAME="BC_SEQ_105696627401498293495358" KIND="DATA" OWNER="sa" REMOTE="false" TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;" aop_point_method="import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;request.setFieldValue(&quot;Subject&quot;,request.getFieldValue(&quot;Answer2&quot;));">
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Subject" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="3" TYPE="STRING" VALUE=""/>
+</createAnswer2><createAnswer3 JNDINAME="BC_SEQ_105696627401498293495358" KIND="DATA" OWNER="sa" REMOTE="false" TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;request.setFieldValue(&quot;Subject&quot;,request.getFieldValue(&quot;Answer3&quot;));&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Subject" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="3" TYPE="STRING" VALUE=""/>
+</createAnswer3><createAnswer4 JNDINAME="BC_SEQ_105696627401498293495358" KIND="DATA" OWNER="sa" REMOTE="false" TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;null&lt;BR&gt;" aop_point_method="import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;request.setFieldValue(&quot;Subject&quot;,request.getFieldValue(&quot;Answer4&quot;));">
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Subject" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="3" TYPE="STRING" VALUE=""/>
+</createAnswer4><BP_SEQ_103124740381592521096955 JNDINAME="BC_SEQ_105696627401498293495358" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_KOR_NAME="copy of " TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;null&lt;BR&gt;" aop_point_method="import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;request.setFieldValue(&quot;Subject&quot;,request.getFieldValue(&quot;Answer5&quot;));">
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Subject" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="3" TYPE="STRING" VALUE=""/>
+</BP_SEQ_103124740381592521096955><BP_SEQ_109407462861592521105931 JNDINAME="BC_SEQ_105696627401498293495358" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_KOR_NAME="copy of " TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;null&lt;BR&gt;" aop_point_method="import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;request.setFieldValue(&quot;Subject&quot;,request.getFieldValue(&quot;Answer6&quot;));">
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Subject" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="3" TYPE="STRING" VALUE=""/>
+</BP_SEQ_109407462861592521105931><BP_SEQ_105228559471592521112451 JNDINAME="BC_SEQ_105696627401498293495358" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_KOR_NAME="copy of " TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;null&lt;BR&gt;" aop_point_method="import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;request.setFieldValue(&quot;Subject&quot;,request.getFieldValue(&quot;Answer7&quot;));">
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Subject" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="3" TYPE="STRING" VALUE=""/>
+</BP_SEQ_105228559471592521112451></BC_SEQ_109469316661498293470875></xml>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close" lazy-init="true" scope="singleton">
+		<property name="driverClassName" value="${trinity.datasource.driver}" />
+		<property name="url" value="${trinity.datasource.url}" />
+		<property name="username" value="${trinity.datasource.id}" />
+		<property name="password" value="${trinity.datasource.pw}" />
+		<property name="maxTotal" value="${trinity.datasource.max}" />
+		<property name="maxIdle" value="${trinity.datasource.min}" />
+		<property name="maxWaitMillis" value="${trinity.datasource.wait}" />
+<!-- 		<property name="removeAbandoned" value="true"/> -->
+        <property name="initialSize" value="${trinity.datasource.min}" />
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="maxOpenPreparedStatements" value="200"/>
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="mapperLocations" value="classpath:META-INF/mybatis/mapper/**/*.xml" />
+	</bean>
+	
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+
+</beans>

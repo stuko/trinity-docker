@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> TRINITY </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+<meta http-equiv="Cache-Control" content="no-cache"/> 
+<meta http-equiv="Expires" content="0"/> 
+<meta http-equiv="Pragma" content="no-cache"/> 
+
+
+<script src="/jsp/SDLC/js/default.js" language="javascript" ></script>
+<link rel="stylesheet" href="/jsp/Neo/css/reset.css">
+<link rel="stylesheet" href="/jsp/Neo/css/animate.css">
+<link rel="stylesheet" href="/jsp/Neo/css/styles.css">
+<link rel="stylesheet" href="/jsp/summernote/bootstrap-4.1.3.css" /> 
+<script src="/jsp/anaconda/js/default.js" language="javascript" ></script>
+<script src="/jsp/summernote/jquery-3.3.1.js"></script>
+<script language="javascript">
+// alert(window.location.hostname);
+if(window.location.hostname.indexOf('dev.bestmember.net') >= 0){
+   document.location.href = '/Anaconda.do';
+}
+if(window.location.hostname.indexOf('app.bestmember.net') >= 0){
+   document.location.href = '/Anaconda.do';
+}
+if(window.location.hostname.indexOf('www.bestmember.net') >= 0){
+   document.location.href = '/Anaconda.do';
+}
+if(window.location.hostname.indexOf('app.socialproject.net') >= 0){
+   document.location.href = '/Anaconda.do';
+}
+if(window.location.hostname.indexOf('www.socialproject.net') >= 0){
+   document.location.href = '/Anaconda.do';
+}
+if(window.location.hostname.indexOf('www.duna.kr') >= 0){
+   document.location.href = '/Anaconda.do';
+}
+if(window.location.hostname.indexOf('www.smartsdlc.com') >= 0){
+   document.location.href = '/Anaconda.do';
+}
+
+if(window.location.hostname.indexOf('dev.smartsdlc.com') >= 0){
+   document.location.href = '/CMD_SEQ_101883437261289891462965.do';
+}
+function login()
+{
+	with(fmLogin)
+	{
+		if(id.value == null || id.value == '')
+		{
+			alert("아이디를 입력하시기 바랍니다");
+			return;
+		}
+
+		if(passwd.value == null || passwd.value == '')
+		{
+			alert("패스워드를 입력하시기 바랍니다");
+			return;
+		}
+		AnacondaSubmit(document.fmLogin);
+	}
+}
+$(document).ready(function() {
+    $("#passwd").keydown(function(key) {
+       if (key.keyCode == 13) {
+          login();
+       }
+    });
+ });
+
+</script>
+ </head>
+
+ <body>
+<div id="container-login">
+<h2 style="text-align:center;margin-top:5px;">TRINITY 3.1</h2>
+		<form name="fmLogin" id='frmLogin' method="post" action="/Anaconda.do?CMD=CMD_SEQ_106932268621288335171509" onSubmit="return false;">
+		<input type="hidden" name="ENC.RSA" value="true">
+		<label for="name">Username:</label>
+		<input type="name" name="id" id="id">
+		<label for="username">Password:</label>
+		<input type="password" name="passwd" id="passwd">
+		<button type="button" style="margin-top:5px; margin-left:20px;" class="btn btn-primary" value="Login" onClick="javascript:login();">Login</button>
+		</form>
+	</div>
+<script language="javascript">
+fmLogin.id.focus();
+</script>
+</body>
+</html>

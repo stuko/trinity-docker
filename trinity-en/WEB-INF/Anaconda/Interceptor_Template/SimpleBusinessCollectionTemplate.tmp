@@ -1,0 +1,87 @@
+package com.stuko.anaconda.intercepter;
+
+import com.stuko.anaconda.Exception.ExceptionCenter;
+import com.stuko.anaconda.business.BusinessData;
+import com.stuko.anaconda.business.BusinessCollection;
+import com.stuko.anaconda.business.BusinessHelper;
+import com.stuko.anaconda.intercepter.BusinessIntercepter;
+import com.stuko.anaconda.intercepter.BusinessCollectionIntercepter;
+import com.stuko.anaconda.intercepter.ActionIntercepter;
+import com.stuko.anaconda.value.BlankField;
+import com.stuko.anaconda.value.ReturnValue;
+<@IMPORT>
+
+public class <@NAME> extends BusinessCollectionIntercepter
+{
+	public ReturnValue invokeAfterMethod(BusinessCollection businessCollection, ReturnValue masterReturnValue) throws Exception
+	{
+		String FORWARD_PAGE = new String();
+		ExceptionCenter.debug(businessCollection.getBusinessName() + " ==> Simple BusinessIntercepter Call After!!!");
+		ReturnValue returnValue = new ReturnValue();
+		try
+		{
+			BusinessCollection service = businessCollection;
+			ReturnValue MasterReturnValue = masterReturnValue;
+			ReturnValue LocalReturnValue = returnValue;
+			<@NAME> This = this;
+
+			<@AFTER>
+
+			returnValue.mBRtn = true;
+			returnValue.mORtn = "AOP result is true and Continue process";
+		}
+		catch(Exception e)
+		{
+			returnValue.mBRtn = false;
+			returnValue.mDesc = "AfterMethod Exception";
+			ExceptionCenter.debug("AfterMethod Exception");
+		    ExceptionCenter.catchException(e);
+		    throw new Exception(e);
+		}
+
+
+
+		return returnValue;
+	}
+
+	public ReturnValue invokeBeforeMethod(BusinessCollection businessCollection, ReturnValue masterReturnValue) throws Exception
+	{
+		String FORWARD_PAGE = new String();
+		ExceptionCenter.debug(businessCollection.getBusinessName() + " ==> Simple BusinessIntercepter Call Before!!!");
+		ReturnValue returnValue = new ReturnValue();
+		try
+		{
+			BusinessCollection service = businessCollection;
+			ReturnValue MasterReturnValue = masterReturnValue;
+			ReturnValue LocalReturnValue = returnValue;
+			<@NAME> This = this;
+
+			<@BEFORE>
+			
+			returnValue.mBRtn = true;
+			returnValue.mORtn = "AOP result is true and Continue process";
+		}
+		catch(Exception e)
+		{
+			returnValue.mBRtn = false;
+			returnValue.mDesc = "BeforeMethod Exception";
+			ExceptionCenter.debug("BeforeMethod Exception");
+		    ExceptionCenter.catchException(e);
+		    throw new Exception(e);
+		}
+
+
+
+		return returnValue;
+	}
+
+	public void doProcessSkip(boolean isProcessSkip)
+	{
+		this.setProcessSkip(isProcessSkip);
+	}
+	public void doProcessExit(boolean isProcessExit)
+	{
+		this.setProcessExit(isProcessExit);
+	}
+
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_104435908621565764984839.xml" USER="null" id="BC_SEQ_104435908621565764984839"><BC_SEQ_104435908621565764984839 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="룰 검색결과" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_104435908621565764984839" referenceKey="null"><search DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="select *&lt;BR&gt;from   rule_context&lt;BR&gt;where seq = ?&lt;BR&gt;UNION ALL&lt;BR&gt;select *&lt;BR&gt;from   rule_context&lt;BR&gt;where  rule like CONCAT('%', ?, '%')&lt;BR&gt;or     msg like CONCAT('%', ?, '%')&lt;BR&gt;or     context_name like CONCAT('%', ?, '%')&lt;BR&gt;or     sql_statement like CONCAT('%', ?, '%')&lt;BR&gt;or     attachments like CONCAT('%', ?, '%')&lt;BR&gt;or     rest_url like CONCAT('%', ?, '%')&lt;BR&gt;or     rest_header like CONCAT('%', ?, '%')&lt;BR&gt;or     rest_body like CONCAT('%', ?, '%')&lt;BR&gt;or     rest_result like CONCAT('%', ?, '%')&lt;BR&gt;or     context_desc like CONCAT('%', ?, '%')" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="k1" SEQ="1" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k2" SEQ="2" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k3" SEQ="3" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k4" SEQ="4" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k5" SEQ="5" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k6" SEQ="6" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k7" SEQ="7" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k8" SEQ="8" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k9" SEQ="9" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k10" SEQ="10" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="K11" SEQ="11" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+</search><search_factor DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="select *&lt;BR&gt;from   rule_factor&lt;BR&gt;where  factor_name like CONCAT('%', ?, '%')&lt;BR&gt;or     factor_statement like CONCAT('%', ?, '%')&lt;BR&gt;" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="k1" SEQ="1" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k2" SEQ="2" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+</search_factor><search_function DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="select *&lt;BR&gt;from   rule_function&lt;BR&gt;where function_name like concat('%',?,'%')&lt;BR&gt;or rule_function like concat('%',?,'%')" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="k1" SEQ="1" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k2" SEQ="2" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+</search_function><search_chat DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="select *&lt;BR&gt;from   Chat&lt;BR&gt;where name like concat('%',?,'%')&lt;BR&gt;or value like concat('%',?,'%')" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="k1" SEQ="1" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="k2" SEQ="2" TYPE="REFERENCE" VALUE="keyword"><![CDATA[keyword]]></FIELD>
+</search_chat></BC_SEQ_104435908621565764984839></xml>

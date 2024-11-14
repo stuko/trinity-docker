@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/DefaultDir/sa@sdlc.bestmember.net/DEFAULT_SEQ_108523613691289273297923.xml" USER="null" id="DEFAULT_SEQ_108523613691289273297923"><DEFAULT_SEQ_108523613691289273297923 DEFAULT_XML_DATA_COLLECTION_KOR_NAME="" type=""><anaconda_stat type="TABLE"><SYSTEMID KIND="DATA">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bi_who" SEQ="2" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bi_when" SEQ="3" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bi_what" SEQ="4" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bi_where" SEQ="5" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bi_how" SEQ="6" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="user_id" SEQ="7" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="insert_dt" SEQ="8" TYPE="datetime" VALUE=""/>
+</SYSTEMID></anaconda_stat><bugs type="TABLE"><SYSTEMID KIND="DATA">
+<FIELD KIND="ITEM" LENGTH="0" NAME="bid" SEQ="1" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="title" SEQ="2" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="detail" SEQ="3" TYPE="text" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="reproduced" SEQ="4" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="status" SEQ="5" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="severity" SEQ="6" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="userid" SEQ="7" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="pid" SEQ="8" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bugURL" SEQ="9" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="browserVersion" SEQ="10" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="dateString" SEQ="11" TYPE="varchar" VALUE=""/>
+</SYSTEMID></bugs><change_management type="TABLE"><SYSTEMID KIND="DATA">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cm_key" SEQ="2" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cm_server" SEQ="3" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cm_reg_date" SEQ="4" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cm_upt_date" SEQ="5" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cm_user" SEQ="6" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cm_title" SEQ="7" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cm_list" SEQ="8" TYPE="text" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cm_status" SEQ="9" TYPE="int" VALUE=""/>
+</SYSTEMID></change_management><notice insert="regdate,title,contents,gubun,path,uptdate,member_id,cnt" key="seq" list="seq,regdate,title,gubun,path,uptdate,member_id,cnt" read="seq,regdate,title,contents,gubun,path,uptdate,member_id,cnt" type="TABLE" update="title,contents"><SYSTEMID KIND="DATA">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="regdate" SEQ="2" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="title" SEQ="3" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="contents" SEQ="4" TYPE="text" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="gubun" SEQ="5" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="path" SEQ="6" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="uptdate" SEQ="7" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="member_id" SEQ="8" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cnt" SEQ="9" TYPE="int" VALUE=""/>
+</SYSTEMID></notice></DEFAULT_SEQ_108523613691289273297923></xml>

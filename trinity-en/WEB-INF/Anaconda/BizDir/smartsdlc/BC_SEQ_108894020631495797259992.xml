@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/smartsdlc/BC_SEQ_108894020631495797259992.xml" USER="null" id="BC_SEQ_108894020631495797259992"><BC_SEQ_108894020631495797259992 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="룰 수정 -AJAX" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_108894020631495797259992" referenceKey="null"><updateNode DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE rule_context&lt;BR&gt;SET context_name = ? , context_desc = ? , rule = ? , rule_condition = ? , msg = ? , sql_statement = ?  , attachments = ? , q_code = ? , priority = ? , delimeter= ?, anaconda_db_seq = ?, service_name = ?  , trinity_command = ? &lt;BR&gt;WHERE seq = ?&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;import com.stuko.anaconda.business.*;&lt;BR&gt;import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;&lt;BR&gt;if(BusinessHelper.checkBusinessNull(request.getFieldValue(&quot;q_code&quot;))){&lt;BR&gt;   request.setFieldValue(&quot;QCode&quot;,request.getFieldValue(&quot;q_code&quot;)); &lt;BR&gt;}&lt;BR&gt;&lt;BR&gt;if(!BusinessHelper.checkBusinessNull(request.getFieldValue(&quot;QCode&quot;)) &lt;BR&gt;&amp;&amp; BusinessHelper.checkBusinessNull(request.getFieldValue(&quot;Subject&quot;))){&lt;BR&gt;   request.setFieldValue(&quot;q_code&quot;,AutoSeq.genKey(&quot;Q&quot;));&lt;BR&gt;   request.setFieldValue(&quot;QCode&quot;,request.getFieldValue(&quot;q_code&quot;)); &lt;BR&gt;}&lt;BR&gt;&lt;BR&gt;if(BusinessHelper.checkBusinessNull(request.getFieldValue(&quot;rest_url&quot;))){&lt;BR&gt;    This.doProcessSkip(true);&lt;BR&gt;}&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="context_name" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="context_desc" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rule" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rule_condition" SEQ="4" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="msg" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="sql_statement" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="attachments" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="priority" SEQ="9" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="delimeter" SEQ="10" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="anaconda_db_seq" SEQ="11" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="service_name" SEQ="12" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="trinity_command" SEQ="13" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="14" TYPE="INT" VALUE=""/>
+</updateNode><updateNodeMoreInfo DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE rule_context&lt;BR&gt;SET context_name = ? , context_desc = ? , rule = ? , rule_condition = ? , msg = ? , sql_statement = ?  , attachments = ? ,rest_url = ? , rest_header = ? , rest_body = ?, rest_result = ? , q_code = ?, priority = ? , delimeter= ?, anaconda_db_seq = ?, service_name = ?&lt;BR&gt;WHERE seq = ?&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;if(!BusinessHelper.checkBusinessNull(request.getFieldValue(&quot;rest_url&quot;))&lt;BR&gt;&amp;&amp; (BusinessHelper.checkBusinessNull(request.getFieldValue(&quot;rest_body&quot;)) || BusinessHelper.checkBusinessNull(request.getFieldValue(&quot;rest_header&quot;)))&lt;BR&gt;){&lt;BR&gt;    This.doProcessSkip(true);&lt;BR&gt;}&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="context_name" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="context_desc" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rule" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rule_condition" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="msg" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="sql_statement" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="attachment" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rest_url" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rest_header" SEQ="9" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rest_body" SEQ="10" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rest_result" SEQ="11" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="12" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="priority" SEQ="13" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="delimeter" SEQ="14" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="anaconda_db_seq" SEQ="15" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="service_name" SEQ="16" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="17" TYPE="INT" VALUE=""/>
+</updateNodeMoreInfo><checkQuest DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Select Count(*) AS COUNT from Quest Where QCode = ?" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;Object object = result.getReturnObject(&quot;checkQuest&quot;);&lt;BR&gt;BusinessCollection bc = (BusinessCollection)object;&lt;BR&gt;request.setFieldValue(&quot;COUNT&quot;,bc.getBusinessData(0).getFieldValue(&quot;COUNT&quot;));" aop_point_method="&lt;BR&gt;null&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="1" TYPE="STRING" VALUE=""/>
+</checkQuest><updateQuest JNDINAME="BC_SEQ_107827494641498293947245" KIND="DATA" OWNER="sa" REMOTE="false" TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;!&quot;0&quot;.equals(request.getFieldValue(&quot;COUNT&quot;))&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Subject" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode1" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer1" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode2" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer2" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode3" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer3" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode4" SEQ="9" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer4" SEQ="10" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="q_code" SEQ="11" TYPE="STRING" VALUE=""/>
+</updateQuest><createQuest JNDINAME="BC_SEQ_109469316661498293470875" KIND="DATA" OWNER="sa" REMOTE="false" TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&quot;0&quot;.equals(request.getFieldValue(&quot;COUNT&quot;))&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Subject" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode1" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer1" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode2" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer2" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode3" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer3" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="QCCode4" SEQ="9" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Answer4" SEQ="10" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="q_code" SEQ="11" TYPE="STRING" VALUE=""/>
+</createQuest><createOrUpdateRuleContextScript JNDINAME="createOrUpdateRuleContextScript" KIND="DATA" OWNER="sa" REMOTE="false" TYPE="BC" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="request.setFieldValue(&quot;RULE_SEQ&quot;,request.getFieldValue(&quot;seq&quot;));&lt;BR&gt;// request.setFieldValue(&quot;RULE_CREATE&quot;,&quot;&quot;);&lt;BR&gt;// request.setFieldValue(&quot;RULE_UPDATE&quot;,&quot;true&quot;);">
+<FIELD KIND="ITEM" LENGTH="0" NAME="RULE_SEQ" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="RULE_BEFORE_SCRIPT" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="RULE_AFTER_SCRIPT" SEQ="3" TYPE="STRING" VALUE=""/>
+</createOrUpdateRuleContextScript></BC_SEQ_108894020631495797259992></xml>

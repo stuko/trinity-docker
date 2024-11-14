@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_100957210541665530844383.xml" USER="null" id="BC_SEQ_100957210541665530844383"><BC_SEQ_100957210541665530844383 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="null" BIZ_COLLECTION_KOR_NAME="XML서비스 -sp_push_schedule_info" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="" aop_point_method="" business_rule="null" id="BC_SEQ_100957210541665530844383" referenceKey="null"><sp_push_schedule_info_insert DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO sp_push_schedule_info (push_key,push_client,push_secret,push_db,push_channel) VALUES(?,?,?,?,?)" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;create&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="push_key" SEQ="1" TYPE="KEY" VALUE="PS"><![CDATA[PS]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.clientId" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.secretKey" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.db" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="channel" SEQ="5" TYPE="STRING" VALUE=""/>
+</sp_push_schedule_info_insert><sp_push_schedule_info_update DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE sp_push_schedule_info SET push_client= ?,push_secret= ?,push_db= ?,push_channel= ?,push_yn= ?,push_update_dt= now() WHERE push_key = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;update&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="push_client" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="push_secret" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="push_db" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="push_channel" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="push_yn" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="push_key" SEQ="6" TYPE="STRING" VALUE=""/>
+</sp_push_schedule_info_update><sp_push_schedule_info_delete DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="DELETE FROM sp_push_schedule_info WHERE push_key = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;delete&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="push_key" SEQ="1" TYPE="STRING" VALUE=""/>
+</sp_push_schedule_info_delete><sp_push_schedule_info_read DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT push_key,push_client,push_secret,push_db,push_channel,push_yn,push_create_dt,push_update_dt FROM sp_push_schedule_info WHERE push_key = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;read&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="push_key" SEQ="1" TYPE="STRING" VALUE=""/>
+</sp_push_schedule_info_read><sp_push_schedule_info_list DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT push_key,push_client,push_secret,push_db,push_channel,push_yn,push_create_dt,push_update_dt , X.count&lt;BR&gt;FROM sp_push_schedule_info , (select count(*) as count from sp_push_schedule_info) X&lt;BR&gt;WHERE push_client = ? &lt;BR&gt;AND push_secret = ?" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="if(!&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;))){This.doProcessSkip(true);}else{if(request.getFieldValue(&quot;pos&quot;) == null) request.setFieldValue(&quot;pos&quot;,&quot;0&quot;);}">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.clientId" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.secretKey" SEQ="2" TYPE="STRING" VALUE=""/>
+</sp_push_schedule_info_list></BC_SEQ_100957210541665530844383></xml>

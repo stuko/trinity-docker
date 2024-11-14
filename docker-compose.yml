@@ -4,7 +4,7 @@ services:
       image: blacklabelops/hsqldb
       hostname: trinity-db
       extra_hosts:
-        - "trinity-db:192.168.57.243"
+        - "trinity-db:${TRINITY_DB_IP}"
       container_name: trinity-db
       environment:
         HSQLDB_DATABASE_HOST: trinity-db
@@ -23,7 +23,7 @@ services:
       image: tomcat:8
       hostname: trinity-web
       extra_hosts:
-        - "trinity-db:192.168.57.243"
+        - "trinity-db:${TRINITY_DB_IP}"
       container_name: trinity-web
       environment:
         JDBC_URL: jdbc:hsqldb:hsql://trinity-db:9001/anaconda
@@ -33,11 +33,12 @@ services:
         - "8800:8080"
         - "8843:8443"
       volumes:
-        - ./trinity:/usr/local/tomcat/webapps/ROOT
+        - ./trinity-en:/usr/local/tomcat/webapps/ROOT
         - ./config/trinity-docker.key:/usr/local/tomcat/conf/trinity-docker.key
         - ./config/server.xml:/usr/local/tomcat/conf/server.xml
         - ./config/context.xml:/usr/local/tomcat/conf/context.xml
         - ./lib/hsqldb.jar:/usr/local/tomcat/lib/hsqldb.jar
+        - ./logs:/usr/local/tomcat/logs
       links:
         - db
       restart: always  

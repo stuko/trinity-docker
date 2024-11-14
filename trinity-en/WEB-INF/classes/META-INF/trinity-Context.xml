@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util">
+
+	<bean id="config"
+		class="com.stuko.kronos.impl.NonForgetfulPropertyPlaceholderConfigurer">
+		<property name="locations"> 
+			<list>
+				<value>META-INF/common.properties</value>
+			</list>
+		</property>
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+	</bean>
+
+	<bean id="ConnectionPool" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="${trinity.datasource.driver}" />
+		<property name="url" value="${trinity.datasource.url}" />
+		<property name="username" value="${trinity.datasource.id}" />
+		<property name="password" value="${trinity.datasource.pw}" />
+		<property name="maxTotal" value="${trinity.datasource.max}" />
+		<property name="maxIdle" value="${trinity.datasource.min}" />
+		<property name="maxWaitMillis" value="${trinity.datasource.wait}" />
+	</bean>
+	
+	<bean id="LocalConnectionPool" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="${trinity.datasource.local.driver}" />
+		<property name="url" value="${trinity.datasource.local.url}" />
+		<property name="username" value="${trinity.datasource.local.id}" />
+		<property name="password" value="${trinity.datasource.local.pw}" />
+		<property name="maxTotal" value="${trinity.datasource.local.max}" />
+		<property name="maxIdle" value="${trinity.datasource.local.min}" />
+		<property name="maxWaitMillis" value="${trinity.datasource.local.wait}" />
+	</bean>
+
+	<bean id="MobileFramework" class="com.stuko.trinity.container.impl.TrinityContainer">
+	</bean>
+	
+	
+	<bean id="saveAnacondaXML" class="com.stuko.kronos.business.impl.SQLMapperImpl"  scope="prototype"
+		>
+		<property name="name" value="saveAnacondaXML" />
+		<property name="resultAdd" value="true" />
+		<property name="connectionPool" ref="LocalConnectionPool" />
+		<property name="statement">
+			<value><![CDATA[
+			INSERT INTO ANACONDA (XML_KEY,XML_KIND,XML_DIR,XML_TAIL,XML_CONTENTS,XML_CHANGEDT)
+			VALUES({=xml_key},{=xml_kind},{=xml_dir},{=xml_tail},{=xml_contents},CURRENT_DATE)
+	  	 ]]></value>
+		</property>
+	</bean>
+	
+	<bean id="deleteAnacondaXML" class="com.stuko.kronos.business.impl.SQLMapperImpl"  scope="prototype"
+		>
+		<property name="name" value="deleteAnacondaXML" />
+		<property name="resultAdd" value="true" />
+		<property name="connectionPool" ref="LocalConnectionPool" />
+		<property name="statement">
+			<value><![CDATA[
+			DELETE FROM ANACONDA
+			WHERE XML_KEY = {=xml_key}
+			AND   XML_KIND = {=xml_kind}
+	  	 ]]></value>
+		</property>
+	</bean>
+		
+	<bean id="updateAnacondaXML" class="com.stuko.kronos.business.impl.SQLMapperImpl"  scope="prototype"
+		>
+		<property name="name" value="updateAnacondaXML" />
+		<property name="resultAdd" value="true" />
+		<property name="connectionPool" ref="LocalConnectionPool" />
+		<property name="statement">
+			<value><![CDATA[
+			UPDATE ANACONDA
+			SET XML_DIR = {=xml_dir}, XML_CONTENTS = {=xml_contents} , XML_CHANGEDT = CURRENT_DATE
+			WHERE XML_KEY = {=xml_key}
+			AND   XML_KIND = {=xml_kind}
+	  	 ]]></value>
+		</property>
+	</bean>	
+    <bean id="selectAnacondaXML" class="com.stuko.kronos.business.impl.SQLMapperImpl"  scope="prototype"
+		>
+		<property name="name" value="selectAnacondaXML" />
+		<property name="resultAdd" value="true" />
+		<property name="connectionPool" ref="LocalConnectionPool" />
+		<property name="statement">
+			<value><![CDATA[
+			SELECT * FROM ANACONDA
+			WHERE XML_KEY = {=xml_key}
+			AND   XML_KIND = {=xml_kind}
+	  	 ]]></value>
+		</property>
+	</bean>		
+	
+  <bean id="selectAllAnacondaXML" class="com.stuko.kronos.business.impl.SQLMapperImpl"  scope="prototype"
+		>
+		<property name="name" value="selectAllAnacondaXML" />
+		<property name="resultAdd" value="true" />
+		<property name="connectionPool" ref="LocalConnectionPool" />
+		<property name="statement">
+			<value><![CDATA[
+			SELECT * FROM ANACONDA
+	  	 ]]></value>
+		</property>
+	</bean>			
+
+	<import resource="mybatis/mybatis-datasource.xml" />
+
+	
+</beans>            

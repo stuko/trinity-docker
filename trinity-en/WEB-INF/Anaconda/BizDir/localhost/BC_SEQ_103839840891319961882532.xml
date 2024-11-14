@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/localhost/BC_SEQ_103839840891319961882532.xml" USER="null" id="BC_SEQ_103839840891319961882532"><BC_SEQ_103839840891319961882532 AnacondaRule="" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME=" 프로젝트 지식관리 입력  -&gt;  프로젝트 지식관리 입력 결과 " COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="null " aop_point_method="null " business_rule="null" id="BC_SEQ_103839840891319961882532" referenceKey=""><insert DATASOURCE="java:comp/env/jdbc/hsql" DESC="글 입력" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="insert into notice(title, contents, regdate,gubun,member_id , uptdate)&lt;BR&gt;values (?,?, TO_CHAR (CURRENT_TIMESTAMP,'YYYYMMDDHH24MISS'),?,?,TO_CHAR (CURRENT_TIMESTAMP,'YYYYMMDDHH24MISS') ) " TYPE="SQL" aop_point_class="null " aop_point_method="null ">
+<FIELD KIND="ITEM" LENGTH="0" NAME="title" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="contents" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="gubun" SEQ="3" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.MEMBER_NAME" SEQ="4" TYPE="STRING" VALUE=""/>
+</insert></BC_SEQ_103839840891319961882532></xml>

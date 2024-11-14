@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_108536154121658102646810.xml" USER="null" id="BC_SEQ_108536154121658102646810"><BC_SEQ_108536154121658102646810 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="트레이너챗봇설정정보 추가" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_108536154121658102646810" referenceKey="null"><insert DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Insert into ChatBotTrainerConfig&lt;BR&gt;(clientId, training_url, trigger_name, quest) &lt;BR&gt;values(? ,?,?,? )&lt;BR&gt;" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.clientId" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="training_url" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="trigger_name" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="quest" SEQ="4" TYPE="STRING" VALUE=""/>
+</insert></BC_SEQ_108536154121658102646810></xml>

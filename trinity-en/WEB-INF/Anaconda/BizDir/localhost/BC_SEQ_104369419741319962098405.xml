@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/localhost/BC_SEQ_104369419741319962098405.xml" USER="null" id="BC_SEQ_104369419741319962098405"><BC_SEQ_104369419741319962098405 AnacondaRule="" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME=" 프로젝트 지식관리 수정   -&gt;  프로젝트 지식관리 수정 결과 " COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="null " aop_point_method="null " business_rule="null" id="BC_SEQ_104369419741319962098405" referenceKey=""><update DATASOURCE="java:comp/env/jdbc/hsql" DESC="글 수정" KIND="DATA" OWNER="sa" SERVICE_NAME="update notice set title = ? , contents = ? &lt;BR&gt;, uptdate = TO_CHAR (CURRENT_TIMESTAMP,'YYYYMMDDHH24MISS') &lt;BR&gt;where seq = ? and member_id = ? " TYPE="SQL" aop_point_class="null ">
+<FIELD KIND="ITEM" LENGTH="0" NAME="title" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="contents" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="3" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.MEMBER_NAME" SEQ="4" TYPE="STRING" VALUE=""/>
+</update></BC_SEQ_104369419741319962098405></xml>

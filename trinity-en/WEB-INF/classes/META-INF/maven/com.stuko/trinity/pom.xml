@@ -1,0 +1,314 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.stuko</groupId>
+  <artifactId>trinity</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>trinity</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+		<project.build.sourceEncoding>euc-kr</project.build.sourceEncoding>
+		<jdk.version>1.8</jdk.version>
+		<project.root.target>./target</project.root.target>
+		<project.build.directory>./target</project.build.directory>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+        <maven.test.skip>true</maven.test.skip>
+	</properties>
+
+
+
+ <build>
+  	<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>euc-kr</encoding>
+				</configuration>
+			</plugin>		            	
+  	 	
+	  <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-dependency-plugin</artifactId>
+         <executions>
+          <execution>
+                <id>copy-dependencies</id>
+                <phase>prepare-package</phase>
+                <goals>
+                    <goal>copy-dependencies</goal>
+                </goals>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                    <overWriteReleases>false</overWriteReleases>
+                    <overWriteSnapshots>false</overWriteSnapshots>
+                    <overWriteIfNewer>true</overWriteIfNewer>
+                </configuration>
+            </execution>
+           <execution>             
+             <id>copy-artifact-step1</id>
+             <phase>package</phase>
+             <goals>
+               <goal>copy</goal>
+             </goals>
+             <configuration>
+               <artifactItems>
+                   <artifactItem>
+                     <groupId>${project.groupId}</groupId>
+                     <artifactId>${project.artifactId}</artifactId>
+                     <version>${project.version}</version>
+                     <type>${project.packaging}</type>
+                   </artifactItem>
+               </artifactItems>
+               <outputDirectory>./WebContents/WEB-INF/lib</outputDirectory>
+               <resources>
+               	<resource>
+               		 <directory>${project.build.directory}</directory>
+                     <includes>
+                         <include>*.jar</include>
+                     </includes>
+               	</resource>
+               </resources>
+            </configuration>
+           </execution>
+                      
+         </executions>
+       </plugin>
+       
+       
+       <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-resources-plugin</artifactId>
+         <executions>
+           <execution>             
+             <id>copy-artifact</id>
+             <phase>package</phase>
+             <goals>
+               <goal>copy-resources</goal>
+             </goals>
+             <configuration>
+               <outputDirectory>./WebContents/WEB-INF/lib</outputDirectory>
+               <resources>
+               	<resource>
+               		 <directory>${project.build.directory}/lib</directory>
+                     <includes>
+                         <include>*.jar</include>
+                     </includes>
+               	</resource>
+               
+               </resources>
+            </configuration>
+           </execution>
+           
+			<execution>             
+             <id>copy-artifact-jar</id>
+             <phase>package</phase>
+             <goals>
+               <goal>copy-resources</goal>
+             </goals>
+             <configuration>
+               <outputDirectory>./tomcat7/webapps/sdlc/WEB-INF/lib</outputDirectory>
+               <resources>
+               	<resource>
+               		 <directory>./WebContents/WEB-INF/lib</directory>
+                     <includes>
+                         <include>*.jar</include>
+                     </includes>
+                      <excludes>
+                     	<exclude>**/*servlet-api*.jar</exclude>
+                     	<exclude>**/*jsp-api*.jar</exclude>
+                     	<exclude>**/*el-api*.jar</exclude>
+                     	<exclude>**/javax.ejb*.jar</exclude>
+                     	<exclude>**/javax.jms*.jar</exclude>
+                     </excludes>
+               	</resource>
+               
+               </resources>
+            </configuration>
+           </execution>           
+         </executions>
+       </plugin>
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+    </plugins>
+  </build>
+
+
+
+
+
+
+
+
+
+
+
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+	<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>2.3.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>2.4.3</version>
+		</dependency>    
+    <dependency>
+    	<groupId>javax.servlet</groupId>
+    	<artifactId>javax.servlet-api</artifactId>
+    	<version>4.0.0-b05</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.logging.log4j</groupId>
+    	<artifactId>log4j12-api</artifactId>
+    	<version>2.0-alpha2</version>
+    </dependency>
+	<dependency>
+		<groupId>org.kie.modules</groupId>
+		<artifactId>com-fasterxml-jackson</artifactId>
+		<version>6.5.0.Final</version>
+		<type>pom</type>
+	</dependency>
+    <dependency>
+    	<groupId>bsh</groupId>
+    	<artifactId>bsh</artifactId>
+    	<version>2.0b4</version>
+    </dependency>
+    <dependency>
+    	<groupId>javax.servlet.jsp</groupId>
+    	<artifactId>jsp-api</artifactId>
+    	<version>2.2.1-b03</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.hsqldb</groupId>
+    	<artifactId>hsqldb</artifactId>
+    	<version>2.4.0</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.commons</groupId>
+    	<artifactId>commons-dbcp2</artifactId>
+    	<version>2.1.1</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.apache.commons</groupId>
+    	<artifactId>commons-pool2</artifactId>
+    	<version>2.4.2</version>
+    </dependency>
+	<dependency>
+		<groupId>org.kie.modules</groupId>
+		<artifactId>com-fasterxml-jackson</artifactId>
+		<version>6.5.0.Final</version>
+		<type>pom</type>
+	</dependency>
+	<dependency>
+		<groupId>org.glassfish</groupId>
+		<artifactId>javax.mail</artifactId>
+		<version>10.0-b28</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+	<dependency>
+	    <groupId>commons-fileupload</groupId>
+	    <artifactId>commons-fileupload</artifactId>
+	    <version>1.3.3</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.6</version>
+	</dependency>
+   <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-beans</artifactId>
+    	<version>4.3.8.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-context</artifactId>
+    	<version>4.3.8.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-context-support</artifactId>
+    	<version>4.3.8.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-expression</artifactId>
+    	<version>4.3.8.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-jdbc</artifactId>
+    	<version>4.3.8.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-aop</artifactId>
+    	<version>4.3.8.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-tx</artifactId>
+    	<version>4.3.8.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-web</artifactId>
+    	<version>4.3.8.RELEASE</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-webmvc</artifactId>
+    	<version>4.3.8.RELEASE</version>
+    </dependency>	
+	
+	<dependency>
+        <groupId>org.springframework.social</groupId>
+        <artifactId>spring-social-core</artifactId>
+        <version>1.1.4.RELEASE</version>
+    </dependency>
+	<dependency>
+	    <groupId>org.springframework.social</groupId>
+	    <artifactId>spring-social-google</artifactId>
+        <version>1.0.0.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.social</groupId>
+        <artifactId>spring-social-facebook</artifactId>
+        <version>2.0.3.RELEASE</version>
+    </dependency>
+
+    
+
+	
+  </dependencies>
+</project>
