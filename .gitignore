@@ -3,3 +3,5 @@
 *.log
 node_modules/
 front/trinity-react/node_modules/
+./logs/
+/logs/

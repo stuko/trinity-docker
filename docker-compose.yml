@@ -15,23 +15,24 @@ services:
         HSQLDB_REMOTE: "false"
         HSQLDB_DATABASE_ALIAS: "anaconda"
       ports:
-        - "9001:9001"
+        - "9901:9001"
       volumes:
         - "./db:/opt/database"
-      restart: always
+#      restart: always
     web:
-      image: tomcat:8
+      image: tomcat:9.0.97
       hostname: trinity-web
       extra_hosts:
         - "trinity-db:${TRINITY_DB_IP}"
       container_name: trinity-web
       environment:
-        JDBC_URL: jdbc:hsqldb:hsql://trinity-db:9001/anaconda
+        JDBC_URL: jdbc:hsqldb:hsql://trinity-db:9901/anaconda
         JDBC_USER: sa
         JDBC_PASS: sa
       ports:
-        - "8800:8080"
+        - "8880:8080"
         - "8843:8443"
+        - "8809:8009"
       volumes:
         - ./trinity-en:/usr/local/tomcat/webapps/ROOT
         - ./config/trinity-docker.key:/usr/local/tomcat/conf/trinity-docker.key
@@ -41,4 +42,4 @@ services:
         - ./logs:/usr/local/tomcat/logs
       links:
         - db
-      restart: always  
+#      restart: always  
