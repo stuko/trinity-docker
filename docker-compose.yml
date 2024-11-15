@@ -1,4 +1,3 @@
-version: '3.3'
 services:
     db:
       image: blacklabelops/hsqldb
@@ -13,11 +12,11 @@ services:
         HSQLDB_TRACE: "false"
         HSQLDB_SILENT: "true"
         HSQLDB_REMOTE: "false"
-        HSQLDB_DATABASE_ALIAS: "anaconda"
+        HSQLDB_DATABASE_ALIAS: "test"
       ports:
         - "9901:9001"
       volumes:
-        - "./db:/opt/database"
+        - "./data:/opt/database"
 #      restart: always
     web:
       image: tomcat:9.0.97
@@ -26,19 +25,21 @@ services:
         - "trinity-db:${TRINITY_DB_IP}"
       container_name: trinity-web
       environment:
-        JDBC_URL: jdbc:hsqldb:hsql://trinity-db:9901/anaconda
+        JDBC_URL: jdbc:hsqldb:hsql://trinity-db:9901/test
         JDBC_USER: sa
-        JDBC_PASS: sa
+        JDBC_PASS: 
       ports:
         - "8880:8080"
         - "8843:8443"
         - "8809:8009"
       volumes:
-        - ./trinity-en:/usr/local/tomcat/webapps/ROOT
+        - ./trinity-en:/usr/local/tomcat/webapps/trinity
         - ./config/trinity-docker.key:/usr/local/tomcat/conf/trinity-docker.key
         - ./config/server.xml:/usr/local/tomcat/conf/server.xml
         - ./config/context.xml:/usr/local/tomcat/conf/context.xml
         - ./lib/hsqldb.jar:/usr/local/tomcat/lib/hsqldb.jar
+        - ./lib/mariadb-java-client-2.7.2.jar:/usr/local/tomcat/lib/mariadb-java-client-2.7.2.jar
+        - ./lib/ojdbc14.jar:/usr/local/tomcat/lib/ojdbc14.jar
         - ./logs:/usr/local/tomcat/logs
       links:
         - db
