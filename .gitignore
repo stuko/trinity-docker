@@ -7,3 +7,7 @@ front/trinity-react/node_modules/
 /logs/
 ./data/
 /data/
+./logs-ml/
+/logs-ml/
+./data-ml/
+/data-ml/
