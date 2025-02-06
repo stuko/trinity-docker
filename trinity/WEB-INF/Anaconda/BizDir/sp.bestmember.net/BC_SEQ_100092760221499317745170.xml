@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_100092760221499317745170.xml" USER="null" id="BC_SEQ_100092760221499317745170"><BC_SEQ_100092760221499317745170 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="프로젝트 액티비티 추가하기" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_100092760221499317745170" referenceKey="null"><createProjectActivity DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO ProjectActivity(PMCode, ActivityCode, ActivitySeq, ActivityName, RoleCode, PhaseCode) values(?,?,?,?,?,?)" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="import com.stuko.anaconda.business.*;&lt;BR&gt;import com.stuko.anaconda.XmlConfig.*;&lt;BR&gt;&lt;BR&gt;request.setFieldValue(&quot;ActivityCode&quot;,AutoSeq.genKey(&quot;AT&quot;));">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PMCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ActivityCode" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ActivitySeq" SEQ="3" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ActivityName" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="RoleCode" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PhaseCode" SEQ="6" TYPE="STRING" VALUE=""/>
+</createProjectActivity><createSchedule DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="&lt;BR&gt;&lt;BR&gt;INSERT INTO Schedule(PMCode, ProjectCode, PMActivityCode, StartDateTime, EndDateTime,ActivityDuration) values(?,(Select ProjectCode From ProjectManagement Where PMCode = ?),?, str_to_date(?,'%Y%m%d%H%i%s'), str_to_date(?,'%Y%m%d%H%i%s'),Datediff(?,?))&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" TYPE="SQL" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PMCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PMCode1" SEQ="2" TYPE="REFERENCE" VALUE="PMCode"><![CDATA[PMCode]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ActivityCode" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="StartDateTime" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="EndDateTime" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="EndDateTime2" SEQ="6" TYPE="REFERENCE" VALUE="EndDateTime"><![CDATA[EndDateTime]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="StartDateTime2" SEQ="7" TYPE="REFERENCE" VALUE="StartDateTime"><![CDATA[StartDateTime]]></FIELD>
+</createSchedule></BC_SEQ_100092760221499317745170></xml>

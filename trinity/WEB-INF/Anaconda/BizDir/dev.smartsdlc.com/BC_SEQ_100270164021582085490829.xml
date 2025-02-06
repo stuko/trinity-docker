@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_100270164021582085490829.xml" USER="null" id="BC_SEQ_100270164021582085490829"><BC_SEQ_100270164021582085490829 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="XML서비스 -MEMBERSHIP" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_100270164021582085490829" referenceKey="null"><MEMBERSHIP_insert DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO MEMBERSHIP (MSHP_KEY,SVC_KEY,MSHP_USER,MSHP_NAME,MSHP_PERIOD,MSHP_COUNT,MSHP_STARTDATE,MSHP_ENDDATE,MSHP_YN) VALUES(?,?,?,?,?,?,?,?,?)" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;create&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_KEY" SEQ="1" TYPE="KEY" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_USER" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_NAME" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_PERIOD" SEQ="5" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_COUNT" SEQ="6" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_STARTDATE" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_ENDDATE" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_YN" SEQ="9" TYPE="STRING" VALUE=""/>
+</MEMBERSHIP_insert><MEMBERSHIP_update DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE MEMBERSHIP SET  WHERE SVC_KEY = ? MSHP_USER = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;update&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_USER" SEQ="2" TYPE="STRING" VALUE=""/>
+</MEMBERSHIP_update><MEMBERSHIP_delete DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="DELETE FROM MEMBERSHIP WHERE SVC_KEY = ? MSHP_USER = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;delete&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_USER" SEQ="2" TYPE="STRING" VALUE=""/>
+</MEMBERSHIP_delete><MEMBERSHIP_read DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT MSHP_KEY,SVC_KEY,MSHP_REGDATE,MSHP_USER,MSHP_NAME,MSHP_PERIOD,MSHP_COUNT,MSHP_STARTDATE,MSHP_ENDDATE,MSHP_YN FROM MEMBERSHIP WHERE SVC_KEY = ? MSHP_USER = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;read&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_USER" SEQ="2" TYPE="STRING" VALUE=""/>
+</MEMBERSHIP_read><MEMBERSHIP_list DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT MSHP_KEY,SVC_KEY,MSHP_REGDATE,MSHP_USER,MSHP_NAME,MSHP_PERIOD,MSHP_COUNT,MSHP_STARTDATE,MSHP_ENDDATE,MSHP_YN FROM MEMBERSHIP LIMIT ?,10" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="if(!&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;))){&lt;BR&gt;   This.doProcessSkip(true);&lt;BR&gt;}else{&lt;BR&gt;   if(request.getFieldValue(&quot;pos&quot;) == null){&lt;BR&gt;       request.setFieldValue(&quot;pos&quot;,&quot;0&quot;);&lt;BR&gt;   }&lt;BR&gt;}">
+<FIELD KIND="ITEM" LENGTH="0" NAME="pos" SEQ="1" TYPE="INT" VALUE=""/>
+</MEMBERSHIP_list><selectTotalCount DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT COUNT(*) AS CNT&lt;BR&gt;FROM MEMBERSHIP" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+</selectTotalCount></BC_SEQ_100270164021582085490829></xml>

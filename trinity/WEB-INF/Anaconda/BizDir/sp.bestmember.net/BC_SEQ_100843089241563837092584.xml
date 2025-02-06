@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_100843089241563837092584.xml" USER="null" id="BC_SEQ_100843089241563837092584"><BC_SEQ_100843089241563837092584 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="나의 챗봇 삭제하기" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_100843089241563837092584" referenceKey="null"><deleteMyChatbot DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="delete from Chat where channelId =  ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="chatbot" SEQ="1" TYPE="STRING" VALUE=""/>
+</deleteMyChatbot><deleteChatBotMaster DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Delete From ChatBot&lt;BR&gt;Where Token = ? And ChatBotKey = ? And ChatBotName = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.clientId" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="token" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="3" TYPE="STRING" VALUE=""/>
+</deleteChatBotMaster></BC_SEQ_100843089241563837092584></xml>

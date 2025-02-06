@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_105151026041617927277421.xml" USER="null" id="BC_SEQ_105151026041617927277421"><BC_SEQ_105151026041617927277421 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="null" BIZ_COLLECTION_KOR_NAME="XML서비스 -SB_PLAN" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="" aop_point_method="" business_rule="null" id="BC_SEQ_105151026041617927277421" referenceKey="null"><SB_PLAN_insert DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO SB_PLAN (SPL_KEY,PL_KEY,SPL_SEQ,SPL_PERCENT,SPL_WEIGHT,SPL_TITLE,SPL_TEXT,PL_SEQ) VALUES(?,?,?,?,?,?,?,?)" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;create&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_KEY" SEQ="1" TYPE="KEY" VALUE="SPL"><![CDATA[SPL]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PL_KEY" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_SEQ" SEQ="3" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_PERCENT" SEQ="4" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_WEIGHT" SEQ="5" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_TITLE" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_TEXT" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PL_SEQ" SEQ="8" TYPE="INT" VALUE=""/>
+</SB_PLAN_insert><SB_PLAN_update DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE SB_PLAN SET SPL_PERCENT= ?,SPL_WEIGHT= ?,SPL_TITLE= ?,SPL_TEXT= ? WHERE SPL_KEY = ?  AND SPL_SEQ = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;update&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_PERCENT" SEQ="1" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_WEIGHT" SEQ="2" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_TITLE" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_TEXT" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_KEY" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_SEQ" SEQ="6" TYPE="INT" VALUE=""/>
+</SB_PLAN_update><SB_PLAN_delete DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="DELETE FROM SB_PLAN WHERE SPL_KEY = ?  AND SPL_SEQ = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;delete&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_SEQ" SEQ="2" TYPE="INT" VALUE=""/>
+</SB_PLAN_delete><SB_PLAN_read DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT SPL_KEY,PL_KEY,SPL_SEQ,RL_SEQ,SPL_WRITEDT,SPL_PERCENT,SPL_WEIGHT,SPL_TITLE,SPL_TEXT FROM SB_PLAN WHERE SPL_KEY = ?  AND SPL_SEQ = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;read&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SPL_SEQ" SEQ="2" TYPE="INT" VALUE=""/>
+</SB_PLAN_read><SB_PLAN_list DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT       SPL_KEY&lt;BR&gt;                    ,PL_KEY&lt;BR&gt;                    ,PL_SEQ&lt;BR&gt;                    , SPL_SEQ&lt;BR&gt;                    ,RL_SEQ&lt;BR&gt;                    ,SPL_WRITEDT&lt;BR&gt;                    ,SPL_PERCENT&lt;BR&gt;                    ,SPL_WEIGHT&lt;BR&gt;                    ,SPL_TITLE&lt;BR&gt;                    ,SPL_TEXT &lt;BR&gt;FROM           SB_PLAN &lt;BR&gt;WHERE        PL_KEY = ? &lt;BR&gt;AND              PL_SEQ = ? &lt;BR&gt;ORDER BY   SPL_SEQ" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="if(!&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;))){This.doProcessSkip(true);}else{if(request.getFieldValue(&quot;pos&quot;) == null) request.setFieldValue(&quot;pos&quot;,&quot;0&quot;);}">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PL_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PL_SEQ" SEQ="2" TYPE="INT" VALUE=""/>
+</SB_PLAN_list></BC_SEQ_105151026041617927277421></xml>

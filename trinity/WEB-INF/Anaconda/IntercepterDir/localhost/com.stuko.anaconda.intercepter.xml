@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="EUC-KR"?><xml PATH="null" USER="null" id="com.stuko.anaconda.intercepter"><com.stuko.anaconda.intercepter COLLECTION_KOR_NAME=""><IC_SEQ_102420394721381491074031 INTERCEPTER_TYPE="INTERCEPTER_BIZPROCESS" SOURCE_PACKAGE="com.stuko.anaconda.intercepter" TYPE="INTERCEPTER"><SOURCE_INTERCEPTER_BEFORE><![CDATA[import com.stuko.anaconda.business.*;
+if(!BusinessHelper.checkBusinessNull(request.getFieldValue("pos")))
+{
+ request.setFieldValue("pos","0");
+}
+ ]]></SOURCE_INTERCEPTER_BEFORE><SOURCE_INTERCEPTER_AFTER/></IC_SEQ_102420394721381491074031><IC_SEQ_108405589551381491187468 INTERCEPTER_TYPE="INTERCEPTER_BIZPROCESS" SOURCE_PACKAGE="com.stuko.anaconda.intercepter" TYPE="INTERCEPTER"><SOURCE_INTERCEPTER_BEFORE><![CDATA[import com.stuko.anaconda.business.*;
+if(!BusinessHelper.checkBusinessNull(request.getFieldValue("pos")))
+{
+ request.setFieldValue("pos","0");
+}
+ ]]></SOURCE_INTERCEPTER_BEFORE><SOURCE_INTERCEPTER_AFTER/></IC_SEQ_108405589551381491187468><IC_SEQ_104700535291381491190671 INTERCEPTER_TYPE="INTERCEPTER_BIZPROCESS" SOURCE_PACKAGE="com.stuko.anaconda.intercepter" TYPE="INTERCEPTER"><SOURCE_INTERCEPTER_BEFORE><![CDATA[import com.stuko.anaconda.business.*;
+if(!BusinessHelper.checkBusinessNull(request.getFieldValue("pos")))
+{
+ request.setFieldValue("pos","0");
+}
+ ]]></SOURCE_INTERCEPTER_BEFORE><SOURCE_INTERCEPTER_AFTER/></IC_SEQ_104700535291381491190671><IC_SEQ_108034100661381491192140 INTERCEPTER_TYPE="INTERCEPTER_BIZPROCESS" SOURCE_PACKAGE="com.stuko.anaconda.intercepter" TYPE="INTERCEPTER"><SOURCE_INTERCEPTER_BEFORE><![CDATA[import com.stuko.anaconda.business.*;
+if(!BusinessHelper.checkBusinessNull(request.getFieldValue("pos")))
+{
+ request.setFieldValue("pos","0");
+}
+ ]]></SOURCE_INTERCEPTER_BEFORE><SOURCE_INTERCEPTER_AFTER/></IC_SEQ_108034100661381491192140><IC_SEQ_107941038491381491225484 INTERCEPTER_TYPE="INTERCEPTER_BIZPROCESS" SOURCE_PACKAGE="com.stuko.anaconda.intercepter" TYPE="INTERCEPTER"><SOURCE_INTERCEPTER_BEFORE><![CDATA[import com.stuko.anaconda.business.*;
+if(!BusinessHelper.checkBusinessNull(request.getFieldValue("pos")))
+{
+ request.setFieldValue("pos","0");
+}
+ ]]></SOURCE_INTERCEPTER_BEFORE><SOURCE_INTERCEPTER_AFTER/></IC_SEQ_107941038491381491225484><IC_SEQ_106497929401381491331218 INTERCEPTER_TYPE="INTERCEPTER_BIZPROCESS" SOURCE_PACKAGE="com.stuko.anaconda.intercepter" TYPE="INTERCEPTER"><SOURCE_INTERCEPTER_BEFORE><![CDATA[import com.stuko.anaconda.business.*;
+if(!BusinessHelper.checkBusinessNull(request.getFieldValue("pos")))
+{
+ request.setFieldValue("pos","0");
+}
+ ]]></SOURCE_INTERCEPTER_BEFORE><SOURCE_INTERCEPTER_AFTER/></IC_SEQ_106497929401381491331218><IC_SEQ_109821378361381491371578 INTERCEPTER_TYPE="INTERCEPTER_BIZPROCESS" SOURCE_PACKAGE="com.stuko.anaconda.intercepter" TYPE="INTERCEPTER"><SOURCE_INTERCEPTER_BEFORE><![CDATA[import com.stuko.anaconda.business.*;
+if(!BusinessHelper.checkBusinessNull(request.getFieldValue("pos")))
+{
+ request.setFieldValue("pos","0");
+}
+ ]]></SOURCE_INTERCEPTER_BEFORE><SOURCE_INTERCEPTER_AFTER/></IC_SEQ_109821378361381491371578><IC_SEQ_109174309001381491450531 INTERCEPTER_TYPE="INTERCEPTER_BIZPROCESS" SOURCE_PACKAGE="com.stuko.anaconda.intercepter" TYPE="INTERCEPTER"><SOURCE_INTERCEPTER_BEFORE><![CDATA[import com.stuko.anaconda.business.*;
+if(!BusinessHelper.checkBusinessNull(request.getFieldValue("pos")))
+{
+ request.setFieldValue("pos","0");
+}
+ ]]></SOURCE_INTERCEPTER_BEFORE><SOURCE_INTERCEPTER_AFTER/></IC_SEQ_109174309001381491450531><IC_SEQ_101982202681381491621906 INTERCEPTER_TYPE="INTERCEPTER_SIMPLE_BIZPROCESS" SOURCE_PACKAGE="com.stuko.anaconda.intercepter" TYPE="INTERCEPTER"><SOURCE_INTERCEPTER_BEFORE><![CDATA[import com.stuko.anaconda.business.*;
+if(!BusinessHelper.checkBusinessNull(request.getFieldValue("pos")))
+{
+ request.setFieldValue("pos","0");
+}
+ ]]></SOURCE_INTERCEPTER_BEFORE><SOURCE_INTERCEPTER_AFTER/></IC_SEQ_101982202681381491621906></com.stuko.anaconda.intercepter></xml>

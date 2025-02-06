@@ -4,7 +4,9 @@ services:
       image: blacklabelops/hsqldb
       hostname: trinity-db
       extra_hosts:
-        - "trinity-db:192.168.57.243"
+        - "trinity-db:192.168.0.55"
+        - "hsqldb:192.168.0.55"
+        - "mariadb:192.168.0.55"
       container_name: trinity-db
       environment:
         HSQLDB_DATABASE_HOST: trinity-db
@@ -15,7 +17,7 @@ services:
         HSQLDB_REMOTE: "false"
         HSQLDB_DATABASE_ALIAS: "anaconda"
       ports:
-        - "9001:9001"
+        - "9002:9001"
       volumes:
         - "./db:/opt/database"
       restart: always
@@ -23,10 +25,12 @@ services:
       image: tomcat:8
       hostname: trinity-web
       extra_hosts:
-        - "trinity-db:192.168.57.243"
+        - "trinity-db:192.168.0.55"
+        - "hsqldb:192.168.0.55"
+        - "mariadb:192.168.0.55"
       container_name: trinity-web
       environment:
-        JDBC_URL: jdbc:hsqldb:hsql://trinity-db:9001/anaconda
+        JDBC_URL: jdbc:hsqldb:hsql://trinity-db:9002/anaconda
         JDBC_USER: sa
         JDBC_PASS: sa
       ports:
@@ -38,6 +42,7 @@ services:
         - ./config/server.xml:/usr/local/tomcat/conf/server.xml
         - ./config/context.xml:/usr/local/tomcat/conf/context.xml
         - ./lib/hsqldb.jar:/usr/local/tomcat/lib/hsqldb.jar
+        - ./lib/mariadb-java-client-3.0.11.jar:/usr/local/tomcat/lib/mariadb-java-client-3.0.11.jar
       links:
         - db
       restart: always  

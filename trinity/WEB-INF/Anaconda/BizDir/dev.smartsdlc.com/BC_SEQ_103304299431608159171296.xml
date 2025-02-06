@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_103304299431608159171296.xml" USER="null" id="BC_SEQ_103304299431608159171296"><BC_SEQ_103304299431608159171296 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="타임라인 상세 보기" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_103304299431608159171296" referenceKey="null"><read DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT *&lt;BR&gt;FROM   PLAN&lt;BR&gt;WHERE PL_KEY = ?&lt;BR&gt;AND       PL_SEQ = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PL_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PL_SEQ" SEQ="2" TYPE="INT" VALUE=""/>
+</read></BC_SEQ_103304299431608159171296></xml>

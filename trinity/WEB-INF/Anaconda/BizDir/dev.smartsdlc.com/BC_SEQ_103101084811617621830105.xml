@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_103101084811617621830105.xml" USER="null" id="BC_SEQ_103101084811617621830105"><BC_SEQ_103101084811617621830105 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="룰 최상위로 이동하기" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_103101084811617621830105" referenceKey="null"><moveTop DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE rule_context&lt;BR&gt;SET parent_seq = -1 , rule_group = ?&lt;BR&gt;WHERE seq =?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="rule_group" SEQ="1" TYPE="KEY" VALUE="PL_"><![CDATA[PL_]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="2" TYPE="INT" VALUE=""/>
+</moveTop><deleteChild DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="delete from rule_relation&lt;BR&gt;where child_key = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="INT" VALUE=""/>
+</deleteChild></BC_SEQ_103101084811617621830105></xml>

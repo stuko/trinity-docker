@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_109405246661516372798977.xml" USER="null" id="BC_SEQ_109405246661516372798977"><BC_SEQ_109405246661516372798977 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="데이터 베이스 정보 저장" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_109405246661516372798977" referenceKey="null"><checkDB DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Select * &lt;BR&gt;From  SaaSDB&lt;BR&gt;Where Account = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Account" SEQ="1" TYPE="STRING" VALUE=""/>
+</checkDB><saveDB DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Insert into SaaSDB(Account, DBCode, UseTrinity, Id, Password, Url, MaxConnection,UserId,DBName)&lt;BR&gt;Values( ? ,?,?,?,?,?,?,?,?)" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="import com.stuko.anaconda.business.*;&lt;BR&gt;import com.stuko.saas.trinity.*;&lt;BR&gt;if(((BusinessCollection)result.getReturnObject(&quot;checkDB&quot;)).size() &gt; 0) This.doProcessSkip(true);&lt;BR&gt;else{&lt;BR&gt;   SaaSSQLProcessImpl proc = new SaaSSQLProcessImpl();&lt;BR&gt;   request.setFieldValue(&quot;userid&quot;,proc.getUserID());&lt;BR&gt;   request.setFieldValue(&quot;dbname&quot;,proc.getDB());&lt;BR&gt;}">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Account" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="DBCode" SEQ="2" TYPE="KEY" VALUE="DB"><![CDATA[DB]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="trinity" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="id" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="password2" SEQ="5" TYPE="REFER_ENCRYPT" VALUE="password"><![CDATA[password]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="url" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="max" SEQ="7" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="userid" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="dbname" SEQ="9" TYPE="STRING" VALUE=""/>
+</saveDB><updateDB DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Update SaaSDB&lt;BR&gt;Set Id = ? , Password = ? , Url = ? , MaxConnection = ? , UseTrinity = ?&lt;BR&gt;Where Account = ?" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="import com.stuko.anaconda.business.*;&lt;BR&gt;if(((BusinessCollection)result.getReturnObject(&quot;checkDB&quot;)).size() == 0) This.doProcessSkip(true);">
+<FIELD KIND="ITEM" LENGTH="0" NAME="id" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="password2" SEQ="2" TYPE="REFER_ENCRYPT" VALUE="password"><![CDATA[password]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="url" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="max" SEQ="4" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="trinity" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Account" SEQ="6" TYPE="STRING" VALUE=""/>
+</updateDB><releaseDB KIND="DATA" OWNER="sa" POJO_CLASS="com.stuko.saas.trinity.SaaSSQLProcessImpl" REMOTE="false" SERVICE_NAME="release" TYPE="POJO">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Account" SEQ="1" TYPE="STRING" VALUE=""/>
+</releaseDB></BC_SEQ_109405246661516372798977></xml>

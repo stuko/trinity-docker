@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/BizDir/localhost/BC_SEQ_108748823581559962079937.xml" USER="null" id="BC_SEQ_108748823581559962079937"><BC_SEQ_108748823581559962079937 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="데이터 베이스 리스트 화면" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_108748823581559962079937" referenceKey="null"><selectTotalCount DATASOURCE="java:comp/env/jdbc/hsql" DESC="데이터 전체 카운트 가져오기" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Select count(*) AS CNT&lt;BR&gt;From ANACONDA_DB" TYPE="SQL">
-</selectTotalCount><getList DATASOURCE="java:comp/env/jdbc/hsql" DESC="전체 리스트 가져오기" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Select *&lt;BR&gt;From   ANACONDA_DB&lt;BR&gt;Limit  ?, 20" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;if(!BusinessHelper.checkBusinessNull(BusinessDataParameter.getActionParamValue(&quot;pos&quot;)))&lt;BR&gt;{&lt;BR&gt; BusinessDataParameter.setFieldValue(&quot;pos&quot;,&quot;0&quot;);&lt;BR&gt;} ">
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/ROOT/WEB-INF/Anaconda/BizDir/localhost/BC_SEQ_108748823581559962079937.xml" USER="null" id="BC_SEQ_108748823581559962079937"><BC_SEQ_108748823581559962079937 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="데이터 베이스 리스트 화면" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" class_intercepter="" id="BC_SEQ_108748823581559962079937" referenceKey="null"><selectTotalCount DATASOURCE="java:comp/env/jdbc/hsql" DESC="데이터 전체 카운트 가져오기" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Select count(*) AS CNT&lt;BR&gt;From ANACONDA_DB" TYPE="SQL">
+<SERVICE><![CDATA[Select count(*) AS CNT<BR>From ANACONDA_DB]]></SERVICE><bef_intercepter/><aft_intercepter/></selectTotalCount><getList DATASOURCE="java:comp/env/jdbc/hsql" DESC="전체 리스트 가져오기" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Select *&lt;BR&gt;From   ANACONDA_DB&lt;BR&gt;Limit  ?, 20" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;if(!BusinessHelper.checkBusinessNull(BusinessDataParameter.getActionParamValue(&quot;pos&quot;)))&lt;BR&gt;{&lt;BR&gt; BusinessDataParameter.setFieldValue(&quot;pos&quot;,&quot;0&quot;);&lt;BR&gt;} " class_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter">
 <FIELD KIND="ITEM" LENGTH="0" NAME="pos" SEQ="1" TYPE="INT" VALUE=""/>
-</getList></BC_SEQ_108748823581559962079937></xml>
+<SERVICE><![CDATA[Select *
+From   ANACONDA_DB
+Limit  ?, 20]]></SERVICE><bef_intercepter><![CDATA[import com.stuko.anaconda.business.*;
+
+if(request.getFieldValue("pos") == null || "".equals(request.getFieldValue("pos")) || "null".equals(request.getFieldValue("pos")))
+{
+ request.setFieldValue("pos","0");
+}else{
+request.setFieldValue("pos","0");
+}]]></bef_intercepter><aft_intercepter/></getList><bef_intercepter><![CDATA[
+
+]]></bef_intercepter><aft_intercepter><![CDATA[
+
+]]></aft_intercepter></BC_SEQ_108748823581559962079937></xml>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_109368021191667267088861.xml" USER="null" id="BC_SEQ_109368021191667267088861"><BC_SEQ_109368021191667267088861 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="자동매매 등록" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_109368021191667267088861" referenceKey="null"><create DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="insert into sp.sp_acma_config(vendor, duna_channel_id, duna_channel, duna_message, duna_msg_type, access_key, secret_key, duna_account,duna_client_id, duna_secret_key, duna_token, duna_url) &lt;BR&gt;values (?,?,?,'socialproject.acma','DUNA.SAAS',?,?,?,?,?,?, ?)" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="vendor" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="duna_channel" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="duna_channel_ref" SEQ="3" TYPE="REFERENCE" VALUE="duna_channel"><![CDATA[duna_channel]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="accessKey" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="secretKey" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Account" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="duna_client_id" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="duna_secret_key" SEQ="8" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="duna_token" SEQ="9" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="duna_url" SEQ="10" TYPE="STRING" VALUE=""/>
+</create></BC_SEQ_109368021191667267088861></xml>

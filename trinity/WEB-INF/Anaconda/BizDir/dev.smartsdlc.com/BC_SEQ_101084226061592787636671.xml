@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_101084226061592787636671.xml" USER="null" id="BC_SEQ_101084226061592787636671"><BC_SEQ_101084226061592787636671 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="요구사항 수정 프로세스" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_101084226061592787636671" referenceKey="null"><updateProgress DATASOURCE="java:comp/env/jdbc/ID104556759501588036008138" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE SPRINT_BACK_LOG&lt;BR&gt;SET PROGRESS = ? , CREATEDT = NOW()&lt;BR&gt;WHERE SBL_KEY = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PROGRESS" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SBL_KEY" SEQ="2" TYPE="STRING" VALUE=""/>
+</updateProgress><updateRequirement DATASOURCE="java:comp/env/jdbc/ID104556759501588036008138" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE BACK_LOG&lt;BR&gt;SET BL_TEXT = ?&lt;BR&gt;WHERE BL_KEY = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="BL_TEXT" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="BL_KEY" SEQ="2" TYPE="STRING" VALUE=""/>
+</updateRequirement></BC_SEQ_101084226061592787636671></xml>

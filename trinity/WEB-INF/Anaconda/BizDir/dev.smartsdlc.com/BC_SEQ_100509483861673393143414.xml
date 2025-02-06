@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_100509483861673393143414.xml" USER="null" id="BC_SEQ_100509483861673393143414"><BC_SEQ_100509483861673393143414 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="업비트-코인 시세 정보 저장" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_100509483861673393143414" referenceKey="null"><insert DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="insert into coin_market_price &lt;BR&gt;   (market ,&lt;BR&gt;    trade_date ,&lt;BR&gt;    trade_time ,&lt;BR&gt;    trade_date_kst ,&lt;BR&gt;    trade_time_kst ,&lt;BR&gt;    opening_price ,&lt;BR&gt;    high_price ,&lt;BR&gt;    low_price ,&lt;BR&gt;    trade_price ,&lt;BR&gt;    prev_closing_price ,&lt;BR&gt;    change_price ,&lt;BR&gt;    change_rate ,&lt;BR&gt;    signed_change_price ,&lt;BR&gt;    signed_change_rate ,&lt;BR&gt;    trade_volume ,&lt;BR&gt;    acc_trade_price ,&lt;BR&gt;    acc_trade_price_24h ,&lt;BR&gt;    acc_trade_volume ,&lt;BR&gt;    acc_trade_volume_24h ,&lt;BR&gt;    highest_52_week_price ,&lt;BR&gt;    highest_52_week_date ,&lt;BR&gt;    lowest_52_week_price ,&lt;BR&gt;    lowest_52_week_date , date, time)&lt;BR&gt;values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="market" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="trade_date" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="trade_time" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="trade_date_kst" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="trade_time_kst" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="opening_price" SEQ="6" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="high_price" SEQ="7" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="low_price" SEQ="8" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="trade_price" SEQ="9" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="prev_closing_price" SEQ="10" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="change_price" SEQ="11" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="change_rate" SEQ="12" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="signed_change_price" SEQ="13" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="signed_change_rate" SEQ="14" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="trade_volume" SEQ="15" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="acc_trade_price" SEQ="16" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="acc_trade_price_24h" SEQ="17" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="acc_trade_volume" SEQ="18" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="acc_trade_volume_24h" SEQ="19" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="highest_52_week_price" SEQ="20" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="highest_52_week_date" SEQ="21" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="lowest_52_week_price" SEQ="22" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="lowest_52_week_date" SEQ="23" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="date" SEQ="24" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="time" SEQ="25" TYPE="STRING" VALUE=""/>
+</insert></BC_SEQ_100509483861673393143414></xml>

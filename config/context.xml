@@ -24,6 +24,8 @@
     <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
     <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
     <ResourceLink global="jdbc/hsql" name="jdbc/hsql" type="javax.sql.DataSource" />
+    <ResourceLink global="jdbc/SPDB" name="jdbc/SPDB" type="javax.sql.DataSource" />
+    <ResourceLink global="jdbc/admin" name="jdbc/admin" type="javax.sql.DataSource" />
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
     <!--
     <Manager pathname="" />

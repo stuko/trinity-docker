@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/Scraping/BC_SEQ_105710580711503280555663.xml" USER="null" id="BC_SEQ_105710580711503280555663"><BC_SEQ_105710580711503280555663 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="레코딩 저장하기" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_105710580711503280555663" referenceKey="null"><saveRecord DATASOURCE="java:comp/env/jdbc/anr" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Insert into record(num, parent_seq, name, x, y, evt, value, wheel) &lt;BR&gt;values(?,?,?,?,?,?,?,?)&lt;BR&gt;" TYPE="SQL" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="num" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="parent_seq" SEQ="2" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="x" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="y" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="evt" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="value" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="wheel" SEQ="8" TYPE="STRING" VALUE=""/>
+</saveRecord></BC_SEQ_105710580711503280555663></xml>

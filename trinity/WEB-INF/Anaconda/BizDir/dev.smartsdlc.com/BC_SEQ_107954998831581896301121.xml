@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_107954998831581896301121.xml" USER="null" id="BC_SEQ_107954998831581896301121"><BC_SEQ_107954998831581896301121 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="XML서비스 -PRODUCT" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_107954998831581896301121" referenceKey="null"><PRODUCT_insert DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO PRODUCT (PRD_KEY,PRD_NAME,PRD_FIXED_PRICE,PRD_FIXED_DC_RATE,PRD_INTRODUCE,PRD_DISPLAY_YN,PRD_DISPLAY) VALUES(?,?,?,?,?,?,?)" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;create&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_KEY" SEQ="1" TYPE="KEY" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_NAME" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_FIXED_PRICE" SEQ="3" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_FIXED_DC_RATE" SEQ="4" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_INTRODUCE" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_DISPLAY_YN" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_DISPLAY" SEQ="7" TYPE="STRING" VALUE=""/>
+</PRODUCT_insert><PRODUCT_update DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE PRODUCT SET PRD_NAME= ?,PRD_FIXED_PRICE= ?,PRD_FIXED_DC_RATE= ?,PRD_INTRODUCE= ?,PRD_DISPLAY_YN= ?,PRD_DISPLAY= ? WHERE PRD_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;update&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_NAME" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_FIXED_PRICE" SEQ="2" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_FIXED_DC_RATE" SEQ="3" TYPE="DOUBLE" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_INTRODUCE" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_DISPLAY_YN" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_DISPLAY" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_KEY" SEQ="7" TYPE="STRING" VALUE=""/>
+</PRODUCT_update><PRODUCT_delete DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="DELETE FROM PRODUCT WHERE PRD_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;delete&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+</PRODUCT_delete><PRODUCT_read DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT PRD_KEY,PRD_REGDATE,PRD_NAME,PRD_FIXED_PRICE,PRD_FIXED_DC_RATE,PRD_INTRODUCE,PRD_DISPLAY_YN,PRD_DISPLAY FROM PRODUCT WHERE PRD_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;read&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PRD_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+</PRODUCT_read><PRODUCT_list DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT PRD_KEY,PRD_REGDATE,PRD_NAME,PRD_FIXED_PRICE,PRD_FIXED_DC_RATE,PRD_INTRODUCE,PRD_DISPLAY_YN,PRD_DISPLAY FROM PRODUCT LIMIT ?,10" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="if(request.getFieldValue(&quot;code&quot;) == null)  request.setFieldValue(&quot;code&quot;,&quot;list&quot;);&lt;BR&gt;&lt;BR&gt;if(!&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;))){&lt;BR&gt;  This.doProcessSkip(true);&lt;BR&gt;}else{&lt;BR&gt;  if(request.getFieldValue(&quot;pos&quot;) == null){&lt;BR&gt;    request.setFieldValue(&quot;pos&quot;,&quot;0&quot;);&lt;BR&gt;  }&lt;BR&gt;}">
+<FIELD KIND="ITEM" LENGTH="0" NAME="pos" SEQ="1" TYPE="INT" VALUE=""/>
+</PRODUCT_list><selectTotalCount DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT COUNT(*) AS CNT&lt;BR&gt;FROM PRODUCT" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+</selectTotalCount></BC_SEQ_107954998831581896301121></xml>

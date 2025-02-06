@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_102395698371505640560159.xml" USER="null" id="BC_SEQ_102395698371505640560159"><BC_SEQ_102395698371505640560159 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="프로젝트 관리 활동정보 삭제" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_102395698371505640560159" referenceKey="null"><deleteActivity DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Delete From ProjectActivity Where PMCode = ? And ActivityCode = ?" TYPE="SQL" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PMCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ActivityCode" SEQ="2" TYPE="STRING" VALUE=""/>
+</deleteActivity><deleteSchedule DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Delete From Schedule Where PMCode = ?  And PMActivity = ?" TYPE="SQL" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PMCode" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ActivityCode" SEQ="2" TYPE="STRING" VALUE=""/>
+</deleteSchedule></BC_SEQ_102395698371505640560159></xml>

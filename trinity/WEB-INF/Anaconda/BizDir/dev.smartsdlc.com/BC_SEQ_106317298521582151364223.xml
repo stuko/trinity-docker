@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_106317298521582151364223.xml" USER="null" id="BC_SEQ_106317298521582151364223"><BC_SEQ_106317298521582151364223 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="XML서비스 -PAY_RULE" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_106317298521582151364223" referenceKey="null"><PAY_RULE_insert DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO PAY_RULE (SVC_KEY,USR_TYPE_KEY,SITE_KEY,MSHP_PERIOD,MSHP_COUNT,MSHP_STARTDATE,MSHP_ENDDATE,MSHP_YN) VALUES(?,?,?,?,?,?,?,?)" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;create&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="USR_TYPE_KEY" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SITE_KEY" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_PERIOD" SEQ="4" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_COUNT" SEQ="5" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_STARTDATE" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_ENDDATE" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_YN" SEQ="8" TYPE="STRING" VALUE=""/>
+</PAY_RULE_insert><PAY_RULE_update DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE PAY_RULE SET MSHP_PERIOD= ?,MSHP_COUNT= ?,MSHP_STARTDATE= ?,MSHP_ENDDATE= ?,MSHP_YN= ? WHERE SVC_KEY = ? AND USR_TYPE_KEY = ? AND SITE_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;update&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_PERIOD" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_COUNT" SEQ="2" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_STARTDATE" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_ENDDATE" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MSHP_YN" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="USR_TYPE_KEY" SEQ="7" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SITE_KEY" SEQ="8" TYPE="STRING" VALUE=""/>
+</PAY_RULE_update><PAY_RULE_delete DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="DELETE FROM PAY_RULE WHERE SVC_KEY = ? AND USR_TYPE_KEY = ? AND SITE_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;delete&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="USR_TYPE_KEY" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SITE_KEY" SEQ="3" TYPE="STRING" VALUE=""/>
+</PAY_RULE_delete><PAY_RULE_read DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT SVC_KEY,USR_TYPE_KEY,SITE_KEY,PRL_REGDATE,MSHP_PERIOD,MSHP_COUNT,MSHP_STARTDATE,MSHP_ENDDATE,MSHP_YN FROM PAY_RULE WHERE SVC_KEY = ? AND USR_TYPE_KEY = ? AND SITE_KEY = ? " TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;read&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="SVC_KEY" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="USR_TYPE_KEY" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="SITE_KEY" SEQ="3" TYPE="STRING" VALUE=""/>
+</PAY_RULE_read><PAY_RULE_list DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT A.SVC_KEY, &lt;BR&gt;       IF(A.SVC_KEY = '*', '모든 서비스' , B.SVC_NAME) AS SVC_NAME, &lt;BR&gt;       IF(A.USR_TYPE_KEY = '*', '모든 고객' , C.USR_TYPE_NAME) AS USR_TYPE_NAME,&lt;BR&gt;       IF(A.SITE_KEY = '*', '모든 사이트' , A.SITE_KEY) AS SITE_NAME,&lt;BR&gt;       A.USR_TYPE_KEY,&lt;BR&gt;       A.SITE_KEY,&lt;BR&gt;       A.PRL_REGDATE,A.MSHP_PERIOD,A.MSHP_COUNT,A.MSHP_STARTDATE,A.MSHP_ENDDATE,A.MSHP_YN &lt;BR&gt;FROM PAY_RULE A&lt;BR&gt;     LEFT JOIN SERVICE B ON A.SVC_KEY = B.SVC_KEY&lt;BR&gt;     LEFT JOIN USER_TYPE C ON A.USR_TYPE_KEY = C.USR_TYPE_KEY&lt;BR&gt;LIMIT ?,10&lt;BR&gt;" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_method="if(!&quot;list&quot;.equals(request.getFieldValue(&quot;code&quot;))){&lt;BR&gt;   This.doProcessSkip(true);&lt;BR&gt;}else{&lt;BR&gt;   if(request.getFieldValue(&quot;pos&quot;) == null) {&lt;BR&gt;       request.setFieldValue(&quot;pos&quot;,&quot;0&quot;);&lt;BR&gt;   }&lt;BR&gt;}">
+<FIELD KIND="ITEM" LENGTH="0" NAME="pos" SEQ="1" TYPE="INT" VALUE=""/>
+</PAY_RULE_list><selectTotalCount DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT COUNT(*) AS CNT&lt;BR&gt;FROM PAY_RULE" TYPE="SQL">
+</selectTotalCount><SERVICE_list DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT *&lt;BR&gt;FROM    SERVICE" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;before_create&quot;.equals(request.getFieldValue(&quot;code&quot;)) || &quot;read&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+</SERVICE_list><USER_TYPE_list DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="SELECT *&lt;BR&gt;FROM    USER_TYPE" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;before_create&quot;.equals(request.getFieldValue(&quot;code&quot;)) || &quot;read&quot;.equals(request.getFieldValue(&quot;code&quot;))">
+</USER_TYPE_list></BC_SEQ_106317298521582151364223></xml>

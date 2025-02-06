@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_104509828941566694701211.xml" USER="null" id="BC_SEQ_104509828941566694701211"><BC_SEQ_104509828941566694701211 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="컨테이너 스크립트 저장" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_104509828941566694701211" referenceKey="null"><saveOrUpdate DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="insert into container_script (container_name, before_script, after_script)&lt;BR&gt;values (?,?,?)&lt;BR&gt;on duplicate key update&lt;BR&gt;before_script = ?, after_script = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="container_name" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="before1" SEQ="2" TYPE="REFERENCE" VALUE="before_script"><![CDATA[before_script]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="after1" SEQ="3" TYPE="REFERENCE" VALUE="after_script"><![CDATA[after_script]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="before2" SEQ="4" TYPE="REFERENCE" VALUE="before_script"><![CDATA[before_script]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="after2" SEQ="5" TYPE="REFERENCE" VALUE="after_script"><![CDATA[after_script]]></FIELD>
+</saveOrUpdate></BC_SEQ_104509828941566694701211></xml>

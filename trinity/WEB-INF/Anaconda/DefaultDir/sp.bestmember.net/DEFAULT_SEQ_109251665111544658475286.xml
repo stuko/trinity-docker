@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/DefaultDir/sp.bestmember.net/DEFAULT_SEQ_109251665111544658475286.xml" USER="null" id="DEFAULT_SEQ_109251665111544658475286"><DEFAULT_SEQ_109251665111544658475286 DEFAULT_XML_DATA_COLLECTION_KOR_NAME="" type=""><mdl_user_preferences Business.Service.Name="BC_SEQ_106606909511544660877558" insert="userid,name,value" key="userid" list="id,userid,name,value" read="id,userid,name,value" type="TABLE" update="name,value"><SYSTEMID KIND="DATA" REMOTE="false">
+<FIELD KIND="ITEM" LENGTH="0" NAME="id" SEQ="1" TYPE="BIGINT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="userid" SEQ="2" TYPE="BIGINT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="3" TYPE="VARCHAR" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="value" SEQ="4" TYPE="VARCHAR" VALUE=""/>
+</SYSTEMID></mdl_user_preferences></DEFAULT_SEQ_109251665111544658475286></xml>

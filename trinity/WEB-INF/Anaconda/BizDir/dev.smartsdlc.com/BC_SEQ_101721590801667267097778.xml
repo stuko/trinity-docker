@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/dev.smartsdlc.com/BC_SEQ_101721590801667267097778.xml" USER="null" id="BC_SEQ_101721590801667267097778"><BC_SEQ_101721590801667267097778 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="자동매매 삭제" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_101721590801667267097778" referenceKey="null"><delete DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="delete from sp.sp_acma_config&lt;BR&gt;where duna_account = ?&lt;BR&gt;and    duna_channel = ?&lt;BR&gt;and    access_key  = ?&lt;BR&gt;and    secret_key = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="session.Account" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="duna_channel" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="accessKey" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="secretKey" SEQ="4" TYPE="STRING" VALUE=""/>
+</delete></BC_SEQ_101721590801667267097778></xml>

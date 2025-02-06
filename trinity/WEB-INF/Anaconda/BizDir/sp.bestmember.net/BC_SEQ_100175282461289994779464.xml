@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_100175282461289994779464.xml" USER="null" id="BC_SEQ_100175282461289994779464"><BC_SEQ_100175282461289994779464 AnacondaRule="" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="" BIZ_COLLECTION_KOR_NAME="변경관리 서버 수정 프로세스" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="null " aop_point_method="null " business_rule="null" id="BC_SEQ_100175282461289994779464" referenceKey=""><updateServer DATASOURCE="java:comp/env/jdbc/hsql" DESC="변경관리서버 수정" KIND="DATA" OWNER="sa" SERVICE_NAME="update change_server &lt;BR&gt;set cm_ip = ?,&lt;BR&gt;cm_name = ?,&lt;BR&gt;cm_id = ?,&lt;BR&gt;cm_pw = ?,&lt;BR&gt;cm_dir = ?,&lt;BR&gt;cm_root = ?,&lt;BR&gt;cm_server_group_seq=?,&lt;BR&gt;cm_type = ?,&lt;BR&gt;cm_ftp_dir = ?,&lt;BR&gt;cm_server_object = ?&lt;BR&gt;where seq = ? " TYPE="SQL" aop_point_class="null " aop_point_method="null ">
+<FIELD KIND="ITEM" LENGTH="0" NAME="server_ip" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="server_name" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="server_id" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="server_pw" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="server_dir" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="server_root" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="server_group_seq" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="server_type" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="server_ftp_dir" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="server_object" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="2" TYPE="INT" VALUE=""/>
+</updateServer></BC_SEQ_100175282461289994779464></xml>

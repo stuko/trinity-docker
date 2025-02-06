@@ -36,8 +36,11 @@
 	BusinessCollection businessCollection = null;
 	BusinessData bizdata = null;
 	BizLogicXmlResource xmlResource = BizLogicXmlResource.getInstance();
-	String strColKorBizName = null;
 	long cache_time = 0;
+        String  strColKorBizName = "";
+        String strClassIntercepter = "";
+        String strAftIntercepter = "";
+        String strBefIntercepter = "";
 
 	if (strCode.equals("upd"))
 	{

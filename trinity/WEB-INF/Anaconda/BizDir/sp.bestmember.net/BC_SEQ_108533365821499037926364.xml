@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_108533365821499037926364.xml" USER="null" id="BC_SEQ_108533365821499037926364"><BC_SEQ_108533365821499037926364 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="Channel Config 저장" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_108533365821499037926364" referenceKey="null"><InsertOrUpdate DATASOURCE="java:comp/env/jdbc/SPDB" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="&lt;BR&gt;INSERT INTO ChannelConfig (Vendor,ChannelId,ConfigName,ConfigValue) VALUES (?,?,?,?)&lt;BR&gt;ON DUPLICATE KEY UPDATE ConfigName = ?&lt;BR&gt;&lt;BR&gt;" TYPE="SQL" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="msgType" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="channelId" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="configName" SEQ="3" TYPE="STRING" VALUE="token"><![CDATA[token]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="token1" SEQ="4" TYPE="REFERENCE" VALUE="토큰"><![CDATA[토큰]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="token2" SEQ="5" TYPE="REFERENCE" VALUE="토큰"><![CDATA[토큰]]></FIELD>
+</InsertOrUpdate></BC_SEQ_108533365821499037926364></xml>

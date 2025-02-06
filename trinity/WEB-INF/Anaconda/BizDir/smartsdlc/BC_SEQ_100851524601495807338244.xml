@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/smartsdlc/BC_SEQ_100851524601495807338244.xml" USER="null" id="BC_SEQ_100851524601495807338244"><BC_SEQ_100851524601495807338244 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="룰 이동-AJAX" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_100851524601495807338244" referenceKey="null"><moveRule DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE rule_context&lt;BR&gt;SET parent_seq = ?&lt;BR&gt;WHERE seq = ?&lt;BR&gt;" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_class="&lt;BR&gt;&lt;BR&gt;null&lt;BR&gt;&lt;BR&gt;" aop_point_method="!&quot;-1&quot;.equals(request.getFieldValue(&quot;select_rule&quot;))&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="select_rule" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="2" TYPE="INT" VALUE=""/>
+</moveRule><moveNewRule DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="update rule_context&lt;BR&gt;set parent_seq = ? , rule_group = ?&lt;BR&gt;where seq = ?" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;-1&quot;.equals(request.getFieldValue(&quot;select_rule&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="select_rule" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="rule_group" SEQ="2" TYPE="KEY" VALUE="R"><![CDATA[R]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="3" TYPE="INT" VALUE=""/>
+</moveNewRule><checkRuleRelation DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="select count(*) as CNT&lt;BR&gt;from rule_relation&lt;BR&gt;where parent_key = ?&lt;BR&gt;and child_key = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="select_rule" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="2" TYPE="INT" VALUE=""/>
+</checkRuleRelation><insertRuleRelation DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="insert into rule_relation(parent_key, child_key)&lt;BR&gt;values(?,?)" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.ConditionalBusinessIntercepter" aop_point_method="&quot;0&quot;.equals(((com.stuko.anaconda.business.BusinessCollection)result.getReturnObject(&quot;checkRuleRelation&quot;)).getBusinessData(0).getFieldValue(&quot;CNT&quot;))">
+<FIELD KIND="ITEM" LENGTH="0" NAME="select_rule" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="2" TYPE="INT" VALUE=""/>
+</insertRuleRelation><updateRuleRelation DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Update rule_relation&lt;BR&gt;set parent_key = ?&lt;BR&gt;where child_key = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="select_rule" SEQ="1" TYPE="INT" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="2" TYPE="INT" VALUE=""/>
+</updateRuleRelation></BC_SEQ_100851524601495807338244></xml>

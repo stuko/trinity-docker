@@ -49,12 +49,38 @@
               auth="Container"
               type="javax.sql.DataSource"
               driverClassName="org.hsqldb.jdbcDriver"
-              url="jdbc:hsqldb:hsql://192.168.57.243:9001/anaconda"
+              url="jdbc:hsqldb:hsql://hsqldb:9002/anaconda"
               username="sa"
               password="sa"
               maxTotal="10"
               maxIdle="5"
               maxWaitMillis = "100"/>
+
+
+     <Resource name="jdbc/SPDB"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="org.mariadb.jdbc.Driver"
+              url="jdbc:mariadb://mariadb:3306/sp?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=euckr&amp;serverTimezone=UTC"
+              username="sp"
+              password="asdfasdf11"
+              maxTotal="50"
+              maxIdle="5"
+              validationQuery="select 1"
+              validationQueryTimeout="2"
+              maxWaitMillis="100"/>
+     <Resource name="jdbc/admin"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="org.mariadb.jdbc.Driver"
+              url="jdbc:mariadb://mariadb:3306/test?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=euckr&amp;serverTimezone=UTC"
+              username="admin"
+              password="asdfasdf11"
+              maxTotal="20"
+              maxIdle="2"
+              validationQuery="select 1"
+              validationQueryTimeout="2"
+              maxWaitMillis="100"/>
 
   </GlobalNamingResources>
 

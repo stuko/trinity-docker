@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/dev.bestmember.net/BC_SEQ_100283586721580335394688.xml" USER="null" id="BC_SEQ_100283586721580335394688"><BC_SEQ_100283586721580335394688 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME=" 대화 인텐트 관리 -&gt;  대화 인텐트 수정 -&gt; 대화 인텐트 정보 수정 프로세스" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_100283586721580335394688" referenceKey="null"><updateIntent DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="UPDATE INTENT&lt;BR&gt;SET IT_NAME = ? , IT_DESC = ?&lt;BR&gt;WHERE IT_KEY = ?" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="IT_NAME" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="IT_DESC" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="IT_KEY" SEQ="3" TYPE="STRING" VALUE=""/>
+</updateIntent></BC_SEQ_100283586721580335394688></xml>

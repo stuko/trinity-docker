@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/sp.bestmember.net/BC_SEQ_104827386341563837105515.xml" USER="null" id="BC_SEQ_104827386341563837105515"><BC_SEQ_104827386341563837105515 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="나의 챗봇 수정하기" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_104827386341563837105515" referenceKey="null"><updateMyChatbot DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="update Chat &lt;BR&gt;set value = ?&lt;BR&gt;where channelId = ?&lt;BR&gt;and   name = 'token'" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="token" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="chatbot" SEQ="2" TYPE="STRING" VALUE=""/>
+</updateMyChatbot><updateMyChatbotName DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="update Chat &lt;BR&gt;set value = ?&lt;BR&gt;where channelId = ?&lt;BR&gt;and   name = 'name'" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="name" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="chatbot" SEQ="2" TYPE="STRING" VALUE=""/>
+</updateMyChatbotName></BC_SEQ_104827386341563837105515></xml>

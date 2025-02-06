@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/www.smartsdlc.com/BC_SEQ_105826837261737805486102.xml" USER="null" id="BC_SEQ_105826837261737805486102"><BC_SEQ_105826837261737805486102 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="Channel 이 없는 경우" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" aop_point_method="&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" business_rule="null" id="BC_SEQ_105826837261737805486102" referenceKey="null"><createTeam DATASOURCE="java:comp/env/jdbc/ID104556759501588036008138" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Insert Into Team(TeamCode, TeamName) &lt;BR&gt;Values (?,?)" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="TeamCode" SEQ="1" TYPE="KEY" VALUE="T"><![CDATA[T]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="TmpProjectName" SEQ="2" TYPE="STRING" VALUE=""/>
+</createTeam><createProject DATASOURCE="java:comp/env/jdbc/ID104556759501588036008138" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Insert Into Project (ProjectCode, ProjectName) &lt;BR&gt;Values (?,?)" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="ProjectCode" SEQ="1" TYPE="KEY" VALUE="P"><![CDATA[P]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="TmpProjectName" SEQ="2" TYPE="STRING" VALUE=""/>
+</createProject><createProjectManagement DATASOURCE="java:comp/env/jdbc/ID104556759501588036008138" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Insert Into ProjectManagement (PMCode, PMStartDateTime, PMEndDateTime, TeamCode , MethodologyCode, ProjectCode) &lt;BR&gt;Values (?,?,?,?,?,?)" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="PMCode" SEQ="1" TYPE="KEY" VALUE="PM"><![CDATA[PM]]></FIELD>
+<FIELD KIND="ITEM" LENGTH="0" NAME="StartDateTime" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="EndDateTime" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="TeamCode" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="MethodologyCode" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="ProjectCode" SEQ="6" TYPE="STRING" VALUE=""/>
+</createProjectManagement><createChannel DATASOURCE="java:comp/env/jdbc/ID104556759501588036008138" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="Insert into Channel (ChannelId , TeamCode, BotName, Vendor)&lt;BR&gt;Values (?,?,?,?)" TYPE="SQL">
+<FIELD KIND="ITEM" LENGTH="0" NAME="ChannelId" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="TeamCode" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="BotName" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="Vendor" SEQ="4" TYPE="STRING" VALUE=""/>
+</createChannel></BC_SEQ_105826837261737805486102></xml>

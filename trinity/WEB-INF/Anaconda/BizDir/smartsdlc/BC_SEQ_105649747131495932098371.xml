@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/usr/local/tomcat/webapps/trinity/WEB-INF/Anaconda/BizDir/smartsdlc/BC_SEQ_105649747131495932098371.xml" USER="null" id="BC_SEQ_105649747131495932098371"><BC_SEQ_105649747131495932098371 AnacondaRule="null" BIZ_COLLECTION_CACHE_TIME="0" BIZ_COLLECTION_COUNT="1" BIZ_COLLECTION_KOR_NAME="테이블 프로파일링 저장-AJAX" COLLECTION_INTERCEPTER="" KIND="COLLECTION" aop_intercepter="" aop_point_class="&lt;BR&gt;null&lt;BR&gt;" aop_point_method="&lt;BR&gt;null&lt;BR&gt;" business_rule="null" id="BC_SEQ_105649747131495932098371" referenceKey="null"><saveTableProfile DATASOURCE="session.jndi" KIND="DATA" OWNER="sa" REMOTE="false" SERVICE_NAME="INSERT INTO rule_factor(factor_name, factor_statement , factor_from , factor_type , baseprofile_yn , factor_group , anaconda_db_seq)&lt;BR&gt;VALUES(?,? ,?,?, ?,?,?)&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;" TYPE="SQL" aop_intercepter="com.stuko.anaconda.intercepter.SimpleBusinessIntercepter" aop_point_class="&lt;BR&gt;" aop_point_method="import com.stuko.anaconda.business.*;&lt;BR&gt;&lt;BR&gt;if(!BusinessHelper.checkBusinessNull(request.getFieldValue(&quot;factor_type&quot;))){&lt;BR&gt;   request.setFieldValue(&quot;factor_type&quot;,&quot;R&quot;);&lt;BR&gt;}&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;">
+<FIELD KIND="ITEM" LENGTH="0" NAME="factor_name" SEQ="1" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="factor_statement" SEQ="2" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="factor_from" SEQ="3" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="factor_type" SEQ="4" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="baseprofile_yn" SEQ="5" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="factor_group" SEQ="6" TYPE="STRING" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="anaconda_db_seq" SEQ="7" TYPE="INT" VALUE=""/>
+</saveTableProfile></BC_SEQ_105649747131495932098371></xml>

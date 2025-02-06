@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?><xml PATH="/home/java/trinity/trinity-en/WEB-INF/Anaconda/DefaultDir/sa@sdlc.bestmember.net/DEFAULT_SEQ_108658673051313907573764.xml" USER="null" id="DEFAULT_SEQ_108658673051313907573764"><DEFAULT_SEQ_108658673051313907573764 DEFAULT_XML_DATA_COLLECTION_KOR_NAME="" type=""><pe_keyword insert="" key="" list="" read="" type="TABLE" update=""><SYSTEMID KIND="DATA">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cate_seq" SEQ="2" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="key_word" SEQ="3" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="key_word_desc" SEQ="4" TYPE="text" VALUE=""/>
+</SYSTEMID></pe_keyword><project Business.Service.Name="BC_SEQ_102960412191329546088763" insert="project_title,project_order_company,project_period,project_start,project_cost,project_team_count,project_contents" key="seq" list="seq,project_title,project_order_company,project_period,project_start,project_cost,project_team_count" read="seq,project_title,project_order_company,project_period,project_start,project_cost,project_team_count" type="TABLE" update="project_title,project_order_company,project_period,project_start,project_cost,project_team_count,project_contents"><SYSTEMID KIND="DATA">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="project_title" SEQ="2" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="project_order_company" SEQ="3" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="project_period" SEQ="4" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="project_start" SEQ="5" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="project_cost" SEQ="6" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="project_team_count" SEQ="7" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="project_contents" SEQ="8" TYPE="text" VALUE=""/>
+</SYSTEMID></project><board type="TABLE"><SYSTEMID KIND="DATA">
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_part" SEQ="1" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_cnt" SEQ="2" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_title" SEQ="3" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_lid" SEQ="4" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_subject" SEQ="5" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_uptdate" SEQ="6" TYPE="datetime" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_regdate" SEQ="7" TYPE="datetime" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_content" SEQ="8" TYPE="text" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_step" SEQ="9" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_user" SEQ="10" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_level" SEQ="11" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_status" SEQ="12" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_filename" SEQ="13" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_max" SEQ="14" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_pid" SEQ="15" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_filedir" SEQ="16" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_enddate" SEQ="17" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="board_curcnt" SEQ="18" TYPE="int" VALUE=""/>
+</SYSTEMID></board><test_scenario_item type="TABLE"><SYSTEMID KIND="DATA">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="scenario_seq" SEQ="2" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="item_url" SEQ="3" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="data_group_seq" SEQ="4" TYPE="int" VALUE=""/>
+</SYSTEMID></test_scenario_item><bugs type="TABLE"><SYSTEMID KIND="DATA">
+<FIELD KIND="ITEM" LENGTH="0" NAME="bid" SEQ="1" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="title" SEQ="2" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="detail" SEQ="3" TYPE="text" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="reproduced" SEQ="4" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="status" SEQ="5" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="severity" SEQ="6" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="userid" SEQ="7" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="pid" SEQ="8" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="bugURL" SEQ="9" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="browserVersion" SEQ="10" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="dateString" SEQ="11" TYPE="varchar" VALUE=""/>
+</SYSTEMID></bugs><pe_public_keyword type="TABLE"><SYSTEMID KIND="DATA" REMOTE="false">
+<FIELD KIND="ITEM" LENGTH="0" NAME="seq" SEQ="1" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="cate_seq" SEQ="2" TYPE="int" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="key_word" SEQ="3" TYPE="varchar" VALUE=""/>
+<FIELD KIND="ITEM" LENGTH="0" NAME="key_word_desc" SEQ="4" TYPE="text" VALUE=""/>
+</SYSTEMID></pe_public_keyword></DEFAULT_SEQ_108658673051313907573764></xml>
